@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Swahili Coastal Kitchen — Recipe Booklet</title>
+<meta name="description" content="28 recipes and stories from Mombasa, Lamu, Malindi & Kilifi — researched and compiled by Harris Salat.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛵</text></svg>">
+<style>
+/* ============ PALETTE — ocean blue, sand, coral, mangrove ============ */
+:root {
+  --ink:     #23282b;  /* body text */
+  --primary: #0f3d52;  /* deep Indian-Ocean blue: covers, dividers, titles */
+  --accent:  #c78a3b;  /* dhow-sail gold / sand: kickers, rules */
+  --second:  #b3502e;  /* coral red: Swahili terms, links */
+  --tint:    #f2f7f5;  /* callout background */
+  --paper:   #fdfcf7;  /* page background */
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: "Lora", Georgia, "Times New Roman", serif; color: var(--ink);
+       font-size: 11pt; line-height: 1.55; background: var(--paper); margin: 0; }
+.page-col { max-width: 46rem; margin: 0 auto; padding: 2rem 1.5rem; }
+h1, h2, h3 { font-family: "Playfair Display", "TeX Gyre Bonum", Georgia, serif; }
+a { color: var(--second); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============ SITE NAV ============ */
+.site-nav { background: var(--primary); font-family: Arial, sans-serif; font-size: 9pt;
+            letter-spacing: .12em; text-transform: uppercase; padding: .55rem 1.2rem; }
+.site-nav a { color: #f0e9d8; }
+
+/* ============ COVER ============ */
+.cover { background: var(--primary); color: #f2ede0; text-align: center;
+         padding: 6rem 2rem 7rem; }
+.cover .kicker { letter-spacing: .35em; font-size: 8pt; color: var(--accent);
+                 text-transform: uppercase; font-family: Arial, sans-serif; }
+.cover h1 { font-size: 34pt; margin: 1rem 0 .5rem; }
+.cover .subtitle { font-style: italic; font-size: 12pt; opacity: .85; }
+.cover .boats { margin-top: 2.2rem; font-size: 16pt; letter-spacing: .8em; }
+.cover .revised { margin-top: 2.4rem; font-size: 9pt; color: var(--accent); }
+
+/* ============ KICKERS, HEADINGS ============ */
+.kicker { letter-spacing: .18em; font-size: 8pt; text-transform: uppercase;
+          color: var(--accent); font-family: Arial, sans-serif; font-weight: bold; }
+h2.section { font-size: 20pt; color: var(--ink); margin: .3rem 0 .8rem; }
+h4.subhead { font-family: "Playfair Display", Georgia, serif; font-size: 12pt;
+             color: var(--primary); margin: 1.3rem 0 .3rem; }
+
+/* ============ CONTENTS ============ */
+.toc { column-count: 2; column-gap: 2.5rem; }
+.toc p { margin: .2rem 0; break-inside: avoid; }
+.toc .toc-chapter { margin: .9rem 0 .25rem; font-weight: bold; }
+.toc .toc-chapter a { color: var(--primary); }
+.toc a { color: var(--ink); }
+.toc .num { color: var(--accent); font-size: 8pt; margin-right: .5em; }
+@media (max-width: 560px) { .toc { column-count: 1; } }
+
+/* ============ CHAPTER DIVIDER ============ */
+.divider { background: var(--primary); color: #f2ede0; padding: 2.2rem 2rem; margin: 2.5rem 0 1.5rem; }
+.divider .kicker { color: var(--accent); }
+.divider h2 { font-size: 19pt; margin: .4rem 0; }
+.divider .proverb { font-size: 10pt; }
+.divider .proverb em { opacity: .85; }
+.divider .proverb .translation { font-style: italic; opacity: .75; }
+
+/* ============ RECIPES ============ */
+.recipe { border-top: 1px solid #dfe5e0; padding-top: 1.6rem; margin-top: 2rem; }
+.recipe h3 { font-size: 17pt; margin: .25rem 0 .1rem; color: var(--primary); }
+.recipe .sw-name { font-style: italic; color: var(--second); font-size: 12pt; margin: 0 0 .7rem; }
+.recipe .headnote { font-style: italic; color: #454f52; margin: .4rem 0 .8rem; }
+.recipe .meta { font-family: Arial, sans-serif; font-size: 8.5pt; letter-spacing: .08em;
+                text-transform: uppercase; color: var(--accent); font-weight: bold; margin: 0 0 .9rem; }
+.cols { display: flex; gap: 2rem; flex-wrap: wrap; }
+.cols > div { flex: 1 1 16rem; }
+.label { letter-spacing: .18em; font-size: 8pt; text-transform: uppercase;
+         color: var(--primary); font-family: Arial, sans-serif; font-weight: bold; margin: .8rem 0 .3rem; }
+.sub-label { font-family: Arial, sans-serif; font-size: 8pt; letter-spacing: .1em;
+             text-transform: uppercase; color: var(--second); font-weight: bold; margin: .7rem 0 .1rem; }
+ul.ing { list-style: none; padding: 0; margin: .2rem 0; }
+ul.ing li { padding: .12rem 0 .12rem 1rem; text-indent: -1rem; font-size: 10.5pt; }
+ul.ing li::before { content: "· "; color: var(--accent); font-weight: bold; }
+ol.method { padding-left: 1.2rem; margin: .2rem 0; }
+ol.method li { margin: .35rem 0; font-size: 10.5pt; }
+.note { background: var(--tint); border-left: 3px solid var(--accent); padding: .6rem .9rem;
+        font-size: 10pt; margin: .9rem 0 0; }
+.sources { font-size: 8.5pt; color: #667075; margin-top: .9rem; }
+
+/* ============ GLOSSARY TABLE ============ */
+table.gloss { border-collapse: collapse; width: 100%; font-size: 10pt; margin: .8rem 0; }
+table.gloss td { padding: .3rem .6rem; border-bottom: 1px solid #e4e8e3; vertical-align: top; }
+table.gloss td.sw { font-style: italic; color: var(--second); white-space: nowrap; }
+
+/* ============ PANTRY ============ */
+.pantry-item { margin: .7rem 0; }
+.pantry-item b i { color: var(--second); }
+
+/* ============ FOOTER ============ */
+.footer { text-align: center; font-size: 9pt; color: #667075; padding: 2.5rem 1rem 3rem;
+          border-top: 1px solid #dfe5e0; margin-top: 3rem; }
+.backtop { position: fixed; right: 18px; bottom: 18px; background: var(--primary); color: #fff;
+           padding: 9px 14px; border-radius: 22px; font-family: Arial, sans-serif; font-size: 9pt;
+           font-weight: bold; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+.backtop:hover { background: var(--second); color: #fff; text-decoration: none; }
+@media print { .backtop, .site-nav { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body id="top">
+<nav class="site-nav"><a href="/">← harrissalat.com</a></nav>
+
+<header class="cover">
+  <div class="kicker">A Recipe Booklet</div>
+  <h1>The Swahili<br>Coastal Kitchen</h1>
+  <div class="subtitle">Recipes and stories from Mombasa, Lamu, Malindi &amp; Kilifi</div>
+  <div class="boats">⛵ ⛵ ⛵</div>
+  <div class="revised">Compiled July 2026 · In the style of Manoj's Gujarati Kitchen</div>
+</header>
+
+<div class="page-col">
+
+<div class="kicker">Karibu — Welcome</div>
+<h2 class="section" id="contents">Contents</h2>
+<div class="toc">
+  <p class="toc-chapter"><a href="#before">Before You Cook</a></p>
+  <p><a href="#intro">A Cuisine Born of Monsoon Winds</a></p>
+  <p><a href="#pantry">The Coastal Pantry</a></p>
+  <p><a href="#glossary">A Short Swahili Food Glossary</a></p>
+  <p class="toc-chapter"><a href="#ch1">Breakfast · The True Swahili Morning</a></p>
+  <p><span class="num">1</span><a href="#r1">Pigeon Peas in Coconut Sauce</a></p>
+  <p><span class="num">2</span><a href="#r2">Cardamom-Coconut Doughnuts</a></p>
+  <p><span class="num">3</span><a href="#r3">Coconut Rice Pancakes</a></p>
+  <p><span class="num">4</span><a href="#r4">Thin Coconut-Rice Griddle Cakes</a></p>
+  <p><span class="num">5</span><a href="#r5">Spiced Ginger Tea</a></p>
+  <p class="toc-chapter"><a href="#ch2">Rice, the Center of the Table</a></p>
+  <p><span class="num">6</span><a href="#r6">Coastal Pilau</a></p>
+  <p><span class="num">7</span><a href="#r7">Mombasa Chicken Biryani</a></p>
+  <p><span class="num">8</span><a href="#r8">Coconut Rice</a></p>
+  <p class="toc-chapter"><a href="#ch3">From the Ocean</a></p>
+  <p><span class="num">9</span><a href="#r9">Grilled Fish in Coconut-Tamarind Sauce</a></p>
+  <p><span class="num">10</span><a href="#r10">Chicken in Coconut-Tamarind Sauce</a></p>
+  <p><span class="num">11</span><a href="#r11">Octopus in Coconut Curry</a></p>
+  <p><span class="num">12</span><a href="#r12">Coastal Fish Curry</a></p>
+  <p><span class="num">13</span><a href="#r13">Prawns in Coconut Sauce</a></p>
+  <p class="toc-chapter"><a href="#ch4">Stews, Sides &amp; Vegetables</a></p>
+  <p><span class="num">14</span><a href="#r14">Kidney Beans in Coconut</a></p>
+  <p><span class="num">15</span><a href="#r15">Cassava in Coconut Sauce</a></p>
+  <p><span class="num">16</span><a href="#r16">Creamed Spinach in Coconut</a></p>
+  <p><span class="num">17</span><a href="#r17">Corn in Coconut Curry</a></p>
+  <p><span class="num">18</span><a href="#r18">Coastal Chapati</a></p>
+  <p class="toc-chapter"><a href="#ch5">Street Food of Old Town</a></p>
+  <p><span class="num">19</span><a href="#r19">Mombasa Mixture Soup</a></p>
+  <p><span class="num">20</span><a href="#r20">Battered Fried Potatoes with Tamarind Chutney</a></p>
+  <p><span class="num">21</span><a href="#r21">Spiced Potato Fritters</a></p>
+  <p><span class="num">22</span><a href="#r22">Charcoal-Grilled Beef Skewers</a></p>
+  <p><span class="num">23</span><a href="#r23">Tomato-Onion-Lime Relish</a></p>
+  <p><span class="num">24</span><a href="#r24">Mombasa Mix</a></p>
+  <p class="toc-chapter"><a href="#ch6">Sweets</a></p>
+  <p><span class="num">25</span><a href="#r25">Crisp Syrup-Glazed Dumplings</a></p>
+  <p><span class="num">26</span><a href="#r26">Coconut Brittle Squares</a></p>
+  <p><span class="num">27</span><a href="#r27">Steamed Coconut-Rice Cake</a></p>
+  <p><span class="num">28</span><a href="#r28">Mombasa Halwa</a></p>
+  <p class="toc-chapter"><a href="#appendix">Appendix</a></p>
+  <p><a href="#appendix">Sources &amp; Further Reading</a></p>
+</div>
+
+<div id="before"></div>
+<div class="divider" id="intro">
+  <div class="kicker">Introduction</div>
+  <h2>A Cuisine Born of Monsoon Winds</h2>
+</div>
+
+<p>For two thousand years, the monsoon winds of the Indian Ocean have carried dhows — and dinner — to the East African coast. Sail south on the <i>kaskazi</i> wind from Arabia, Persia, and India; sail home on the <i>kusi</i> with ivory, mangrove poles, and spices. Out of that long conversation between continents grew the Swahili world: a chain of stone towns from Lamu to Mombasa to Zanzibar, a language, a culture — and one of the great fusion cuisines on earth, worked out centuries before anyone used the word.</p>
+
+<p>"Swahili" comes from the Arabic <i>sawahil</i>, "coasts." The people of this coast were never a single tribe but a maritime, urban civilization: Bantu African at its root, layered with Arab, Persian, Indian, and eventually European influence. The food tells the story more honestly than any monument. A single Mombasa breakfast — pigeon peas simmered in coconut milk, eaten with a cardamom-scented fried bread — contains African legumes, Indian Ocean coconut, Arabian frying tradition, and Indian spice, all on one tin plate before seven in the morning.</p>
+
+<h4 class="subhead">The African foundation</h4>
+<p>Beneath every borrowing sits a Bantu base: coconut in every form, cassava, plantains, greens, pigeon peas and cowpeas, corn roasted over charcoal, and fish from the reef. The techniques that define the coast — extracting thick and thin milk from a freshly grated coconut, mounting a sauce with coconut cream, cooking over mangrove charcoal — are African techniques. The Mijikenda peoples of the coastal hinterland have long supplied the towns with produce, and their farming shaped what the towns ate.</p>
+
+<h4 class="subhead">The Arab &amp; Persian thread</h4>
+<p>Arab and Persian traders and settlers have been present in the coastal towns for as long as there is recorded history, and they brought Islam, which still shapes the coastal table: the food is halal, pork is absent, and the great cooking holidays follow the Muslim calendar. Ramadan evenings produce the coast's finest snack culture — dates, kaimati, vitumbua, spiced porridges. From this thread come pilau's ancestor (the Central Asian and Persian pulao), biryani, mahamri, the syrup-soaked dumplings called kaimati (first cousin to the Middle Eastern luqaimat), Omani-style halwa, and the bitter ginger coffee, <i>kahawa</i>, poured from tall brass pots in the streets after dark.</p>
+
+<h4 class="subhead">The Indian thread</h4>
+<p>Indian traders, and later railway workers and merchants who settled permanently in Mombasa, gave the coast its curries, its chapati, its chickpea-flour batters (bhajia, viazi karai), its chai, and much of its spice vocabulary. Whole streets of Mombasa's Old Town still cook in a Gujarati-Swahili and Cutchi-Swahili register — the same current of exchange that runs through this booklet's Gujarati predecessor. Indian settlement also brought new crops: peas, wheat flour, and new styles of frying and tempering.</p>
+
+<h4 class="subhead">The European thread</h4>
+<p>The Portuguese held the coast for two centuries from Fort Jesus, and though their political legacy is a ruin, their botanical legacy is dinner: maize and beans arrived with them from the Americas, along with cassava, chilies, pineapple, and papaya — foods now so deeply Kenyan that no one thinks of them as imports. The British era added tea culture and wheat bread, and Mombasa's cosmopolitan port kept absorbing whatever came ashore.</p>
+
+<h4 class="subhead">How to use this booklet</h4>
+<p>The twenty-eight recipes that follow are organized the way the food is actually eaten: breakfast, rice, ocean, stews and sides, street food, sweets. Each recipe carries its Swahili name, a headnote, and citations to the Kenyan and Swahili-community cooks whose published versions informed it. Quantities are synthesized from several sources and tested against common sense; where coastal cooks disagree (they always do), the headnote says so. <i>Karibu chakula</i> — welcome to the food.</p>
+
+<div class="divider" id="pantry">
+  <div class="kicker">Before You Cook</div>
+  <h2>The Coastal Pantry</h2>
+</div>
+
+<p>Stock these dozen things and the entire booklet opens up. Everything is available at an Indian grocery, a Caribbean market, or a well-stocked supermarket — the Swahili coast and the Caribbean share half a pantry.</p>
+
+<div class="pantry-item"><b>Coconut (<i>nazi</i>)</b> — The soul of the cuisine. Coastal cooks straddle a serrated grating stool called an <i>mbuzi</i> ("goat"), grate a mature coconut, then squeeze the flesh with water to draw two grades of milk: <i>tui zito</i>, the thick first pressing, and <i>tui la kupikia</i>, the thin second pressing used for simmering. Canned coconut milk replicates this: the cream that rises to the top of an unshaken can is your thick milk; the rest, diluted with a little water, is your thin. Buy full-fat, unsweetened, guar-free if you can.</div>
+<div class="pantry-item"><b>Tamarind (<i>ukwaju</i>)</b> — The coast's sour note, balancing coconut's richness in kupaka sauces and the street chutney served with viazi karai. Buy seedless block tamarind and soak, or wet concentrate.</div>
+<div class="pantry-item"><b>The pilau quartet</b> — Cumin (<i>bizari nyembamba</i>), cardamom (<i>iliki</i>), cloves (<i>karafuu</i>), cinnamon (<i>mdalasini</i>), plus black pepper (<i>pilipili manga</i>). Ground together they are pilau masala; whole, they perfume biryani and chai. Toast and grind your own and the kitchen smells like a Mombasa spice stall.</div>
+<div class="pantry-item"><b>Turmeric (<i>manjano</i>)</b> — The yellow in nearly every coconut sauce and every street-food batter.</div>
+<div class="pantry-item"><b>Chilies (<i>pilipili</i>)</b> — Bird's-eye chilies for heat, used with more restraint than outsiders expect; heat usually arrives at the table as a chutney or sauce rather than inside the dish.</div>
+<div class="pantry-item"><b>Lime (<i>ndimu</i>)</b> — Finishes almost everything; the coast squeezes lime where the West grinds pepper.</div>
+<div class="pantry-item"><b>Rice (<i>mchele</i>, cooked: <i>wali</i>)</b> — Long-grain or basmati for pilau and biryani; broken or short-grain rice, soaked and ground, becomes the batter family (vitumbua, vibibi, mkate wa sinia).</div>
+<div class="pantry-item"><b>Pigeon peas &amp; kidney beans (<i>mbaazi, maharagwe</i>)</b> — The breakfast and lunch legumes, nearly always finished with coconut. Dried pigeon peas need an overnight soak; canned work on a weeknight.</div>
+<div class="pantry-item"><b>Chickpea flour (<i>unga wa dengu</i> / besan)</b> — The Indian gift behind bhajia and viazi karai batters. No substitute delivers the same earthy crunch.</div>
+<div class="pantry-item"><b>Cassava (<i>muhogo</i>)</b> — Boiled in coconut, fried as chips, or roasted; frozen peeled cassava is excellent and saves real labor.</div>
+<div class="pantry-item"><b>Fish &amp; seafood (<i>samaki, pweza, kamba</i>)</b> — Whole firm fish (snapper, sea bass, kingfish) for grilling; octopus and prawns for coconut curries. The rule of the coast: buy what the boats brought in.</div>
+<div class="pantry-item"><b>Ghee &amp; neutral oil (<i>samli, mafuta</i>)</b> — Ghee enriches doughs and rice; neutral oil does the deep-frying that Old Town runs on.</div>
+
+<div class="divider" id="glossary">
+  <div class="kicker">Reference</div>
+  <h2>A Short Swahili Food Glossary</h2>
+</div>
+
+<table class="gloss">
+  <tr><td class="sw">nazi / tui</td><td>coconut / coconut milk</td><td class="sw">iliki</td><td>cardamom</td></tr>
+  <tr><td class="sw">wali</td><td>cooked rice</td><td class="sw">karafuu</td><td>cloves</td></tr>
+  <tr><td class="sw">samaki</td><td>fish</td><td class="sw">mdalasini</td><td>cinnamon</td></tr>
+  <tr><td class="sw">kuku</td><td>chicken</td><td class="sw">manjano</td><td>turmeric</td></tr>
+  <tr><td class="sw">nyama</td><td>meat (beef)</td><td class="sw">ukwaju</td><td>tamarind</td></tr>
+  <tr><td class="sw">pweza</td><td>octopus</td><td class="sw">pilipili</td><td>chili pepper</td></tr>
+  <tr><td class="sw">kamba</td><td>prawns</td><td class="sw">ndimu</td><td>lime</td></tr>
+  <tr><td class="sw">mbaazi</td><td>pigeon peas</td><td class="sw">tangawizi</td><td>ginger</td></tr>
+  <tr><td class="sw">maharagwe</td><td>beans</td><td class="sw">kitunguu saumu</td><td>garlic</td></tr>
+  <tr><td class="sw">muhogo</td><td>cassava</td><td class="sw">dhania</td><td>cilantro / coriander</td></tr>
+  <tr><td class="sw">mchicha</td><td>amaranth greens / spinach</td><td class="sw">chumvi</td><td>salt</td></tr>
+  <tr><td class="sw">viazi</td><td>potatoes</td><td class="sw">sukari</td><td>sugar</td></tr>
+  <tr><td class="sw">mkate</td><td>bread / cake</td><td class="sw">chai</td><td>tea</td></tr>
+  <tr><td class="sw">wa kupaka</td><td>"coated / painted with" (sauce)</td><td class="sw">kahawa</td><td>coffee</td></tr>
+  <tr><td class="sw">sufuria</td><td>cooking pot</td><td class="sw">karai</td><td>deep frying wok</td></tr>
+  <tr><td class="sw">mbuzi</td><td>coconut grating stool</td><td class="sw">jiko</td><td>charcoal stove</td></tr>
+</table>
+
+<div class="divider" id="ch1">
+  <div class="kicker">Chapter One · Recipes 1–5</div>
+  <h2>Breakfast: The True Swahili Morning</h2>
+  <div class="proverb"><em>Siku njema huonekana asubuhi.</em> <span class="translation">— A good day shows itself in the morning.</span></div>
+</div>
+
+<div class="recipe" id="r1">
+  <div class="kicker">No. 1 · Breakfast</div>
+  <h3>Pigeon Peas in Coconut Sauce</h3>
+  <p class="sw-name">Mbaazi za Nazi</p>
+  <p class="headnote">This is the dish. Pigeon peas simmered until tender, napped in a turmeric-tinted coconut sauce, and crowned with a spoonful of reduced coconut cream — served every morning in Mombasa's Old Town with mahamri (recipe No. 2) for tearing and dipping. A Kilifi grandmother quoted by the Kenyan blog Jikoni Secrets put it best: "Asubuhi njema huanza na mbaazi moto" — a good morning begins with warm pigeon peas. Some households make the same dish with kidney beans (see No. 14); the pigeon-pea version is the breakfast classic.</p>
+  <p class="meta">Serves 4–6 · 40 min active + overnight soak (or use canned)</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups dried pigeon peas, soaked overnight (or 3 × 15-oz cans, drained)</li>
+        <li>1 medium red onion, half finely chopped, half sliced</li>
+        <li>2 cloves garlic, grated</li>
+        <li>1 tsp fresh ginger, grated (optional)</li>
+        <li>1 tsp ground turmeric</li>
+        <li>1 green chili, slit (optional)</li>
+        <li>2 cups thin coconut milk (1 can coconut milk whisked with ½ cup water, cream reserved)</li>
+        <li>1 cup thick coconut cream (the reserved cream, plus more from a second can if needed)</li>
+        <li>1¼ tsp salt, or to taste</li>
+        <li>2 Tbsp neutral oil</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Drain the soaked peas, cover with fresh water in a pot, and boil gently 45–60 minutes until tender but intact (canned peas skip this). Drain.</li>
+        <li>In a sufuria or heavy pot, heat the oil and fry the chopped onion until golden. Add garlic and ginger; cook 30 seconds until fragrant.</li>
+        <li>Stir in the turmeric, then the peas, coating them in the yellow oil.</li>
+        <li>Pour in the thin coconut milk, add the sliced onion, chili, and salt, and simmer uncovered 15–20 minutes, until the sauce thickens enough to coat the peas.</li>
+        <li>Meanwhile, in a small pan, boil the thick coconut cream, stirring, 3–5 minutes until it thickens to a spoonable glaze.</li>
+        <li>Ladle the peas into a shallow bowl and drizzle the reduced cream generously over the top. Serve hot with mahamri or chapati.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="note">The finishing cream is not optional. Coastal cooks judge mbaazi by that white ribbon of <i>tui zito</i> on top — it is what makes the dish taste of Mombasa rather than merely of beans.</div>
+  <p class="sources">Sources: Jikoni Secrets (jikonisecrets.co.ke/mbaazi-za-nazi-recipe); Malindians.com (malindians.com/recipes/mbaazi-za-nazi); Welma via Cookpad Kenya; Swahili Food by Vanessa (swahilifood.com).</p>
+</div>
+
+<div class="recipe" id="r2">
+  <div class="kicker">No. 2 · Breakfast</div>
+  <h3>Cardamom-Coconut Doughnuts</h3>
+  <p class="sw-name">Mahamri</p>
+  <p class="headnote">The beignet look-alike: puffed golden triangles, barely sweet, perfumed with cardamom and coconut milk — the breakfast bread of the Kenyan coast and the required partner to mbaazi za nazi. Mombasa blogger Vanessa of Swahili Food calls them "addictive pillows of joy," and at the century-old Jubilee Hotel in Old Town they sell out before 9 a.m. Mahamri are the yeasted, coconut-enriched aristocrats of the family; their plainer everyday cousin is the mandazi.</p>
+  <p class="meta">Makes about 24 · 45 min active + 1½–2 hr rising</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>4 cups all-purpose flour, plus more for rolling</li>
+        <li>½ cup sugar</li>
+        <li>2¼ tsp (1 packet) instant yeast</li>
+        <li>1½ tsp ground cardamom</li>
+        <li>2 Tbsp ghee or softened butter</li>
+        <li>1¼–1½ cups thick coconut milk, lukewarm</li>
+        <li>¼ tsp salt</li>
+        <li>Neutral oil for deep-frying</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Whisk flour, sugar, yeast, cardamom, and salt. Rub in the ghee, then add coconut milk gradually, kneading 8–10 minutes to a soft, smooth, not-sticky dough (hold back or add milk as needed).</li>
+        <li>Cover and rise in a warm spot 1–1½ hours, until doubled.</li>
+        <li>Punch down and divide into 6 balls. Roll each into a 6-inch round about ¼ inch thick, and cut each round into 4 wedges.</li>
+        <li>Rest the triangles just 10–15 minutes — over-proofing the cut pieces is the classic cause of flat mahamri.</li>
+        <li>Heat 2 inches of oil to about 340°F / 170°C — a skewer dipped in should raise a gentle bubble, not a violent one. Fry a few at a time, turning and basting them with hot oil almost immediately so they balloon; cook to deep gold on both sides, about 2 minutes.</li>
+        <li>Drain on paper. Serve warm, split and dragged through mbaazi, or with spiced tea.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="note">Troubleshooting, per Vanessa: flat mahamri come from over-proofed cut pieces or oil that's too cool; keep them moving in the oil from the moment they hit it.</div>
+  <p class="sources">Sources: Swahili Food by Vanessa (swahilifood.com/snacks/addictive-pillows-of-joy-mahamri); Mayuri's Jikoni, Mombasa (mayuris-jikoni.com/2021/06/22/mahamri); Kenyan Food Journal on the Jubilee Hotel breakfast (kenyanfoodjournal.com/mombasa-old-town-food-trail).</p>
+</div>
+
+<div class="recipe" id="r3">
+  <div class="kicker">No. 3 · Breakfast</div>
+  <h3>Coconut Rice Pancakes</h3>
+  <p class="sw-name">Vitumbua</p>
+  <p class="headnote">Crisp-shelled, custardy-centered rounds of fermented rice-and-coconut batter, cooked not in deep oil but in a dimpled cast-iron pan — the same tool as Danish aebleskiver or South Indian paniyaram, which tells you something about how ideas travel by sea. Vitumbua (one is a kitumbua) are Ramadan and street-corner staples on the coast, eaten hot with morning tea. Mombasa-based Mayuri's Jikoni notes the interior should be "light and fluffy, melt in the mouth."</p>
+  <p class="meta">Makes about 16 · 30 min active + 4 hr soaking + 1–2 hr fermenting</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1½ cups white rice, soaked 4 hours or overnight</li>
+        <li>1 cup thick coconut milk</li>
+        <li>½ cup sugar</li>
+        <li>1 tsp instant yeast</li>
+        <li>¾ tsp ground cardamom</li>
+        <li>¼ tsp salt</li>
+        <li>Oil or ghee for the pan</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Drain the rice and blend with the coconut milk until completely smooth — a thick, pourable batter; add a splash of water if needed.</li>
+        <li>Blend in sugar, yeast, cardamom, and salt. Cover and ferment in a warm place 1–2 hours, until bubbly and slightly risen.</li>
+        <li>Heat a vitumbua / aebleskiver / paniyaram pan over medium heat and slick each well with a little oil or ghee.</li>
+        <li>Stir the batter and fill each well three-quarters full. Cover and cook 2–3 minutes until the base is deep gold and the top is set at the edges.</li>
+        <li>Flip each with a skewer or spoon and cook the second side 1–2 minutes.</li>
+        <li>Serve hot. They are best within the hour — which on the coast is never a problem.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni, Mombasa (mayuris-jikoni.com, "Vitumbua"); Living &amp; Loving Kenya (livinglovingkenya.com).</p>
+</div>
+
+<div class="recipe" id="r4">
+  <div class="kicker">No. 4 · Breakfast</div>
+  <h3>Thin Coconut-Rice Griddle Cakes</h3>
+  <p class="sw-name">Vibibi</p>
+  <p class="headnote">Vitumbua's flatter cousin: the same fermented rice-and-coconut batter poured thin on a griddle, like a small, naturally gluten-free pancake with lacy edges and a sweet coconut breath. One is a kibibi — "little lady." Sold piping hot on coastal streets for breakfast alongside a small cup of kahawa; Mayuri's Jikoni laments that vibibi vendors grow rarer each year, which is the best argument for making them at home.</p>
+  <p class="meta">Makes about 12 · 20 min active + 4 hr soaking + 1 hr fermenting</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1 cup white rice, soaked 4 hours or overnight</li>
+        <li>1¼ cups thick coconut milk</li>
+        <li>⅓ cup sugar</li>
+        <li>¾ tsp instant yeast</li>
+        <li>½ tsp ground cardamom</li>
+        <li>Pinch of salt</li>
+        <li>Ghee or oil for the griddle</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Drain the rice and blend with coconut milk to a completely smooth, thin batter — pourable like crepe batter.</li>
+        <li>Blend in sugar, yeast, cardamom, and salt; ferment, covered, about 1 hour until lightly bubbly.</li>
+        <li>Heat a nonstick skillet or griddle over medium heat and grease lightly with ghee.</li>
+        <li>Pour a small ladle of batter and let it spread to a 4–5 inch cake. Cook until the top sets and the underside is golden, 2 minutes; flip and give the second side 1 minute.</li>
+        <li>Serve hot, with tea or kahawa. Some cooks scatter a pinch of grated coconut over the wet batter before flipping.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni, Mombasa (mayuris-jikoni.com, "Vibibi — Swahili Pancakes"); Food.com Swahili archive ("Coconut Rice Pancakes — Vibibi").</p>
+</div>
+
+<div class="recipe" id="r5">
+  <div class="kicker">No. 5 · Breakfast</div>
+  <h3>Spiced Ginger Tea</h3>
+  <p class="sw-name">Chai ya Tangawizi</p>
+  <p class="headnote">Kenya grows some of the world's best black tea, and the coast drinks it Indian-style: boiled with milk, sugar, and a fist of ginger, sometimes with cardamom and cloves for a full masala chai. This is what washes down mahamri at every Old Town breakfast table. Its after-dark counterpart is kahawa tungu — "bitter coffee" — brewed strong with ginger and poured from tall brass pots into thimble cups by street vendors, an Arab inheritance worth seeking out.</p>
+  <p class="meta">Serves 4 · 15 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups water</li>
+        <li>2 cups whole milk</li>
+        <li>2 Tbsp loose black tea (Kenyan if you can get it) or 4 strong tea bags</li>
+        <li>2-inch piece fresh ginger, pounded or grated</li>
+        <li>4 cardamom pods, crushed (optional)</li>
+        <li>2 cloves (optional)</li>
+        <li>3–4 Tbsp sugar, to taste</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Boil the water with the ginger (and cardamom and cloves, if using) for 3–4 minutes to draw out the spice.</li>
+        <li>Add the tea and boil 1 minute.</li>
+        <li>Add milk and sugar and return to a boil, watching closely — chai loves to boil over. Let it rise once, lower the heat, and simmer 2 minutes.</li>
+        <li>Strain into cups. Proper coastal chai is strong, sweet, and gingery enough to feel in your throat.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Kenyan Food Journal (kenyanfoodjournal.com); Living &amp; Loving Kenya (livinglovingkenya.com); Jikoni Secrets on the chai-and-mbaazi breakfast spread (jikonisecrets.co.ke).</p>
+</div>
+
+<div class="divider" id="ch2">
+  <div class="kicker">Chapter Two · Recipes 6–8</div>
+  <h2>Rice, the Center of the Table</h2>
+  <div class="proverb"><em>Haraka haraka haina baraka.</em> <span class="translation">— Hurry, hurry has no blessing.</span></div>
+</div>
+
+<div class="recipe" id="r6">
+  <div class="kicker">No. 6 · Rice</div>
+  <h3>Coastal Pilau</h3>
+  <p class="sw-name">Pilau ya Pwani</p>
+  <p class="headnote">The cornerstone of every coastal celebration — weddings, Eid, homecomings — and a direct descendant of the Persian and Central Asian pulao, carried down the trade winds. Coastal pilau is dark, savory, and one-pot: beef simmered with deeply browned onions and the pilau spice quartet, the rice cooked right in the broth so every grain turns the color of mangrove wood. Always served with kachumbari (No. 23), whose sharp lime cuts the richness.</p>
+  <p class="meta">Serves 6 · 1¼ hr</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1½ lb (700 g) beef chuck, in 1-inch cubes</li>
+        <li>2 cups basmati or long-grain rice, rinsed</li>
+        <li>3 large red onions, thinly sliced</li>
+        <li>4 cloves garlic + 1-inch ginger, pounded to a paste</li>
+        <li>2 medium potatoes, quartered (optional but traditional)</li>
+        <li>2 ripe tomatoes, chopped (optional; some cooks omit)</li>
+        <li>4 cups beef broth (from simmering the meat) or water</li>
+        <li>⅓ cup neutral oil</li>
+        <li>1½ tsp salt</li>
+      </ul>
+      <div class="sub-label">Pilau Masala</div>
+      <ul class="ing">
+        <li>2 tsp ground cumin</li>
+        <li>1 tsp ground cardamom</li>
+        <li>½ tsp ground cloves</li>
+        <li>½ tsp ground cinnamon</li>
+        <li>1 tsp black pepper</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Simmer the beef in 4½ cups salted water until tender, 40 minutes; reserve meat and broth separately. (Pressure cooker: 20 minutes.)</li>
+        <li>In a heavy pot, heat the oil and fry the onions slowly to a deep mahogany brown, 15–20 minutes — this browning is the flavor and color of pilau; do not rush it.</li>
+        <li>Add the garlic-ginger paste and the pilau masala; fry 1 minute until the kitchen smells like a spice stall. Add tomatoes, if using, and cook down 3 minutes.</li>
+        <li>Add the beef and potatoes, turning to coat, then pour in 4 cups of the broth and the salt; bring to a boil.</li>
+        <li>Stir in the rice, return to a boil, then cover tightly and cook on the lowest heat 18–20 minutes until the liquid is absorbed.</li>
+        <li>Rest 10 minutes off heat, fluff, and serve with kachumbari and, ideally, a wedge of lime.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="note">Pilau vs. biryani, settled: pilau cooks rice in the seasoned broth (brown, unified); biryani layers separately cooked rice over a sauce (white and gold, composed). Coastal cooks consider them entirely different dishes.</div>
+  <p class="sources">Sources: Tuko.co.ke Swahili recipes (tuko.co.ke/271894); Go Visit Kenya (govisitkenya.com/kenya-swahili-pilau-recipe); The Elephant, "Food Culture at the Kenyan Coast" on pilau's pulao origins (theelephant.info).</p>
+</div>
+
+<div class="recipe" id="r7">
+  <div class="kicker">No. 7 · Rice</div>
+  <h3>Mombasa Chicken Biryani</h3>
+  <p class="sw-name">Biryani ya Kuku</p>
+  <p class="headnote">Mombasa biryani — likely arrived with Arab and Persian traders and perfected in Indian-Swahili kitchens — is saucier than its Indian cousins: a rich, tangy chicken masala served under (not folded into) a mound of white rice streaked gold with saffron or food color. It is the Friday and festival dish of the coast, a menu-must at Eid and weddings. This is a home-scale version of the style served in Old Town's biryani houses.</p>
+  <p class="meta">Serves 6 · 1½ hr + marinating</p>
+  <div class="cols">
+    <div>
+      <div class="sub-label">Chicken &amp; Marinade</div>
+      <ul class="ing">
+        <li>2 lb (900 g) bone-in chicken pieces, skinned</li>
+        <li>1 cup plain yogurt</li>
+        <li>4 cloves garlic + 1-inch ginger, pounded</li>
+        <li>1 tsp turmeric · 1 tsp garam masala · 1 tsp ground cumin</li>
+        <li>½ tsp chili powder · 1 tsp salt</li>
+      </ul>
+      <div class="sub-label">Masala</div>
+      <ul class="ing">
+        <li>3 large onions, sliced · ½ cup oil</li>
+        <li>3 tomatoes, chopped · 2 Tbsp tomato paste</li>
+        <li>2 potatoes, halved · 1 green chili, slit</li>
+        <li>½ cup chopped cilantro</li>
+      </ul>
+      <div class="sub-label">Rice</div>
+      <ul class="ing">
+        <li>2½ cups basmati rice</li>
+        <li>4 cardamom pods, 4 cloves, 1 cinnamon stick</li>
+        <li>1½ tsp salt</li>
+        <li>Pinch of saffron in 3 Tbsp warm milk (or a drop of yellow-orange food color, the Mombasa way)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Marinate the chicken in the yogurt, garlic-ginger, spices, and salt at least 1 hour, ideally overnight.</li>
+        <li>Fry the onions in the oil until deep brown and crisp; lift out half for garnish.</li>
+        <li>To the pot add tomatoes and tomato paste; cook down 5 minutes. Add the chicken with its marinade, the potatoes, and chili; cover and simmer 35–40 minutes to a thick, glossy, tangy sauce, adding splashes of water only as needed. Finish with cilantro.</li>
+        <li>Meanwhile boil the rice with the whole spices and salt in abundant water until just done, 8–10 minutes; drain.</li>
+        <li>Streak the drained rice with the saffron milk or color so it comes out white-and-gold.</li>
+        <li>Serve a plateful of rice with the chicken masala ladled generously alongside and over, scattered with the reserved crisp onions. Kachumbari on the side.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Matador Network, "8 Essential Dishes of Kenya's Swahili Coast" on biryani's Arab-Persian arrival and festival role (matadornetwork.com); Swahili Beach Resort culinary guide (swahilibeach.com); Mayuri's Jikoni, Mombasa; Go Visit Kenya biriani recipe (govisitkenya.com).</p>
+</div>
+
+<div class="recipe" id="r8">
+  <div class="kicker">No. 8 · Rice</div>
+  <h3>Coconut Rice</h3>
+  <p class="sw-name">Wali wa Nazi</p>
+  <p class="headnote">The everyday rice of the coast — every grain cooked in coconut milk until faintly sweet, rich, and pearly. It is the default partner for fish curry, beans, and greens, and the dish most likely to convert a visitor on the first bite. Traditionally made with thin second-press milk for cooking and enriched at the end; a single can of coconut milk plus water gets you there.</p>
+  <p class="meta">Serves 4–6 · 30 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups long-grain or basmati rice, rinsed</li>
+        <li>1 can (13.5 oz) full-fat coconut milk</li>
+        <li>1¼ cups water</li>
+        <li>1 tsp salt</li>
+        <li>1 tsp sugar (optional, common on the coast)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Combine rice, coconut milk, water, salt, and sugar in a heavy pot and bring to a boil, stirring once so nothing sticks.</li>
+        <li>Cover tightly, reduce to the lowest heat, and cook 16–18 minutes.</li>
+        <li>Rest 10 minutes off heat, then fluff. The bottom may take on a golden coconut crust — on the coast that crust is the cook's reward.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="note">Upgrade: replace the water with thin coconut milk (second pressing, or canned milk cut with water) and stir a spoon of thick coconut cream through the finished rice.</div>
+  <p class="sources">Sources: The Ethnic Store, "The East Africa Coconut Rice: Wali wa Nazi" (theafrikanstore.com); Food.com Swahili archive ("Rice Cooked in Coconut — Wali wa Nazi"); Swahili Beach Resort culinary guide (swahilibeach.com).</p>
+</div>
+
+<div class="divider" id="ch3">
+  <div class="kicker">Chapter Three · Recipes 9–13</div>
+  <h2>From the Ocean</h2>
+  <div class="proverb"><em>Mvuvi ndiye ajuaye pweza alipo.</em> <span class="translation">— It is the fisherman who knows where the octopus hides.</span></div>
+</div>
+
+<div class="recipe" id="r9">
+  <div class="kicker">No. 9 · Ocean</div>
+  <h3>Grilled Fish in Coconut-Tamarind Sauce</h3>
+  <p class="sw-name">Samaki wa Kupaka</p>
+  <p class="headnote">The showpiece of the coast. Kupaka means "to paint": a whole fish is slashed, marinated, grilled over charcoal, then painted again and again with a spiced coconut-tamarind sauce until it wears a burnished coat. It is the pride of Mombasa and Lamu tables and the dish most often named when Kenyans argue about what the coast does best. Snapper, sea bass, or tilapia all work; the sauce also forgives a fillet cooked in a pan (see the Standard's Chef Ali Mandhry for that weeknight route).</p>
+  <p class="meta">Serves 4 · 1 hr + 30 min (to overnight) marinating</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1 whole firm fish, 3–4 lb, cleaned and scaled (or 2 smaller fish)</li>
+      </ul>
+      <div class="sub-label">Marinade</div>
+      <ul class="ing">
+        <li>4 cloves garlic + 1-inch ginger, pounded</li>
+        <li>1 bird's-eye chili, minced</li>
+        <li>1 tsp turmeric · 1 tsp garam masala</li>
+        <li>Juice of 1 lime · 3 Tbsp oil · 1 tsp salt</li>
+      </ul>
+      <div class="sub-label">Kupaka Sauce</div>
+      <ul class="ing">
+        <li>2 cups thick coconut milk</li>
+        <li>2 Tbsp tamarind paste (or juice of 1 large lime)</li>
+        <li>1 small onion, grated · 2 cloves garlic, grated</li>
+        <li>1 tsp turmeric · ½ tsp ground cumin</li>
+        <li>1 green chili, minced · salt to taste</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Cut 3 diagonal slashes on each side of the fish. Rub the marinade all over and deep into the slashes; rest 30 minutes, or overnight refrigerated.</li>
+        <li>Simmer all the sauce ingredients together, stirring, 8–10 minutes until thick enough to coat a spoon. Taste — it should be rich, sour, and gently hot.</li>
+        <li>Grill the fish over medium charcoal (or under a broiler) about 6–8 minutes per side, until just cooked and lightly charred.</li>
+        <li>Begin painting: brush the fish generously with sauce and give it 1–2 minutes per side on the fire, twice more, until lacquered.</li>
+        <li>Lay the fish on a platter, pour the remaining hot sauce over, and serve with wali wa nazi or ugali, kachumbari, and lime.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: We Eat At Last (weeatatlast.com/samaki-wa-kupaka-grilled-fish-in-coconut-sauce); Chef Ali Mandhry in The Standard, Kenya (standardmedia.co.ke, "Easy recipe: Samaki wa kupaka"); Exodus Africa culinary history on Lamu and Mombasa coconut fish (exodus.africa).</p>
+</div>
+
+<div class="recipe" id="r10">
+  <div class="kicker">No. 10 · Ocean (Honorary)</div>
+  <h3>Chicken in Coconut-Tamarind Sauce</h3>
+  <p class="sw-name">Kuku wa Kupaka</p>
+  <p class="headnote">The same beloved kupaka treatment applied to chicken — grilled until smoky, then simmered in the turmeric-gold coconut sauce until the two flavors fuse. A Mombasa specialty: the coconut milk brings sweetness, green chili the heat, and a last squeeze of lime the tang. Many coastal homes make this on Sundays when a whole fish isn't on hand; it may be the single most crowd-pleasing recipe in this booklet.</p>
+  <p class="meta">Serves 4–6 · 1 hr + marinating</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>3 lb chicken pieces, bone-in, skinned</li>
+      </ul>
+      <div class="sub-label">Marinade</div>
+      <ul class="ing">
+        <li>4 cloves garlic + 1-inch ginger, pounded</li>
+        <li>1 tsp turmeric · 1 tsp ground cumin · 1 tsp ground coriander</li>
+        <li>Juice of 1 lime · 1 tsp salt · 2 Tbsp oil</li>
+      </ul>
+      <div class="sub-label">Sauce</div>
+      <ul class="ing">
+        <li>2½ cups thick coconut milk</li>
+        <li>1 onion, grated · 2 tomatoes, grated (optional)</li>
+        <li>1–2 green chilies, minced</li>
+        <li>½ tsp turmeric · salt · juice of ½ lime, to finish</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Marinate the chicken at least 1 hour.</li>
+        <li>Grill or broil the pieces until charred at the edges and nearly cooked, 15–20 minutes, turning once.</li>
+        <li>Meanwhile simmer the sauce ingredients (except lime) in a wide pot 10 minutes until slightly thickened.</li>
+        <li>Slide the grilled chicken into the sauce and simmer gently 15 minutes, spooning sauce over, until the chicken is tender and the sauce coats it thickly.</li>
+        <li>Finish with lime juice. Serve with wali wa nazi, chapati, or mahamri.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Boondocking Recipes, "24 Easy Kenyan Recipes" (kuku wa kupaka); Go Visit Kenya (govisitkenya.com, "Kuku na Nazi"); Swahili Beach Resort culinary guide (swahilibeach.com).</p>
+</div>
+
+<div class="recipe" id="r11">
+  <div class="kicker">No. 11 · Ocean</div>
+  <h3>Octopus in Coconut Curry</h3>
+  <p class="sw-name">Pweza wa Nazi</p>
+  <p class="headnote">The adventurous coastal signature: reef octopus — pulled by hand from the tide pools at low water — simmered until tender, then finished in a thick, spiced coconut curry. Beach bars from Diani to Lamu serve it as their proudest plate; as one Mombasa food guide puts it, the dish is "exotic yet comforting, spicy yet smooth." The only technique that matters is patience in the first boil.</p>
+  <p class="meta">Serves 4 · 1½ hr (mostly unattended)</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 lb octopus, cleaned</li>
+        <li>2 cups thick coconut milk</li>
+        <li>1 large onion, finely chopped</li>
+        <li>3 cloves garlic + 1-inch ginger, pounded</li>
+        <li>1 tomato, grated</li>
+        <li>1 tsp turmeric · 1 tsp curry powder</li>
+        <li>1 green chili, slit</li>
+        <li>Juice of ½ lime · salt</li>
+        <li>2 Tbsp oil · cilantro to finish</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Simmer the octopus in salted water until genuinely tender when pierced, 45–60 minutes. Drain and cut into bite-size pieces.</li>
+        <li>Fry the onion in the oil until golden; add garlic-ginger, then turmeric and curry powder, frying 1 minute.</li>
+        <li>Add the tomato and cook down 3 minutes; add the octopus and turn to coat.</li>
+        <li>Pour in the coconut milk with the chili and salt, and simmer uncovered 12–15 minutes until the sauce is thick and clings.</li>
+        <li>Finish with lime and cilantro. Serve over wali wa nazi.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Swahili Beach Resort ("Pweza wa Nazi," swahilibeach.com); Mombasa Holidays culinary guide (mombasaholidays.com); Bahari Beach Hotel, Nyali, on coastal seafood traditions (baharibeach.net).</p>
+</div>
+
+<div class="recipe" id="r12">
+  <div class="kicker">No. 12 · Ocean</div>
+  <h3>Coastal Fish Curry</h3>
+  <p class="sw-name">Mchuzi wa Samaki</p>
+  <p class="headnote">The weeknight workhorse: fish steaks simmered in a tomato-onion curry brightened with lemon and cilantro. Mchuzi simply means "sauce" or "stew," and every coastal household has its own — some tomato-forward like this one, others enriched with a cup of coconut milk (add it at step 4 and no one will object). Red snapper is traditional; any firm white fish works.</p>
+  <p class="meta">Serves 4 · 35 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1½ lb firm white fish steaks or fillets (snapper, kingfish, tilapia)</li>
+        <li>2 onions, sliced</li>
+        <li>3 cloves garlic, minced</li>
+        <li>1 Tbsp curry powder</li>
+        <li>3 tomatoes, chopped + 2 Tbsp tomato paste</li>
+        <li>½ cup chopped cilantro</li>
+        <li>Juice of ½ lemon · 1 tsp salt</li>
+        <li>1 cup water (or coconut milk)</li>
+        <li>3 Tbsp oil</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Fry the onions in the oil until well browned.</li>
+        <li>Add garlic and curry powder and fry, stirring hard, 1 minute.</li>
+        <li>Add tomatoes, tomato paste, and half the cilantro; cook 2–3 minutes to a thick base.</li>
+        <li>Add the fish, lemon juice, salt, and water (or coconut milk). Spoon sauce over the fish, cover, and simmer gently 15–20 minutes without stirring — shake the pot instead, so the fish stays whole.</li>
+        <li>Scatter the remaining cilantro and serve hot with rice or wali wa nazi.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Food.com Swahili archive, "Curried Fish — Mchuzi wa Samaki," adapted from a Kenya-Tanzania recipe site; Go Visit Kenya ("Mtuzi wa Samaki"); The Elephant on coastal mchuzi traditions (theelephant.info).</p>
+</div>
+
+<div class="recipe" id="r13">
+  <div class="kicker">No. 13 · Ocean</div>
+  <h3>Prawns in Coconut Sauce</h3>
+  <p class="sw-name">Kamba wa Nazi</p>
+  <p class="headnote">Mombasa's creeks and the Malindi banks supply sweet prawns that need only a few minutes in a turmeric-and-coconut bath. This is the fastest main course in the booklet and the one to make first if a weeknight is all you have — the whole dish moves at the speed of the prawns, which is to say: don't walk away.</p>
+  <p class="meta">Serves 4 · 25 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1½ lb large prawns or shrimp, peeled and deveined</li>
+        <li>1 onion, finely chopped</li>
+        <li>3 cloves garlic + 1-inch ginger, pounded</li>
+        <li>1 tomato, grated</li>
+        <li>1 tsp turmeric · ½ tsp ground cumin</li>
+        <li>1 green chili, minced</li>
+        <li>1½ cups thick coconut milk</li>
+        <li>Juice of ½ lime · salt · cilantro</li>
+        <li>2 Tbsp oil</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Fry the onion in the oil until golden; add garlic-ginger and fry 30 seconds.</li>
+        <li>Add turmeric, cumin, chili, and tomato; cook down 3 minutes.</li>
+        <li>Pour in the coconut milk and simmer 5 minutes to thicken slightly. Season with salt.</li>
+        <li>Add the prawns and cook just 3–4 minutes, until pink and curled.</li>
+        <li>Finish with lime and cilantro; serve immediately over wali wa nazi.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mombasa Holidays culinary guide on coastal prawn dishes (mombasaholidays.com); Swahili Delicacies seafood archive (swahilidelicacies.com); technique cross-checked with We Eat At Last coconut-sauce method (weeatatlast.com).</p>
+</div>
+
+<div class="divider" id="ch4">
+  <div class="kicker">Chapter Four · Recipes 14–18</div>
+  <h2>Stews, Sides &amp; Vegetables</h2>
+  <div class="proverb"><em>Mgeni ni baraka.</em> <span class="translation">— A guest is a blessing.</span></div>
+</div>
+
+<div class="recipe" id="r14">
+  <div class="kicker">No. 14 · Stews &amp; Sides</div>
+  <h3>Kidney Beans in Coconut</h3>
+  <p class="sw-name">Maharagwe ya Nazi</p>
+  <p class="headnote">Mbaazi's lunchtime sibling — red kidney beans in a tomato-tinged coconut sauce, one of the coast's defining everyday dishes and a fixture of the coastal table alongside wali wa nazi and mahamri. If the beans in your remembered breakfast were larger and redder than pigeon peas, this was the pot they came from. Deeply satisfying, entirely plant-based, and better the next day.</p>
+  <p class="meta">Serves 4–6 · 30 min with canned beans (or + overnight soak)</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups dried red kidney beans, soaked and boiled until tender (or 3 × 15-oz cans, drained)</li>
+        <li>1 onion, finely chopped</li>
+        <li>2 cloves garlic, minced</li>
+        <li>2 tomatoes, grated</li>
+        <li>1 tsp turmeric · ½ tsp ground cumin (optional)</li>
+        <li>1 green chili, slit (optional)</li>
+        <li>1 can (13.5 oz) coconut milk, cream and thin milk separated</li>
+        <li>Salt · 2 Tbsp oil · cilantro to finish</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Fry the onion in the oil until golden; add garlic and fry 30 seconds.</li>
+        <li>Add turmeric and cumin, then the tomatoes; cook down to a thick base, 4–5 minutes.</li>
+        <li>Add the beans, thin coconut milk, chili, and salt; simmer uncovered 15 minutes, mashing a few beans against the pot to thicken the sauce.</li>
+        <li>Stir in the thick coconut cream and simmer 3 minutes more, until rich and glossy.</li>
+        <li>Finish with cilantro. Serve with wali wa nazi, chapati, or mahamri.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Swahili Delicacies ("Maharagwe ya Nazi," swahilidelicacies.com); Exodus Africa coastal cuisine survey (exodus.africa); Swahili Beach Resort culinary guide (swahilibeach.com).</p>
+</div>
+
+<div class="recipe" id="r15">
+  <div class="kicker">No. 15 · Stews &amp; Sides</div>
+  <h3>Cassava in Coconut Sauce</h3>
+  <p class="sw-name">Muhogo wa Nazi</p>
+  <p class="headnote">"Nothing beats a good Swahili soft cassava cooked in a thick coconut sauce topped with a touch of green chillies," writes The Standard's food desk, and the coast agrees. Cassava — a Portuguese-era arrival from the Americas, now utterly African — turns silky in coconut milk. Nairobi blogger Kaluhi Kilonzo boils hers in stock for extra depth and adds ginger and lime "for warmth and zing"; both liberties are honored below as options.</p>
+  <p class="meta">Serves 4 · 50 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 lb cassava, peeled, center thread removed, in 2-inch chunks (frozen works well)</li>
+        <li>1 can (13.5 oz) coconut milk, cream and thin milk separated</li>
+        <li>1 small onion, sliced</li>
+        <li>½ bell pepper, sliced</li>
+        <li>2 cloves garlic + 1 tsp ginger, pounded (optional)</li>
+        <li>1 green chili, sliced</li>
+        <li>Squeeze of lime (optional) · salt</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Boil the cassava in salted water (or half water, half stock) until nearly tender, about 25–30 minutes; drain.</li>
+        <li>Return the cassava to the pot with the thin coconut milk, onion, bell pepper, garlic-ginger, and salt; simmer 10 minutes, until the cassava is fully soft and the liquid reduced.</li>
+        <li>Add the thick coconut cream and simmer 5 minutes more, until the sauce is thick enough to cling to every chunk.</li>
+        <li>Top with green chili and a squeeze of lime. Eat on its own, with tea, or beside fried fish.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: The Standard / Evewoman, "Easy recipe: Muhogo wa nazi" (standardmedia.co.ke); Kaluhi's Kitchen (kaluhiskitchen.com/muhogo-wa-nazi); Swahili Delicacies (swahilidelicacies.com).</p>
+</div>
+
+<div class="recipe" id="r16">
+  <div class="kicker">No. 16 · Stews &amp; Sides</div>
+  <h3>Creamed Spinach in Coconut</h3>
+  <p class="sw-name">Mchicha wa Nazi</p>
+  <p class="headnote">The coast's gentle green: amaranth leaves (mchicha) or spinach folded into spiced coconut milk — cool, creamy, and quietly seasoned. Some households add crushed peanuts for body, a variation common across East Africa. It's the standard companion to wali wa nazi or ugali, and proof that Swahili cooking spices for aroma more often than for fire.</p>
+  <p class="meta">Serves 4 as a side · 20 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1 lb spinach or amaranth greens, washed and chopped</li>
+        <li>1 onion, finely chopped</li>
+        <li>2 cloves garlic, minced</li>
+        <li>1 tomato, chopped</li>
+        <li>½ tsp turmeric · ½ tsp ground cumin</li>
+        <li>1 cup thick coconut milk</li>
+        <li>¼ cup crushed roasted peanuts (optional)</li>
+        <li>Salt · 2 Tbsp oil</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Fry the onion in the oil until translucent; add garlic and fry 30 seconds.</li>
+        <li>Add turmeric and cumin, then the tomato; cook 2 minutes.</li>
+        <li>Add the greens and cook, turning, 3–5 minutes until wilted.</li>
+        <li>Pour in the coconut milk (and peanuts, if using), season with salt, and simmer 8–10 minutes until creamy.</li>
+        <li>Serve hot with rice, ugali, or chapati. Blended smooth, the leftovers make a fine soup.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Swahili Delicacies ("Mchicha wa Nazi," swahilidelicacies.com); Jasmine Hemsley, recorded from Swahili home cooks in Zanzibar (jasminehemsley.com); Barilla Foundation, "Mchicha wa nazi na karanga" (fondazionebarilla.com).</p>
+</div>
+
+<div class="recipe" id="r17">
+  <div class="kicker">No. 17 · Stews &amp; Sides</div>
+  <h3>Corn in Coconut Curry</h3>
+  <p class="sw-name">Makai Paka</p>
+  <p class="headnote">Sweet corn on the cob — makai — given the paka (coating) treatment: simmered in a turmeric-gold coconut sauce until each kernel is sauced to the core. Mayuri's Jikoni of Mombasa calls it "easy to prepare, tasty and creamy," and notes it's usually enjoyed with mahamri, chapati, or rice. Eaten with the hands, loudly, and best in corn season.</p>
+  <p class="meta">Serves 4 · 30 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>4 ears corn, husked and cut into 2-inch rounds</li>
+        <li>1 onion, grated</li>
+        <li>2 cloves garlic + 1 tsp ginger, pounded</li>
+        <li>1 tomato, grated</li>
+        <li>1 tsp turmeric · ½ tsp curry powder</li>
+        <li>1 green chili, slit</li>
+        <li>2 cups thick coconut milk</li>
+        <li>Juice of ½ lime · salt · 2 Tbsp oil</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Parboil the corn rounds in salted water 8 minutes; drain.</li>
+        <li>Fry the onion in the oil until golden; add garlic-ginger, turmeric, and curry powder, frying 1 minute.</li>
+        <li>Add the tomato and cook down 3 minutes.</li>
+        <li>Add the corn, coconut milk, chili, and salt; simmer uncovered 12–15 minutes, turning the corn, until the sauce is thick and coats the cobs.</li>
+        <li>Finish with lime. Serve with mahamri or chapati for mopping.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni, Mombasa ("Makai Paka / Corn Coconut Curry," mayuris-jikoni.com); Go Visit Kenya ("Kenyan Plantains in Coconut Milk" and corn recipes, govisitkenya.com).</p>
+</div>
+
+<div class="recipe" id="r18">
+  <div class="kicker">No. 18 · Stews &amp; Sides</div>
+  <h3>Coastal Chapati</h3>
+  <p class="sw-name">Chapati</p>
+  <p class="headnote">Kenya's chapati arrived with Indian workers and merchants and evolved into something distinct: softer, richer, and coiled before rolling so it bakes up in flaky layers — closer to a paratha than to the dry chapati of the subcontinent. On the coast it partners bean stews, kupaka sauces, and mbaazi; nationwide it is the celebration bread, and a stack of well-made chapati confers real status on the cook.</p>
+  <p class="meta">Makes 8 · 1 hr + 30 min resting</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>3 cups all-purpose flour</li>
+        <li>1 tsp salt · 1 tsp sugar</li>
+        <li>1 Tbsp oil, plus about ⅓ cup more for coiling and cooking</li>
+        <li>1¼ cups warm water, approximately</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Mix flour, salt, and sugar; add the 1 Tbsp oil and enough warm water to make a soft dough. Knead 8–10 minutes until smooth; rest, covered, 30 minutes.</li>
+        <li>Divide into 8 balls. Roll each thin, brush with oil, then roll it up into a rope and coil the rope into a snail. Rest the coils 10 minutes.</li>
+        <li>Roll each coil into a round about ⅛ inch thick.</li>
+        <li>Cook on a hot dry pan 1 minute until spotted; flip, brush lightly with oil, flip and brush again, pressing the edges, until both sides are golden and the layers puff, about 2 minutes more.</li>
+        <li>Stack under a towel — the steam keeps them supple. Serve with anything in Chapter Four.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Matador Network, "8 Essential Dishes of Kenya's Swahili Coast" (matadornetwork.com); Tuko.co.ke Swahili recipe collection (tuko.co.ke); Elite Plus Magazine on Indian introductions of wheat flour to the coast (eliteplusmagazine.com).</p>
+</div>
+
+<div class="divider" id="ch5">
+  <div class="kicker">Chapter Five · Recipes 19–24</div>
+  <h2>Street Food of Old Town</h2>
+  <div class="proverb"><em>Mombasa raha.</em> <span class="translation">— Mombasa is pure pleasure.</span></div>
+</div>
+
+<div class="recipe" id="r19">
+  <div class="kicker">No. 19 · Street Food</div>
+  <h3>Mombasa Mixture Soup</h3>
+  <p class="sw-name">Urojo</p>
+  <p class="headnote">The coast's answer to everything: a thick, tangy, turmeric-yellow broth — soured with green mango or lemon and thickened with chickpea flour — loaded at the vendor's cart with bhajias, boiled potatoes, bits of mishkaki, crunchy toppings, and chili. Born in Zanzibar (where it's called Zanzibar mix) and beloved in Mombasa, urojo is less a recipe than an assembly of everything good on the street corner. Make the broth; raid this booklet for the toppings.</p>
+  <p class="meta">Serves 6 · 45 min for the broth (toppings from Nos. 20–22)</p>
+  <div class="cols">
+    <div>
+      <div class="sub-label">Broth</div>
+      <ul class="ing">
+        <li>6 cups water</li>
+        <li>½ cup chickpea flour, whisked with 1 cup cold water</li>
+        <li>1 green (unripe) mango, peeled and chopped — or juice of 1½ lemons</li>
+        <li>1 potato, grated (extra body)</li>
+        <li>1 Tbsp grated ginger + 2 cloves garlic</li>
+        <li>1½ tsp turmeric · salt</li>
+      </ul>
+      <div class="sub-label">To Load Each Bowl</div>
+      <ul class="ing">
+        <li>Boiled potato chunks · bhajia (No. 21)</li>
+        <li>Sliced mishkaki (No. 22) · boiled egg, halved</li>
+        <li>Crisps or crunchy chevdo · coconut or chili chutney · lime</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Simmer the water with mango, grated potato, ginger-garlic, turmeric, and salt for 15 minutes.</li>
+        <li>Whisk in the chickpea-flour slurry and simmer, stirring often, 15–20 minutes until silky and lightly thickened, like a pourable gravy. Adjust sour (lemon) and salt — urojo should make your mouth water.</li>
+        <li>Set out the toppings like a street cart. Into each bowl put potatoes, bhajia, mishkaki, and half an egg; ladle the hot broth over.</li>
+        <li>Crown with crunchies, chutney, chili, and a squeeze of lime. Eat immediately, ideally standing up.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Kenyan Food Journal, Mombasa Old Town food trail ("urojo — Mombasa's beloved mixture soup," kenyanfoodjournal.com); The Elephant on urojo in coastal food culture (theelephant.info).</p>
+</div>
+
+<div class="recipe" id="r20">
+  <div class="kicker">No. 20 · Street Food</div>
+  <h3>Battered Fried Potatoes with Tamarind Chutney</h3>
+  <p class="sw-name">Viazi Karai na Ukwaju</p>
+  <p class="headnote">Mombasa's signature street snack: boiled potatoes dipped in a turmeric-bright chickpea-flour batter and fried in the wide karai pan that names them, then doused in sour-sweet tamarind chutney. A legacy of the Indian-Swahili exchange — come evening, women in Old Town fry them at their doorsteps for workers heading home. The Kenyan Food Journal's vendor wisdom: dry the boiled potatoes thoroughly, keep the oil at 170–180°C, and add a pinch of ajwain to the batter — "the secret ingredient at many coastal stalls."</p>
+  <p class="meta">Serves 4–6 · 45 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 lb small potatoes, boiled, peeled, halved, and thoroughly dried</li>
+      </ul>
+      <div class="sub-label">Batter</div>
+      <ul class="ing">
+        <li>1 cup chickpea flour (besan) + ½ cup all-purpose flour</li>
+        <li>1 tsp turmeric · ½ tsp chili powder</li>
+        <li>2 cloves garlic, grated · ¼ tsp ajwain (optional, authentic)</li>
+        <li>1 tsp salt · about 1 cup water</li>
+        <li>Oil for deep-frying</li>
+      </ul>
+      <div class="sub-label">Ukwaju (Tamarind) Chutney</div>
+      <ul class="ing">
+        <li>½ cup tamarind paste (from soaked block, strained)</li>
+        <li>3 Tbsp sugar or 4 soft dates, mashed</li>
+        <li>½ tsp chili powder · ½ tsp salt · ½ cup water</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Chutney first: simmer all its ingredients 8–10 minutes to a pourable sauce; cool.</li>
+        <li>Whisk the batter ingredients to a thick, smooth coating consistency — it should cling to a potato without sliding off.</li>
+        <li>Heat 2 inches of oil to 170–180°C (a drop of batter should rise steadily, not violently).</li>
+        <li>Dip each potato in batter and fry in batches, turning, until deep golden and crisp, 3–4 minutes. Let the oil recover between batches.</li>
+        <li>Serve hot, drenched in ukwaju chutney, with extra chili sauce for the brave.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Kenyan Food Journal (kenyanfoodjournal.com/viazi-karai-recipe-kenyan-spiced-potatoes); Mayuri's Jikoni, Mombasa (mayuris-jikoni.com/2018/12/16/viazi-karai); Bahari Beach Hotel street-food guide on the ukwaju pairing (baharibeach.net).</p>
+</div>
+
+<div class="recipe" id="r21">
+  <div class="kicker">No. 21 · Street Food</div>
+  <h3>Spiced Potato Fritters</h3>
+  <p class="sw-name">Bhajia</p>
+  <p class="headnote">Viazi karai's close cousin and Mombasa's other great fried potato: thin slices (not whole chunks) dipped in a spiced chickpea batter flecked with cilantro, fried until lacy and crisp. Bhajia crossed from India with the coastal Gujarati community and never left; they're a wedding side dish, a rainy-day snack, and a mandatory urojo topping. Serve with ukwaju chutney (No. 20) or a fresh coconut chutney.</p>
+  <p class="meta">Serves 4–6 · 40 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>4 large potatoes, peeled and sliced ⅛ inch thick</li>
+        <li>1½ cups chickpea flour (besan)</li>
+        <li>2 Tbsp rice flour or all-purpose flour (extra crunch)</li>
+        <li>1 tsp turmeric · ½ tsp chili powder · ½ tsp ground cumin</li>
+        <li>2 cloves garlic, grated</li>
+        <li>½ cup chopped cilantro (dhania)</li>
+        <li>1 tsp salt · about 1 cup water</li>
+        <li>Oil for deep-frying</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Whisk the flours, spices, garlic, cilantro, and salt with enough water for a batter slightly thinner than pancake batter.</li>
+        <li>Heat 2 inches of oil to 175°C.</li>
+        <li>Dip potato slices one at a time and slide into the oil; fry in loose batches, turning, until golden and crisp at the edges, 3–4 minutes.</li>
+        <li>Drain on paper and salt lightly while hot.</li>
+        <li>Serve immediately with chutney — bhajia wait for no one.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Tuko.co.ke Swahili recipe collection (tuko.co.ke/271894); Kenyan Food Journal on bhajia vs. viazi karai (kenyanfoodjournal.com); Mayuri's Jikoni on coastal bhajia culture (mayuris-jikoni.com).</p>
+</div>
+
+<div class="recipe" id="r22">
+  <div class="kicker">No. 22 · Street Food</div>
+  <h3>Charcoal-Grilled Beef Skewers</h3>
+  <p class="sw-name">Mishkaki</p>
+  <p class="headnote">As dusk falls on the coast, charcoal braziers appear on corners and mishkaki — small skewers of marinated beef, from the Arabic mishkak — start turning over the coals. The marinade runs sweet-sour-hot: ginger, garlic, lime, a little papaya or yogurt to tenderize. Eaten straight off the stick with kachumbari and chili sauce, or chopped into a bowl of urojo.</p>
+  <p class="meta">Serves 4–6 (12 skewers) · 30 min + 4 hr (to overnight) marinating</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 lb beef sirloin or tenderloin, in ¾-inch cubes</li>
+        <li>3 cloves garlic + 1-inch ginger, pounded</li>
+        <li>3 Tbsp plain yogurt or 2 Tbsp grated green papaya (tenderizer)</li>
+        <li>Juice of 1 lime · 2 Tbsp oil</li>
+        <li>1 tsp ground cumin · ½ tsp black pepper</li>
+        <li>½ tsp chili powder · 1 Tbsp tomato paste (optional)</li>
+        <li>1¼ tsp salt</li>
+        <li>Skewers, soaked if wooden</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Mix all marinade ingredients with the beef; refrigerate 4 hours or overnight.</li>
+        <li>Thread the meat onto skewers, not too tightly.</li>
+        <li>Grill over hot charcoal (or under a fierce broiler), turning every 2 minutes, 8–10 minutes total, until charred outside and just cooked within.</li>
+        <li>Rest 3 minutes. Serve with kachumbari, chili sauce, and lime — or slice into urojo.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Exodus Africa coastal street food survey (exodus.africa); Living &amp; Loving Kenya on mshikaki stalls (livinglovingkenya.com); Kenyan Food Journal, Mombasa Old Town food trail (kenyanfoodjournal.com).</p>
+</div>
+
+<div class="recipe" id="r23">
+  <div class="kicker">No. 23 · Street Food</div>
+  <h3>Tomato-Onion-Lime Relish</h3>
+  <p class="sw-name">Kachumbari</p>
+  <p class="headnote">The universal accompaniment — a sharp, fresh relish of tomato, onion, chili, and lime that appears beside pilau, biryani, grilled fish, and mishkaki without ever being asked for. The one technique that separates good kachumbari from a mere chopped salad: salting and rinsing the onions, which tames their bite and leaves only crunch.</p>
+  <p class="meta">Serves 6 as a side · 15 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1 red onion, very thinly sliced</li>
+        <li>3 ripe tomatoes, diced</li>
+        <li>1 green chili, minced (or more)</li>
+        <li>½ cup chopped cilantro</li>
+        <li>Juice of 1–2 limes</li>
+        <li>Salt</li>
+        <li>Optional: diced cucumber or avocado</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Toss the onion with 1 tsp salt; rest 10 minutes, then rinse and squeeze dry.</li>
+        <li>Combine onion, tomatoes, chili, and cilantro.</li>
+        <li>Dress with lime juice and salt to taste just before serving — kachumbari should bite back.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: The Elephant on kachumbari with pilau (theelephant.info); Tuko.co.ke ("Kenyan Kachumbari"); Swahili Beach Resort culinary guide (swahilibeach.com).</p>
+</div>
+
+<div class="recipe" id="r24">
+  <div class="kicker">No. 24 · Street Food</div>
+  <h3>Mombasa Mix</h3>
+  <p class="sw-name">Mombasa Mix (Bharazi na Bhajia)</p>
+  <p class="headnote">A one-bowl street institution from the island's Indian-Swahili kitchens: brown chickpeas simmered in a coconut curry sharpened with raw mango, ladled over lentil bhajias, then piled with coconut chutney and crunchy chevdo. Once strictly a street-cart affair, Mayuri's Jikoni notes it's now on fast-food menus across Mombasa — the coast's messiest, most complete snack. This home version simplifies the classic assembly without losing the point: soft, crunchy, hot, sour, and coconut-sweet in every spoonful.</p>
+  <p class="meta">Serves 4–6 · 45 min with canned chickpeas (+ soak if dried)</p>
+  <div class="cols">
+    <div>
+      <div class="sub-label">Curry</div>
+      <ul class="ing">
+        <li>3 cups cooked brown chickpeas (kala chana; or regular chickpeas)</li>
+        <li>1 onion, chopped · 2 cloves garlic + 1 tsp ginger, pounded</li>
+        <li>1 tsp turmeric · ½ tsp chili powder</li>
+        <li>½ green (unripe) mango, chopped — or juice of 1 lemon</li>
+        <li>2 cups coconut milk · salt · 2 Tbsp oil</li>
+      </ul>
+      <div class="sub-label">To Assemble</div>
+      <ul class="ing">
+        <li>Bhajia (No. 21) or lentil fritters</li>
+        <li>Coconut chutney: 1 cup grated coconut blended with cilantro, green chili, lime, salt</li>
+        <li>Chevdo / Bombay mix, or crushed crisps</li>
+        <li>Lime wedges</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Fry the onion in the oil until golden; add garlic-ginger, turmeric, and chili powder; fry 1 minute.</li>
+        <li>Add chickpeas, mango, coconut milk, and salt; simmer 20 minutes, mashing a few chickpeas, until the curry is thick and tangy.</li>
+        <li>Blend the coconut chutney ingredients with a splash of water.</li>
+        <li>To serve: bhajias in the bowl, chickpea curry ladled over, chutney spooned on, chevdo scattered thickly, lime on the side.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni, Mombasa ("Mombasa Mix," mayuris-jikoni.com); Bahari Beach Hotel street-food guide (baharibeach.net).</p>
+</div>
+
+<div class="divider" id="ch6">
+  <div class="kicker">Chapter Six · Recipes 25–28</div>
+  <h2>Sweets</h2>
+  <div class="proverb"><em>Baada ya dhiki faraja.</em> <span class="translation">— After hardship comes relief.</span></div>
+</div>
+
+<div class="recipe" id="r25">
+  <div class="kicker">No. 25 · Sweets</div>
+  <h3>Crisp Syrup-Glazed Dumplings</h3>
+  <p class="sw-name">Kaimati</p>
+  <p class="headnote">Golden fritter-balls, crisp outside and airy within, rolled hot through a cardamom-lemon sugar syrup that sets to a thin glassy shell. Kaimati are sold on every street of Mombasa and are essential to Ramadan evenings — and their family tree maps the whole Indian Ocean: they are the Middle East's luqaimat and Greece's loukoumades, arrived by dhow and made Swahili. The yogurt in the batter is the secret to the shatter.</p>
+  <p class="meta">Makes about 30 · 30 min active + 1 hr rising</p>
+  <div class="cols">
+    <div>
+      <div class="sub-label">Batter</div>
+      <ul class="ing">
+        <li>2 cups all-purpose flour</li>
+        <li>⅔ cup plain yogurt</li>
+        <li>1 Tbsp instant yeast + pinch of sugar</li>
+        <li>1 Tbsp ghee or butter, melted</li>
+        <li>½ tsp ground cardamom</li>
+        <li>About ½ cup water</li>
+        <li>Oil for deep-frying</li>
+      </ul>
+      <div class="sub-label">Syrup</div>
+      <ul class="ing">
+        <li>1 cup sugar · ½ cup water</li>
+        <li>Pinch of ground cardamom · strip of lemon zest</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Boil the syrup ingredients 8–9 minutes until sticky; once it boils, stop stirring (stirring invites crystals). Cool.</li>
+        <li>Beat the flour, yogurt, yeast, ghee, and cardamom by hand, adding water gradually to a thick, elastic batter you can scoop without it running through your fingers. Rise, covered, 1 hour.</li>
+        <li>Heat 2 inches of oil until a wooden spoon raises steady bubbles.</li>
+        <li>With oiled fingers or two spoons, drop walnut-size balls of batter into the oil, a few at a time; fry, rolling them, until deep gold all over.</li>
+        <li>Transfer straight from the oil into the cooled syrup, turning to coat completely.</li>
+        <li>Serve warm or at room temperature, with unsweetened tea or bitter kahawa — the syrup carries all the sugar you need.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: African Food Recipes, "Swahili Sweet Dumplings / Kaimati" (african-food-recipes.blogspot.com); Tuko.co.ke on kaimati and its luqaimat/loukoumades cousins (tuko.co.ke/262176); Mayuri's Jikoni, Mombasa.</p>
+</div>
+
+<div class="recipe" id="r26">
+  <div class="kicker">No. 26 · Sweets</div>
+  <h3>Coconut Brittle Squares</h3>
+  <p class="sw-name">Kashata za Nazi</p>
+  <p class="headnote">The coast's candy: fresh coconut (or roasted peanuts, or both) bound in caramelized sugar with a whisper of cardamom, pressed flat, and cut into diamonds while warm. Kashata are hawked in clear bags at bus stands and kiosks — Kenyan travel writers rank them, with mabuyu (candied baobab seeds), among the coast's classic edible souvenirs. Five ingredients, one pan, dangerous to keep in the house.</p>
+  <p class="meta">Makes about 24 pieces · 20 min</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups grated fresh or frozen coconut (or 1 cup coconut + 1 cup crushed roasted peanuts)</li>
+        <li>1 cup sugar</li>
+        <li>¼ cup water</li>
+        <li>½ tsp ground cardamom</li>
+        <li>Small pinch of salt</li>
+        <li>Optional: a drop of red food color, the classic street look</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>In a heavy pan, dissolve the sugar in the water over medium heat and cook to a pale amber syrup, 5–7 minutes.</li>
+        <li>Stir in the coconut (and peanuts), cardamom, and salt; cook, stirring constantly, 4–5 minutes until the mixture thickens, pulls from the pan, and smells toasty.</li>
+        <li>Turn out onto a greased tray or parchment and press ½ inch thick with a spatula.</li>
+        <li>Score into diamonds while warm; cut fully when cool. Keeps a week in a tin — theoretically.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni on Mombasa's kashata tradition (mayuris-jikoni.com); Living &amp; Loving Kenya on kashata and mabuyu as edible souvenirs (livinglovingkenya.com).</p>
+</div>
+
+<div class="recipe" id="r27">
+  <div class="kicker">No. 27 · Sweets</div>
+  <h3>Steamed Coconut-Rice Cake</h3>
+  <p class="sw-name">Mkate wa Sinia</p>
+  <p class="headnote">"Bread of the tray": a fermented batter of soaked rice, coconut, sugar, and cardamom — the same family as vitumbua — cooked gently in a ghee-slicked pan until it sets into a tender, faintly tangy cake with a golden top. A tea-time and Eid classic across the Swahili world (Zanzibar makes a near-identical mkate wa kumimina). It asks for planning — the rice soaks long — but almost no work.</p>
+  <p class="meta">One 9-inch cake · 30 min active + soaking + 1–2 hr fermenting</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>2 cups white rice, soaked 8 hours or up to 2 days (water changed daily), drained</li>
+        <li>1½ cups grated coconut or coconut powder (or 1 cup thick coconut milk)</li>
+        <li>1 cup sugar</li>
+        <li>1 Tbsp instant yeast</li>
+        <li>1 tsp ground cardamom</li>
+        <li>About 1⅓ cups water</li>
+        <li>1 Tbsp ghee for the pan</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Blend the drained rice with coconut, sugar, yeast, cardamom, and water to a completely smooth batter.</li>
+        <li>Cover and ferment 1–2 hours, until risen and bubbly; stir down.</li>
+        <li>Heat the ghee in a 9-inch ovenproof pan over medium-low heat; pour in the batter, cover, and cook gently about 15 minutes until mostly set — low heat, or the bottom burns before the middle cooks.</li>
+        <li>Finish uncovered in a 350°F oven until fully set, then broil 1–2 minutes for a deep golden top.</li>
+        <li>Cover as it cools (this keeps it tender), then unmold and cut into wedges or diamonds. Serve with spiced tea.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Swahili Delicacies ("Mkate wa Sinia," swahilidelicacies.com/2018/10/28/mkate-wa-sinia-3); Mayuri's Jikoni on Mombasa's mkate sinia tradition (mayuris-jikoni.com).</p>
+</div>
+
+<div class="recipe" id="r28">
+  <div class="kicker">No. 28 · Sweets</div>
+  <h3>Mombasa Halwa</h3>
+  <p class="sw-name">Haluwa ya Mombasa</p>
+  <p class="headnote">The glossy, chewy, jewel-colored confection sold from copper trays in Old Town — a direct Omani inheritance (Oman's national sweet is the same halwa), kept alive by families who have stirred it for generations. Unlike Indian halwas of semolina or carrot, this one is starch-based: cornstarch cooked slowly into sugar syrup with ghee, cardamom, and saffron until it turns translucent and elastic. It demands twenty minutes of honest stirring; it repays them for a week.</p>
+  <p class="meta">Makes one 8-inch tray · 45 min, mostly stirring</p>
+  <div class="cols">
+    <div>
+      <div class="label">Ingredients</div>
+      <ul class="ing">
+        <li>1 cup cornstarch, whisked smooth in 2 cups cold water</li>
+        <li>2 cups sugar · 1½ cups water</li>
+        <li>Juice of ½ lemon (keeps the syrup from crystallizing)</li>
+        <li>⅓ cup ghee, plus more for the tray</li>
+        <li>1 tsp ground cardamom</li>
+        <li>Generous pinch of saffron bloomed in 2 Tbsp hot water (or a drop of orange food color, the street-tray look)</li>
+        <li>¼ cup slivered almonds or pistachios · ½ tsp rosewater (optional)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Method</div>
+      <ol class="method">
+        <li>Boil the sugar, water, and lemon juice 5 minutes to a light syrup.</li>
+        <li>Re-whisk the cornstarch slurry and pour it into the boiling syrup in a stream, whisking hard. The pot will seize, then loosen.</li>
+        <li>Cook over medium-low heat, stirring constantly with a wooden spoon, 20–25 minutes, adding the ghee a spoonful at a time. The halwa is ready when it turns translucent, deep gold, and pulls away from the pot in one glossy mass.</li>
+        <li>Stir in cardamom, saffron, nuts, and rosewater.</li>
+        <li>Press into a ghee-slicked tray, scatter more nuts on top, and cool completely — several hours — before cutting into squares. Serve, as Old Town does, with small cups of kahawa.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="sources">Sources: Mayuri's Jikoni on Mombasa's haluwa culture (mayuris-jikoni.com); Kenyan Food Journal, Old Town food trail (kenyanfoodjournal.com); Food and the Fabulous on the coast's Omani-Arab confectionery inheritance (foodandthefabulous.com).</p>
+</div>
+
+<div class="divider" id="appendix">
+  <div class="kicker">Appendix</div>
+  <h2>Sources &amp; Further Reading</h2>
+</div>
+
+<p>Recipes in this booklet are adapted and synthesized — quantities and methods cross-checked across the sources below and rewritten for the home cook. Kenyan and Swahili-community voices were weighted first.</p>
+
+<h4 class="subhead">Kenyan &amp; Swahili-community cooks</h4>
+<div class="pantry-item"><b>Swahili Food by Vanessa</b> — swahilifood.com. Mombasa-raised blogger; definitive home mahamri and mbaazi.</div>
+<div class="pantry-item"><b>Mayuri's Jikoni</b> — mayuris-jikoni.com. Mombasa-based; encyclopedic on coastal Indian-Swahili cooking: vitumbua, vibibi, viazi karai, makai paka, Mombasa Mix, kashata, haluwa.</div>
+<div class="pantry-item"><b>Jikoni Secrets</b> — jikonisecrets.co.ke. Kenyan recipe site; mbaazi za nazi with Kilifi family context.</div>
+<div class="pantry-item"><b>Kaluhi's Kitchen</b> — kaluhiskitchen.com. Award-winning Nairobi food blog; muhogo wa nazi.</div>
+<div class="pantry-item"><b>Swahili Delicacies</b> — swahilidelicacies.com. Long-running Swahili recipe archive: maharagwe, mchicha, muhogo, mkate wa sinia.</div>
+<div class="pantry-item"><b>Malindians.com</b> — Malindi community site; mbaazi za nazi technique.</div>
+<div class="pantry-item"><b>Chef Ali Mandhry in The Standard</b> — standardmedia.co.ke. Mombasa's celebrity chef; samaki wa kupaka, muhogo wa nazi.</div>
+<div class="pantry-item"><b>Tuko.co.ke</b> — Kenyan news site's Swahili dishes collection: pilau, bhajia, kaimati, kachumbari.</div>
+<div class="pantry-item"><b>Kenyan Food Journal</b> — kenyanfoodjournal.com. Mombasa Old Town food trail; viazi karai vendor technique; urojo.</div>
+<div class="pantry-item"><b>Go Visit Kenya</b> — govisitkenya.com. Kenyan recipe archive: pilau, biriani, kuku na nazi.</div>
+<div class="pantry-item"><b>African Food Recipes</b> — african-food-recipes.blogspot.com. Swahili kaimati and viazi karai; English–Swahili spice glossary.</div>
+
+<h4 class="subhead">History &amp; food culture</h4>
+<div class="pantry-item"><b>The Elephant</b> (Nairobi) — theelephant.info. "Food Culture at the Kenyan Coast" (Mariah Sudi) and "Food and Migration: A Culinary Journey Through East Africa" (Nduati Githae).</div>
+<div class="pantry-item"><b>Matador Network</b> — "8 Essential Dishes to Understand the History of Kenya's Swahili Coast."</div>
+<div class="pantry-item"><b>National Museums of Kenya</b> via Google Arts &amp; Culture — "The Swahili Community of Kenya."</div>
+<div class="pantry-item"><b>Elite Plus Magazine</b> — "Kenya: A Culinary Story," on Portuguese and Indian crop introductions.</div>
+<div class="pantry-item"><b>Exodus Africa</b> — coastal culinary identity survey; Bahari Beach Hotel &amp; Swahili Beach Resort culinary guides (Mombasa/Diani); Living &amp; Loving Kenya; Mombasa Holidays; Food and the Fabulous on the spice-trade inheritance.</div>
+
+<div class="footer">
+  The Swahili Coastal Kitchen · Compiled July 2026 · In the style of Manoj's Gujarati Kitchen<br>
+  <i>Chakula chema — good food.</i><br><br>
+  <a href="/">← Back to harrissalat.com</a>
+</div>
+
+</div>
+<a class="backtop" href="#contents">↑ Contents</a>
+</body>
+</html>

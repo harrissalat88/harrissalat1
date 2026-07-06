@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The South Indian Kitchen — Recipe Booklet</title>
+<style>
+/* ============ PALETTE — curry-leaf green, turmeric gold, chili red ============ */
+:root {
+  --ink:     #2b2622;  /* body text */
+  --primary: #1e4633;  /* deep curry-leaf green: covers, dividers, titles */
+  --accent:  #c8860d;  /* turmeric gold: kickers, rules, running header */
+  --second:  #a63a1e;  /* chili red: italic local-language terms */
+  --tint:    #fdf6e3;  /* callout background */
+  --paper:   #fffdf7;  /* page background (screen) */
+}
+body { font-family: "Lora", Georgia, "Times New Roman", serif; color: var(--ink);
+       font-size: 11pt; line-height: 1.55; background: var(--paper); margin: 0; }
+.page-col { max-width: 46rem; margin: 0 auto; padding: 2rem 1.5rem; }
+h1, h2, h3, .display { font-family: "TeX Gyre Bonum", "Playfair Display", Georgia, serif; }
+a { color: var(--second); text-decoration: none; }
+
+/* ============ COVER ============ */
+.cover { background: var(--primary); color: #f7f3e8; text-align: center;
+         padding: 7rem 2rem 8rem; page-break-after: always; }
+.cover .kicker { letter-spacing: .35em; font-size: 8pt; color: var(--accent);
+                 text-transform: uppercase; font-family: Arial, sans-serif; }
+.cover h1 { font-size: 34pt; margin: 1rem 0 .5rem; }
+.cover .subtitle { font-style: italic; font-size: 12pt; opacity: .85; }
+.cover .dek { font-size: 10pt; opacity: .7; margin-top: 1rem; }
+.cover .revised { margin-top: 3rem; font-size: 9pt; color: var(--accent); }
+
+/* ============ KICKERS, HEADINGS ============ */
+.kicker { letter-spacing: .18em; font-size: 8pt; text-transform: uppercase;
+          color: var(--accent); font-family: Arial, sans-serif; font-weight: bold; }
+h2.section { font-size: 20pt; color: var(--ink); margin: .3rem 0 .8rem; break-after: avoid; }
+
+/* ============ CONTENTS ============ */
+.toc { column-count: 2; column-gap: 2.5rem; }
+.toc .toc-chapter { column-span: none; margin: .9rem 0 .25rem; }
+.toc a { color: var(--ink); }
+.toc .num { color: var(--accent); font-size: 8pt; margin-right: .5em; }
+
+/* ============ CHAPTER DIVIDER ============ */
+.divider { background: var(--primary); color: #f7f3e8; padding: 2.2rem 2rem;
+           page-break-before: always; margin: 0 0 1.5rem; }
+.divider h2 { font-size: 19pt; margin: .4rem 0; }
+.divider .proverb em { opacity: .8; }
+.divider .proverb { font-size: 10pt; }
+.divider .proverb .translation { font-style: italic; opacity: .75; }
+
+/* ============ RECIPE ============ */
+.recipe { margin: 1.6rem 0; }
+.recipe h3 { font-size: 16pt; margin: .2rem 0 0; break-after: avoid; }
+.local-name { font-style: italic; color: var(--second); margin: .1rem 0 .6rem; }
+.headnote { margin: .4rem 0 .6rem; }
+.meta { font-size: 9pt; color: #7a7267; border-top: 1px solid #e5ddcf;
+        border-bottom: 1px solid #e5ddcf; padding: .3rem 0; margin: .5rem 0 .8rem;
+        page-break-after: avoid; }
+.cols { display: flex; gap: 2rem; }
+.col-ing { flex: 2; } .col-method { flex: 3; }
+.col-label { letter-spacing: .15em; font-size: 7.5pt; color: var(--accent);
+             font-family: Arial, sans-serif; font-weight: bold; margin-bottom: .4rem; }
+.col-ing ul { padding-left: 1rem; margin: 0; } .col-ing li { margin: .25rem 0; font-size: 10pt; }
+.col-method ol { padding-left: 1.2rem; margin: 0; } .col-method li { margin: .45rem 0; }
+.subhead { font-weight: bold; font-style: italic; margin: .5rem 0 .2rem; list-style: none; }
+i.term { color: var(--second); }
+
+/* ============ CALLOUT ============ */
+.callout { background: var(--tint); border-left: 3px solid var(--accent);
+           padding: .7rem 1rem; margin: .9rem 0; page-break-inside: avoid; }
+.callout .label { letter-spacing: .15em; font-size: 7.5pt; color: #8a6415;
+                  font-family: Arial, sans-serif; font-weight: bold; }
+.callout ul { margin: .3rem 0 0; padding-left: 1rem; font-size: 10pt; }
+
+/* ============ PANTRY / GLOSSARY ============ */
+.pantry p { margin: .55rem 0; }
+.glossary p { margin: .35rem 0; font-size: 10pt; }
+
+/* ============ PRINT / PDF ============ */
+@page {
+  size: Letter; margin: 0.9in 1in;
+  @top-right { content: "The South Indian Kitchen"; font-size: 7.5pt; color: #c8860d; }
+  @bottom-center { content: "— " counter(page) " —"; font-size: 8pt; color: #7a7267; }
+}
+@page :first { @top-right { content: none; } @bottom-center { content: none; } }
+@media print {
+  body { background: white; }
+  .page-col { max-width: none; padding: 0; }
+  .cover { margin: -0.9in -1in; padding: 3.6in 1in 5in; }
+  .divider { margin-left: -1in; margin-right: -1in; padding: 1.4in 1in 1in; }
+}
+</style>
+</head>
+<body>
+
+<nav style="background:#1e4633;font-family:Arial,sans-serif;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;padding:.55rem 1.2rem"><a href="/" style="color:#f0e9d8;text-decoration:none">&larr; harrissalat.com</a></nav>
+<div class="cover">
+  <div class="kicker">A Recipe Booklet</div>
+  <h1>The South Indian Kitchen</h1>
+  <div class="subtitle">Dosas, Idlis &amp; the Rhythm of the Tiffin Table</div>
+  <div class="dek">Twenty-five recipes from Tamil Nadu, Karnataka, Andhra &amp; Kerala —<br>from the mother batter to the last tumbler of filter coffee.</div>
+  <div class="revised">Compiled July 4, 2026</div>
+</div>
+
+<div class="page-col">
+
+<section id="contents">
+  <div class="kicker">Vanakkam — Welcome</div>
+  <h2 class="section">Contents</h2>
+  <div class="toc">
+    <div class="toc-chapter kicker">Before You Cook</div>
+    <div><a href="#about">About the South Indian Table</a></div>
+    <div><a href="#pantry">The South Indian Pantry</a></div>
+    <div><a href="#batter">The Mother Batter</a></div>
+    <div class="toc-chapter kicker">Chapter One · From the Batter</div>
+    <div><span class="num">1</span><a href="#r1">Classic Plain Dosa</a></div>
+    <div><span class="num">2</span><a href="#r2">Mysore Masala Dosa</a></div>
+    <div><span class="num">3</span><a href="#r3">Rava Dosa</a></div>
+    <div><span class="num">4</span><a href="#r4">Moong Dal Dosa (Pesarattu)</a></div>
+    <div><span class="num">5</span><a href="#r5">Onion-Tomato Uttapam</a></div>
+    <div class="toc-chapter kicker">Chapter Two · Steam &amp; Softness</div>
+    <div><span class="num">6</span><a href="#r6">Classic Idli</a></div>
+    <div><span class="num">7</span><a href="#r7">Mini Idli in Sambar</a></div>
+    <div><span class="num">8</span><a href="#r8">Medu Vada</a></div>
+    <div class="toc-chapter kicker">Chapter Three · The Simmering Pots</div>
+    <div><span class="num">9</span><a href="#r9">Sambar Powder</a></div>
+    <div><span class="num">10</span><a href="#r10">Classic Vegetable Sambar</a></div>
+    <div><span class="num">11</span><a href="#r11">Tiffin Sambar</a></div>
+    <div><span class="num">12</span><a href="#r12">Rasam Powder</a></div>
+    <div><span class="num">13</span><a href="#r13">Tomato Rasam</a></div>
+    <div><span class="num">14</span><a href="#r14">Pepper-Cumin Rasam</a></div>
+    <div class="toc-chapter kicker">Chapter Four · The Chutney Shelf</div>
+    <div><span class="num">15</span><a href="#r15">Coconut Chutney</a></div>
+    <div><span class="num">16</span><a href="#r16">Tomato-Onion Chutney</a></div>
+    <div><span class="num">17</span><a href="#r17">Coriander-Mint Chutney</a></div>
+    <div><span class="num">18</span><a href="#r18">Ginger Chutney (Allam Pachadi)</a></div>
+    <div><span class="num">19</span><a href="#r19">Gunpowder (Milagai Podi)</a></div>
+    <div class="toc-chapter kicker">Chapter Five · The Thali</div>
+    <div><a href="#thali">Composing a Thali</a></div>
+    <div><span class="num">20</span><a href="#r20">Green Bean Poriyal</a></div>
+    <div><span class="num">21</span><a href="#r21">Chayote Kootu</a></div>
+    <div><span class="num">22</span><a href="#r22">Avial</a></div>
+    <div><span class="num">23</span><a href="#r23">Curd Rice (Thayir Sadam)</a></div>
+    <div><span class="num">24</span><a href="#r24">Vermicelli Payasam</a></div>
+    <div><span class="num">25</span><a href="#r25">Filter Coffee (Kaapi)</a></div>
+    <div class="toc-chapter kicker">Appendix</div>
+    <div><a href="#menus">Two Menus</a></div>
+    <div><a href="#glossary">A Small Glossary</a></div>
+    <div><a href="#sources">Sources &amp; Further Reading</a></div>
+  </div>
+</section>
+
+<section id="about" style="page-break-before: always;">
+  <div class="kicker">Before You Cook</div>
+  <h2 class="section">About the South Indian Table</h2>
+  <p>South Indian cooking is built on a quiet architecture: rice and lentils as the frame, and over them a play of four forces — sour tamarind, sweet coconut and jaggery, the heat of chilies and black pepper, and the bitter-aromatic edge of fenugreek and curry leaves. Almost nothing on this table works alone. Sambar wants rice; a dosa wants chutney; rasam wants the soft end of a meal. The genius of the cuisine is in these pairings, and in a single technique that appears on nearly every page of this booklet: the <i class="term">tadka</i> (tempering) — whole spices bloomed in hot oil or ghee for a few loud seconds, then poured, still sputtering, over a dish. If you learn one thing here, learn to temper without fear.</p>
+  <p>The four southern states each speak the language with their own accent. <strong>Tamil Nadu</strong> is tamarind-tangy and pepper-warm, the home of the tiffin house and the banana-leaf meal. <strong>Karnataka</strong> runs a shade sweeter — a pinch of jaggery in the sambar, butter on the dosa — and gave the world the Mysore masala dosa. <strong>Andhra Pradesh</strong> is the boldest and hottest, home of the pesarattu and fierce ginger chutney. <strong>Kerala</strong> cooks in coconut — grated, ground, and as oil — and contributes avial to the thali. This booklet borrows from all four, and says so when it matters.</p>
+  <p>A word on fat: gingelly (sesame) oil is the traditional everyday oil of the Tamil kitchen, coconut oil rules Kerala, and ghee is the festival fat everywhere. A neutral oil works fine in any recipe here unless the recipe says otherwise — but the final spoon of coconut oil on an avial, or ghee on a hot dosa, is not optional garnish. It is the dish.</p>
+  <p>How to use this booklet: quantities are starting points, not law — taste and adjust, exactly as every South Indian cook does. Chili counts assume moderate heat; scale to your table. Every recipe was cross-checked against multiple trusted Indian home-cooking sources, chief among them Dassana Amit's <em>Veg Recipes of India</em>, Swasthi Shreekanth's <em>Indian Healthy Recipes</em>, and <em>Hebbar's Kitchen</em>; they and others are credited in the appendix with thanks.</p>
+</section>
+
+<section id="pantry" class="pantry" style="page-break-before: always;">
+  <div class="kicker">Before You Cook</div>
+  <h2 class="section">The South Indian Pantry</h2>
+  <p><strong>Urad dal</strong> (<i class="term">ulundhu</i>) — skinned, split or whole black gram, the soul of idli, dosa, and vada. Buy it fresh from a busy Indian grocery: old urad dal grinds dull and ferments badly. The whole skinned kind (white, oval) gives the fluffiest batters.</p>
+  <p><strong>Toor dal</strong> (<i class="term">thuvaram paruppu</i>) — split pigeon peas, the creamy backbone of sambar. Look for the unoiled kind; rinse well. Chana dal (split chickpeas) is its crunchy cousin, used in tempering and chutneys.</p>
+  <p><strong>Idli rice</strong> — a short, fat parboiled rice sold by that exact name. It is worth seeking out; regular rice makes flatter idlis. For dosa-only batters, sona masuri or any short-grain raw rice can join it.</p>
+  <p><strong>Poha</strong> (<i class="term">aval</i>) — flattened rice. A small handful soaked into the batter is the home cook's insurance policy for soft idlis, especially in cold kitchens.</p>
+  <p><strong>Rava</strong> (<i class="term">sooji</i>) — semolina. Fine rava makes the lacy instant rava dosa; roasted coarse rava makes upma. Keep both.</p>
+  <p><strong>Whole green moong</strong> (<i class="term">pesalu</i>) — green gram, ground skin-and-all into the emerald pesarattu batter. No fermentation needed, which makes it the most forgiving dosa in the book.</p>
+  <p><strong>Tamarind</strong> (<i class="term">puli</i>) — the sour heart of sambar and rasam. Buy seedless block tamarind and soak lumps in hot water as needed; ready-made concentrate works in a pinch at about half the stated quantity, but tastes flatter.</p>
+  <p><strong>Curry leaves</strong> (<i class="term">karuveppilai</i>) — non-negotiable and non-substitutable; dried ones are a ghost of the fresh. Buy a big bunch, freeze what you don't use, and drop them into hot oil straight from the freezer.</p>
+  <p><strong>Mustard seeds</strong> (<i class="term">kadugu</i>) — the small black kind. Nearly every tempering begins with them; wait until they crackle and pop before adding anything else, or they taste raw and bitter.</p>
+  <p><strong>Asafoetida</strong> (<i class="term">hing / perungayam</i>) — a resinous powder with an oniony-savory depth, used by the pinch in hot oil. It smells alarming in the jar and wonderful in the pan. Buy a small tin; it lasts a year.</p>
+  <p><strong>Dried red chilies</strong> — two kinds if you can: <strong>Byadagi</strong> (Karnataka's wrinkled, deep-red chili — big color, gentle heat, essential for the Mysore red chutney) and <strong>Guntur</strong> or any hot variety for fire. Kashmiri chilies substitute well for Byadagi.</p>
+  <p><strong>Fresh coconut</strong> (<i class="term">thengai</i>) — grated, it is chutney, poriyal, and payasam. Frozen grated coconut from the Indian freezer aisle is entirely acceptable and what most diaspora kitchens use; desiccated coconut is a last resort, rehydrated in warm water.</p>
+  <p><strong>Jaggery</strong> (<i class="term">vellam / bella</i>) — unrefined cane sugar, sold in blocks or powder. A small piece rounds off sambar and rasam the Karnataka way; it is the sweetness in payasam alongside (or instead of) sugar.</p>
+  <p><strong>Fenugreek seeds</strong> (<i class="term">vendhayam</i>) — bitter little amber seeds that help the batter ferment and give sambar powder its haunting back-note. Use by the quarter-teaspoon; more turns bitter.</p>
+  <p><strong>Gingelly oil &amp; ghee</strong> — cold-pressed sesame oil (the pale Indian kind, not toasted East Asian sesame oil) for everyday tempering; ghee for dosas, podi, and anything festive.</p>
+</section>
+
+<section id="batter" style="page-break-before: always;">
+  <div class="kicker">Before You Cook · A Core Technique</div>
+  <h2 class="section">The Mother Batter</h2>
+  <p>Half this booklet runs on one preparation: the fermented rice-and-urad batter that becomes idli on day one, dosa on day two, and uttapam whenever you like. Make it once a week and breakfast takes care of itself.</p>
+  <div class="meta">Makes about 8 cups batter &nbsp;·&nbsp; 30 min work + 4–6 hr soak + 8–14 hr fermentation</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups idli rice</li>
+        <li>1 cup whole skinned urad dal</li>
+        <li>1 tsp fenugreek seeds</li>
+        <li>½ cup poha (optional, for softer idlis)</li>
+        <li>1½ tsp non-iodized salt</li>
+        <li>Water as needed</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Wash the rice until the water runs nearly clear. Wash the urad dal and fenugreek together. Soak them in separate bowls, generously covered with water, 4–6 hours. Soak the poha with the rice for the last 30 minutes.</li>
+        <li>Grind the urad dal first, with ice-cold water added a few tablespoons at a time, until it is a light, fluffy, almost mousse-like batter that has tripled in volume — 10–15 minutes in a wet grinder, or shorter bursts in a strong blender. This aeration is where soft idlis come from; do not rush it.</li>
+        <li>Grind the rice (with the poha) to a fine, faintly grainy batter — like very smooth cream of wheat. Use as little water as you can.</li>
+        <li>Combine both batters with the salt and mix well <em>with your hand</em> for a full minute — tradition holds that warm hands wake the wild yeasts, and tradition is right often enough to obey.</li>
+        <li>Ferment, loosely covered, in a large vessel (the batter will rise substantially) in a warm spot: 8–10 hours in a warm climate, 12–14 in a cool one. In winter, park it in an oven with just the light on. It is ready when domed, bubbly, and pleasantly sour-smelling.</li>
+        <li>Stir gently once, then refrigerate up to 5 days. Idlis want the batter thick and fresh (days 1–2); dosas want it thinned slightly and a little more sour (days 2–5).</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>The classic ratio is 4:1 rice to urad dal; cooks argue for 3:1 (softer idlis) or 5:1 (crisper dosas). Start at 4:1 and drift toward your taste.</li>
+      <li>Non-iodized salt matters — iodine can sulk the fermentation. Rock salt or sea salt is traditional.</li>
+      <li>No wet grinder? A high-powered blender works; keep the batter cool with ice water so the motor doesn't cook the dal.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider" id="ch1">
+  <div class="kicker">Chapter One · Recipes 1–5</div>
+  <h2>From the Batter: Dosas &amp; Griddle Craft</h2>
+  <div class="proverb"><em>Pasi vandhaal paththum parakkum.</em>
+    <span class="translation">— When hunger arrives, ten virtues take flight. (Tamil)</span></div>
+</div>
+
+<article class="recipe" id="r1">
+  <div class="kicker">No. 1 · From the Batter</div>
+  <h3>Classic Plain Dosa</h3>
+  <div class="local-name">Dosai (Tamil) · dose (Kannada)</div>
+  <p class="headnote">Before the fillings and the flourishes, there is this: fermented batter, a hot pan, and a wrist. The plain dosa is where you learn the griddle, so it comes first. Everything in this chapter is a variation on the swirl you master here.</p>
+  <div class="meta">Makes 10–12 dosas &nbsp;·&nbsp; 20 min, with mother batter ready (p. see <a href="#batter">The Mother Batter</a>)</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups mother batter, 1–4 days old</li>
+        <li>Water, to thin</li>
+        <li>Neutral oil or ghee, for the pan</li>
+        <li>½ onion, cut side impaled on a fork (the traditional pan-wipe)</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Thin the batter with a few tablespoons of water to a pourable, ribbony consistency — it should coat a ladle, not glue to it.</li>
+        <li>Heat a cast-iron or nonstick tawa over medium-high until a drop of water skitters and vanishes in two seconds. Rub the pan with the cut onion dipped in a little oil — it seasons the surface and stops sticking.</li>
+        <li>Pour a ladleful (about ⅓ cup) into the center. Immediately, with the base of the ladle, spread it outward in light, confident spirals into a thin round. Speed beats neatness.</li>
+        <li>Drizzle a teaspoon of oil or ghee around the edge. Cook 1½–2 minutes, untouched, until the underside is deep gold and the edges lift.</li>
+        <li>Fold in half — no need to flip a thin dosa — and serve at once, with coconut chutney (No. 15) and sambar (No. 10 or 11). Wipe the pan with the onion between dosas.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>If the batter drags and tears, the pan is too hot; sprinkle water, let it steam off, and try again. If the dosa is pale and limp, the pan is too cool.</li>
+      <li>For a restaurant-crisp <i class="term">paper dosa</i>, thin the batter further and spread twice as wide.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r2">
+  <div class="kicker">No. 2 · From the Batter</div>
+  <h3>Mysore Masala Dosa</h3>
+  <div class="local-name">Mysore masale dose (Kannada)</div>
+  <p class="headnote">Karnataka's gift to breakfast: thicker and softer-crisp than the Tamil dosa, painted inside with a garlicky red chutney, filled with turmeric-yellow potato <i class="term">palya</i>, and — in the old Mysore hotels — finished with real butter. The red chutney is the whole point; do not skip it.</p>
+  <div class="meta">Makes 8 dosas &nbsp;·&nbsp; 50 min, with mother batter ready</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li class="subhead">Red chutney</li>
+        <li>10 Byadagi or Kashmiri chilies, soaked in hot water 20 min</li>
+        <li>3 tbsp fried gram (roasted chana dal)</li>
+        <li>4 garlic cloves</li>
+        <li>1 small onion, roughly chopped</li>
+        <li>1 tsp tamarind paste</li>
+        <li>½ tsp salt</li>
+        <li class="subhead">Potato palya</li>
+        <li>4 medium potatoes, boiled and roughly mashed into chunks</li>
+        <li>2 tbsp oil</li>
+        <li>1 tsp mustard seeds</li>
+        <li>1 tsp each urad dal and chana dal</li>
+        <li>2 green chilies, slit</li>
+        <li>1 sprig curry leaves; pinch of hing</li>
+        <li>2 onions, sliced</li>
+        <li>½ tsp turmeric; salt</li>
+        <li>Squeeze of lemon; chopped coriander</li>
+        <li class="subhead">Assembly</li>
+        <li>4 cups mother batter; butter</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li><em>Chutney:</em> grind the soaked chilies, fried gram, garlic, onion, tamarind, and salt with just enough water to make a thick, spreadable paste. It should be brick-red and assertive.</li>
+        <li><em>Palya:</em> heat the oil; pop the mustard seeds, then brown the dals. Add green chilies, curry leaves, and hing, then the sliced onions, and cook until soft and translucent — not browned. Stir in the turmeric, then the potatoes and salt with a splash of water. Mash lightly together, finish with lemon and coriander, and keep warm.</li>
+        <li>Heat the tawa to medium (gentler than for plain dosa). Pour a ladle of batter and spread into a round slightly thicker than a crepe. Drizzle the edges with oil.</li>
+        <li>When the top sets, spread a generous spoon of red chutney over the whole surface, then a knob of butter, then a bar of potato palya across the middle.</li>
+        <li>Cook until the base is golden and crisp, fold both sides over the filling, and serve seam-down with coconut chutney. Repeat, buttering as your conscience allows.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Byadagi chilies give the chutney its color without scorching heat. If using hotter chilies, halve the count and add a soaked Kashmiri or a little paprika for color.</li>
+      <li>The palya should be chunky, not smooth — you want landscape, not purée.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r3">
+  <div class="kicker">No. 3 · From the Batter</div>
+  <h3>Rava Dosa</h3>
+  <div class="local-name">Rava dosai</div>
+  <p class="headnote">The impatient cook's reward: no soaking, no grinding, no fermenting. A thin slurry of semolina, rice flour, and spice is flung — truly flung — onto a hot pan, where it sets into a golden, lacy, shatteringly crisp net. It breaks every rule the plain dosa taught you, which is half the fun.</p>
+  <div class="meta">Makes 8 dosas &nbsp;·&nbsp; 15 min work + 20 min rest</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>½ cup fine rava (semolina)</li>
+        <li>½ cup rice flour</li>
+        <li>¼ cup all-purpose flour (maida)</li>
+        <li>1 tbsp plain yogurt (optional, for tang)</li>
+        <li>1 tsp cumin seeds</li>
+        <li>½ tsp black peppercorns, crushed</li>
+        <li>1 tsp grated ginger</li>
+        <li>1–2 green chilies, minced</li>
+        <li>1 sprig curry leaves, shredded</li>
+        <li>2 tbsp chopped coriander</li>
+        <li>1 small onion, very finely chopped (optional)</li>
+        <li>¾ tsp salt</li>
+        <li>About 3 cups water</li>
+        <li>Oil or ghee, for the pan</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Whisk everything together with 2½ cups water and rest 20 minutes, then add more water until the batter is thinner than you think right — like buttermilk. Thin batter is the entire secret; medium batter makes a soft, sad dosa.</li>
+        <li>Heat the tawa until properly hot — water should dance off it. This dosa forgives a cool hand in nothing.</li>
+        <li>Stir the batter (the solids sink fast), then pour it from a height of six inches or so, in a circle from the rim inward, letting holes and gaps form. Do not spread. The lace is the dosa.</li>
+        <li>Drizzle a teaspoon of oil into the holes. Cook on medium 2–3 minutes until the lace is deep gold and releases itself. Fold and serve immediately — it waits for no one.</li>
+        <li>Stir the batter again before every single dosa, thinning with a splash of water as it thickens.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r4">
+  <div class="kicker">No. 4 · From the Batter</div>
+  <h3>Moong Dal Dosa</h3>
+  <div class="local-name">Pesarattu (Telugu)</div>
+  <p class="headnote">Andhra's green-gram crepe — <i class="term">pesara</i> (green moong) plus <i class="term">attu</i> (crepe) — protein-rich, emerald-flecked, and blessedly unfermented: soak in the morning, eat by evening. In Andhra hotels the deluxe version, the MLA pesarattu, arrives with upma folded inside; at home, ginger chutney (No. 18) is the classic escort.</p>
+  <div class="meta">Makes 8 dosas &nbsp;·&nbsp; 15 min + 4–6 hr soak</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup whole green moong, soaked 4–6 hours</li>
+        <li>2 tbsp raw rice, soaked with the moong (or 2 tbsp rice flour)</li>
+        <li>1-inch piece ginger</li>
+        <li>2 green chilies</li>
+        <li>½ tsp cumin seeds</li>
+        <li>¾ tsp salt</li>
+        <li class="subhead">Topping</li>
+        <li>1 small onion, finely chopped</li>
+        <li>Chopped coriander; extra cumin</li>
+        <li>Oil, for the pan</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Drain the moong and rice. Grind with the ginger, chilies, cumin, salt, and about ¾ cup water to a smooth, spreadable batter — a shade thicker than dosa batter. Use it now; it does not ferment or keep well.</li>
+        <li>Heat the tawa over medium-high and grease lightly. Pour a ladleful and spread in spirals like a plain dosa, slightly thicker.</li>
+        <li>Immediately scatter chopped onion, coriander, and a pinch of cumin over the wet top, pressing gently so they set into the batter.</li>
+        <li>Drizzle oil around the edge and cook 2–3 minutes until the base is crisp and green-gold. Flip for 30 seconds to toast the onions, then fold and serve hot with allam pachadi.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>For the full <i class="term">MLA pesarattu</i>, spoon a bar of hot upma down the center before folding — named for the state legislators whose Hyderabad canteen made it famous.</li>
+      <li>Split yellow moong works too (soak just 2 hours) and gives a paler, more delicate crepe.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r5">
+  <div class="kicker">No. 5 · From the Batter</div>
+  <h3>Onion-Tomato Uttapam</h3>
+  <div class="local-name">Uthappam (Tamil) · uttappam (Telugu)</div>
+  <p class="headnote">Where the dosa is a crepe, the uttapam is a pancake — thick, soft-centered, crisp-edged, its top cobbled with onion, tomato, and chili. It is what the mother batter wants to become at the sour end of its week, when it has too much personality left to waste.</p>
+  <div class="meta">Makes 6 uttapams &nbsp;·&nbsp; 25 min, with mother batter ready</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>3 cups mother batter, ideally 3–5 days old, kept thick</li>
+        <li>1 large onion, finely chopped</li>
+        <li>1 firm tomato, deseeded and finely chopped</li>
+        <li>2 green chilies, minced</li>
+        <li>3 tbsp chopped coriander</li>
+        <li>½ tsp cumin seeds (optional)</li>
+        <li>Oil or ghee, for the pan</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Toss the onion, tomato, chilies, coriander, and cumin together in a bowl.</li>
+        <li>Heat the tawa over medium and grease it. Pour a generous ladle of thick batter and spread only a little — you want a round the thickness of a crumpet, about 6 inches across.</li>
+        <li>Scatter 3–4 tablespoons of the topping over the wet surface and press it in lightly with the back of the ladle.</li>
+        <li>Drizzle oil around the edges, cover, and cook 2–3 minutes until the base is golden and the top has set into holes.</li>
+        <li>Flip and cook 1–2 minutes more, pressing gently, until the onions at the interface char sweetly. Serve topping-side up, with sambar and any chutney from Chapter Four.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<div class="divider" id="ch2">
+  <div class="kicker">Chapter Two · Recipes 6–8</div>
+  <h2>Steam &amp; Softness: Idli &amp; Friends</h2>
+  <div class="proverb"><em>Oota balladavanige roga illa.</em>
+    <span class="translation">— The one who knows how to eat knows no illness. (Kannada)</span></div>
+</div>
+
+<article class="recipe" id="r6">
+  <div class="kicker">No. 6 · Steam &amp; Softness</div>
+  <h3>Classic Idli</h3>
+  <div class="local-name">Idli · iddli (Kannada) · iddena (Telugu)</div>
+  <p class="headnote">The gentlest breakfast in India: steamed clouds of fermented batter, eaten with sambar and chutney, prescribed by grandmothers for everything from exam nerves to upset stomachs. A good idli — <i class="term">mallige idli</i>, "jasmine-soft," as they say in Karnataka — is judged by how little it resists.</p>
+  <div class="meta">Makes 16 idlis &nbsp;·&nbsp; 20 min, with mother batter freshly fermented</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups mother batter, day 1–2, thick and freshly risen</li>
+        <li>Oil or ghee, for greasing the molds</li>
+        <li>An idli steamer or stacked idli plates (a greased shallow bowl set in a steamer works in a pinch)</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Bring an inch or two of water to a rolling boil in the steamer base. Grease the idli molds well.</li>
+        <li>Stir the batter once, gently — vigorous mixing knocks out the air the fermentation worked all night to build. Do not thin it.</li>
+        <li>Fill each mold three-quarters full. Stack, cover, and steam on high 10–12 minutes.</li>
+        <li>Test with a wet knife or toothpick — it should come out clean. Rest the plates 2 minutes out of the steamer (they unmold cleanly once the surface steam settles).</li>
+        <li>Loosen each idli with a spoon dipped in water. Serve hot, half-drowned in sambar, with coconut chutney and a spoon of milagai podi in ghee (No. 19).</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Dense idlis almost always mean under-ground urad dal or tired fermentation — revisit the mother batter notes rather than blaming the steamer.</li>
+      <li>Leftover idlis are a gift: cube and toss them in a tadka with podi for <i class="term">podi idli</i>, tomorrow's five-minute lunch.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r7">
+  <div class="kicker">No. 7 · Steam &amp; Softness</div>
+  <h3>Mini Idli in Sambar</h3>
+  <div class="local-name">Sambar idli / 14-idli</div>
+  <p class="headnote">A tiffin-house spectacle: a dozen bite-sized idlis submerged in hot tiffin sambar under a spoonful of melting ghee. Children order it for the count; adults order it because soaked idli is arguably better than dry.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 20 min, with batter and tiffin sambar ready</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>3 cups mother batter, thick</li>
+        <li>4 cups hot tiffin sambar (No. 11)</li>
+        <li>4 tsp ghee</li>
+        <li>Chopped coriander; a few fried cashews (optional, hotel-style)</li>
+        <li>Mini-idli plates, or standard plates and a knife</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Steam the batter in mini-idli molds 8–10 minutes (or steam standard idlis and quarter them — nobody at the table will file a complaint).</li>
+        <li>Warm four shallow bowls. Arrange 10–14 mini idlis in each.</li>
+        <li>Ladle the hot sambar generously over — the idlis should float, not sit in a puddle. Rest 2 minutes so they drink.</li>
+        <li>Crown each bowl with a teaspoon of ghee, coriander, and cashews. Serve with spoons and no further ceremony.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r8">
+  <div class="kicker">No. 8 · Steam &amp; Softness</div>
+  <h3>Medu Vada</h3>
+  <div class="local-name">Medhu vadai · ulundu vadai</div>
+  <p class="headnote">The crisp companion — a savory urad-dal doughnut, golden and crackling outside, steamy and fluffy within. No tiffin spread feels complete without one, and the idli-vada-sambar trinity is South India's answer to bacon and eggs. The batter is ground thick, then whipped by hand until it floats.</p>
+  <div class="meta">Makes 12 vadas &nbsp;·&nbsp; 30 min + 2 hr soak</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup whole skinned urad dal, soaked 2 hours</li>
+        <li>1-inch piece ginger, minced</li>
+        <li>2 green chilies, minced</li>
+        <li>1 tsp crushed black pepper</li>
+        <li>1 sprig curry leaves, shredded</li>
+        <li>1 small onion, finely chopped (optional but wonderful)</li>
+        <li>¾ tsp salt; pinch of hing</li>
+        <li>Oil, for deep frying</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Drain the dal thoroughly. Grind with only a tablespoon or two of water — scraping down often — to a thick, fluffy, almost dry batter. A runny batter drinks oil; err dry.</li>
+        <li>Whip the batter with your fingers or a whisk 2–3 minutes to aerate. Drop a bit into water: it should float. Only now fold in the ginger, chilies, pepper, curry leaves, onion, salt, and hing (onion added early weeps water and ruins the batter).</li>
+        <li>Heat oil to medium-hot (170°C/340°F — a drop of batter should rise steadily, not rocket).</li>
+        <li>Wet both hands. Take a lime-sized ball on your right fingers, flatten slightly on the left palm, punch a hole through the center with a wet thumb, and slide it into the oil. (First attempts will be abstract shapes. They fry up delicious regardless.)</li>
+        <li>Fry, turning, 4–5 minutes to an even deep gold. Drain and serve hot with sambar and coconut chutney — or dunked whole in sambar as <i class="term">sambar vadai</i>.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>The float test is the whole game: batter that floats fries light. If it sinks, whip longer.</li>
+      <li>Keep a bowl of water beside the stove and re-wet your hands for every single vada.</li>
+    </ul>
+  </div>
+</article>
+
+<div class="divider" id="ch3">
+  <div class="kicker">Chapter Three · Recipes 9–14</div>
+  <h2>The Simmering Pots: Sambar &amp; Rasam</h2>
+  <div class="proverb"><em>Unave marundhu, marundhe unavu.</em>
+    <span class="translation">— Food is medicine; medicine is food. (Tamil)</span></div>
+</div>
+
+<article class="recipe" id="r9">
+  <div class="kicker">No. 9 · The Simmering Pots</div>
+  <h3>Sambar Powder</h3>
+  <div class="local-name">Sambar podi</div>
+  <p class="headnote">Every South Indian family swears by its own blend, usually a grandmother's, usually a secret. This is a balanced Tamil-style starting point: coriander for body, chilies for warmth, dals for nuttiness, fenugreek for the low hum underneath. A store-bought packet (MTR, Aachi, Sakthi) is a respectable shortcut; a homemade jar is a conversion experience.</p>
+  <div class="meta">Makes about 1 cup &nbsp;·&nbsp; 20 min &nbsp;·&nbsp; keeps 3 months airtight</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>½ cup coriander seeds</li>
+        <li>15 dried red chilies (mix Byadagi and hot)</li>
+        <li>2 tbsp toor dal</li>
+        <li>2 tbsp chana dal</li>
+        <li>1 tbsp cumin seeds</li>
+        <li>1 tbsp black peppercorns</li>
+        <li>1 tsp fenugreek seeds</li>
+        <li>1 sprig curry leaves</li>
+        <li>1 tsp turmeric powder</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>In a dry pan over medium-low heat, roast each ingredient separately (except the turmeric) until fragrant and a shade darker — the dals to light gold, the coriander until it smells like oranges and wood, the fenugreek just barely. Separate roasting sounds fussy; it is the difference between a blend and a muddle.</li>
+        <li>Cool everything completely on a plate.</li>
+        <li>Grind with the turmeric to a fine powder. Sieve if you like a silky sambar.</li>
+        <li>Jar airtight. Use 1½–2 tablespoons per pot of sambar.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r10">
+  <div class="kicker">No. 10 · The Simmering Pots</div>
+  <h3>Classic Vegetable Sambar</h3>
+  <div class="local-name">Kaikari sambar</div>
+  <p class="headnote">The great lentil-tamarind stew of the South — toor dal cooked to a slump, vegetables simmered in tamarind water, the whole thing bloomed with sambar powder and sealed with a crackling tadka. Drumstick is the soul vegetable here; chew the pods and abandon the husks, as everyone does.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 50 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup toor dal, rinsed</li>
+        <li>¼ tsp turmeric</li>
+        <li>1 lemon-sized ball tamarind, soaked in 1½ cups hot water</li>
+        <li>3 cups mixed vegetables: drumstick (fresh or frozen), pumpkin, carrot, okra, eggplant, shallots</li>
+        <li>1 tomato, quartered</li>
+        <li>1½–2 tbsp sambar powder (No. 9)</li>
+        <li>1 small piece jaggery (optional, the Karnataka accent)</li>
+        <li>Salt</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tbsp gingelly oil or ghee</li>
+        <li>1 tsp mustard seeds</li>
+        <li>¼ tsp fenugreek seeds</li>
+        <li>2 dried red chilies; generous pinch of hing</li>
+        <li>1 sprig curry leaves</li>
+        <li>Chopped coriander, to finish</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Pressure-cook the dal with the turmeric and 2½ cups water until completely soft (3–4 whistles, or 30 minutes simmered). Mash smooth.</li>
+        <li>Squeeze and strain the tamarind, pressing out all its sourness; discard the pulp.</li>
+        <li>In a wide pot, simmer the firm vegetables (drumstick, carrot) in the tamarind water with salt for 8 minutes; add the quick ones (pumpkin, okra, tomato, shallots) and cook until just tender.</li>
+        <li>Stir in the sambar powder and jaggery; simmer 5 minutes so the rawness cooks off.</li>
+        <li>Add the mashed dal and enough hot water for a pourable, spoon-coating stew. Simmer 10 minutes, stirring at the bottom. Taste: it should ring sour, warm, and savory at once. Adjust salt, powder, or tamarind.</li>
+        <li>Make the tadka: heat the oil, pop the mustard seeds, add fenugreek, red chilies, hing, and curry leaves for five loud seconds, and pour it all over the sambar. Cover 5 minutes, then finish with coriander.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Sambar thickens dramatically as it sits; thin leftovers with hot water and re-taste the salt.</li>
+      <li>One-vegetable sambars are classics in their own right: just shallots (<i class="term">vengaya sambar</i>), just drumstick (<i class="term">murungakkai sambar</i>), just radish.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r11">
+  <div class="kicker">No. 11 · The Simmering Pots</div>
+  <h3>Tiffin Sambar</h3>
+  <div class="local-name">Hotel-style sambar</div>
+  <p class="headnote">The sweeter, silkier sambar ladled over idli and dosa in tiffin houses — less tamarind, a softer dal, a spoon of jaggery, and a fresh-ground masala that store powder can't imitate. If your idlis are the clouds, this is their weather.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 45 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>½ cup toor dal + ¼ cup moong dal, rinsed</li>
+        <li>¼ tsp turmeric</li>
+        <li>1 small gooseberry-sized ball tamarind, soaked</li>
+        <li>12 shallots, peeled and halved; 1 tomato, chopped</li>
+        <li>1 carrot, in coins (optional)</li>
+        <li>1 tsp jaggery; salt</li>
+        <li class="subhead">Fresh masala</li>
+        <li>1 tbsp coriander seeds</li>
+        <li>1 tbsp chana dal</li>
+        <li>3 dried red chilies</li>
+        <li>¼ tsp fenugreek seeds</li>
+        <li>2 tbsp grated coconut or fried gram</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tbsp ghee; 1 tsp mustard seeds; pinch of hing; 1 sprig curry leaves</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Cook both dals with turmeric and 2½ cups water until very soft; mash to silk.</li>
+        <li>Dry-roast the masala ingredients (coconut last, briefly) until fragrant; cool and grind with a little water to a paste.</li>
+        <li>Simmer the shallots, tomato, and carrot in the strained tamarind water with salt until tender.</li>
+        <li>Add the ground masala and jaggery; simmer 5 minutes. Add the dal and thin with hot water — tiffin sambar should be noticeably looser than meal sambar, almost a thick soup.</li>
+        <li>Finish with the ghee tadka of mustard, hing, and curry leaves. Rest 10 minutes before serving; it rounds as it sits.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r12">
+  <div class="kicker">No. 12 · The Simmering Pots</div>
+  <h3>Rasam Powder</h3>
+  <div class="local-name">Rasam podi</div>
+  <p class="headnote">Coarser and pepperier than sambar powder, built for the thin, fierce brew it flavors. Grind it slightly rough — rasam is rustic by birthright.</p>
+  <div class="meta">Makes about ¾ cup &nbsp;·&nbsp; 15 min &nbsp;·&nbsp; keeps 3 months airtight</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>¼ cup coriander seeds</li>
+        <li>2 tbsp cumin seeds</li>
+        <li>2 tbsp black peppercorns</li>
+        <li>2 tbsp toor dal</li>
+        <li>6 dried red chilies</li>
+        <li>1 sprig curry leaves</li>
+        <li>½ tsp turmeric</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Dry-roast the coriander, dal, and chilies over medium-low until the dal is golden; add the cumin, pepper, and curry leaves for the last minute.</li>
+        <li>Cool completely, add turmeric, and grind to a slightly coarse powder.</li>
+        <li>Jar airtight. Use 1–1½ tablespoons per pot.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r13">
+  <div class="kicker">No. 13 · The Simmering Pots</div>
+  <h3>Tomato Rasam</h3>
+  <div class="local-name">Thakkali rasam</div>
+  <p class="headnote">Rasam means "juice," and this is the everyday version: tamarind and tomato simmered thin with rasam powder, finished with a ghee tadka and a flurry of coriander. It is drunk from a tumbler, spooned over rice after the sambar course, and prescribed for colds with total confidence. The one rule: rasam must never boil hard — it is brought just to a foaming shudder and pulled off the flame.</p>
+  <div class="meta">Serves 4–6 &nbsp;·&nbsp; 25 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 small gooseberry-sized ball tamarind, soaked in 2 cups hot water</li>
+        <li>2 ripe tomatoes, crushed by hand</li>
+        <li>1–1½ tbsp rasam powder (No. 12)</li>
+        <li>2 garlic cloves, crushed (optional)</li>
+        <li>½ cup cooked toor dal or its cooking water (optional, for body)</li>
+        <li>1 tsp jaggery; salt</li>
+        <li>3 tbsp chopped coriander</li>
+        <li class="subhead">Tadka</li>
+        <li>1 tbsp ghee</li>
+        <li>1 tsp mustard seeds; ½ tsp cumin seeds</li>
+        <li>1 dried red chili; pinch of hing; 1 sprig curry leaves</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Strain the tamarind water into a pot. Add the crushed tomatoes, rasam powder, garlic, jaggery, and salt, plus 1½ cups water.</li>
+        <li>Simmer gently 10–12 minutes until the raw tamarind smell fades and the tomatoes slump.</li>
+        <li>Stir in the dal or dal water if using, and thin to a drinkable consistency. Heat only until a froth gathers at the rim — the celebrated <em>froth, don't boil</em> moment — then take it off.</li>
+        <li>Pour over the ghee tadka of mustard, cumin, chili, hing, and curry leaves. Shower with coriander, cover 5 minutes, and serve over rice or in tumblers.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r14">
+  <div class="kicker">No. 14 · The Simmering Pots</div>
+  <h3>Pepper-Cumin Rasam</h3>
+  <div class="local-name">Milagu rasam</div>
+  <p class="headnote">The medicinal one — no tomatoes, no powder from a jar, just black pepper, cumin, and garlic pounded fresh and simmered in tamarind water. This is what appears when someone in a Tamil household sneezes twice. It works.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 20 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 small gooseberry-sized ball tamarind, soaked in 2½ cups hot water</li>
+        <li>2 tsp black peppercorns</li>
+        <li>1½ tsp cumin seeds</li>
+        <li>4 garlic cloves</li>
+        <li>1 dried red chili</li>
+        <li>¼ tsp turmeric; salt</li>
+        <li>Curry leaves; chopped coriander</li>
+        <li class="subhead">Tadka</li>
+        <li>1 tbsp ghee; 1 tsp mustard seeds; pinch of hing</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Crush the pepper, cumin, garlic, and red chili coarsely in a mortar — coarse, so the brew stays clear and the bite stays honest.</li>
+        <li>Simmer the strained tamarind water with turmeric, salt, and half the crushed spices for 10 minutes.</li>
+        <li>Add the remaining spice paste and a handful of torn curry leaves; heat just to the froth and remove.</li>
+        <li>Temper with ghee, mustard, and hing; finish with coriander. Drink hot, ideally under a blanket.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Adding half the spices early and half late gives both depth and freshness — a trick worth stealing for every rasam.</li>
+    </ul>
+  </div>
+</article>
+
+<div class="divider" id="ch4">
+  <div class="kicker">Chapter Four · Recipes 15–19</div>
+  <h2>The Chutney Shelf</h2>
+  <div class="proverb"><em>Kai ruchi.</em>
+    <span class="translation">— "The taste of the hand": the Tamil phrase for the unteachable flavor each cook brings to the same recipe. Chutneys are where it shows first.</span></div>
+</div>
+
+<article class="recipe" id="r15">
+  <div class="kicker">No. 15 · The Chutney Shelf</div>
+  <h3>Coconut Chutney</h3>
+  <div class="local-name">Thengai chutney</div>
+  <p class="headnote">The white one — cool, nutty, and mild, the peacekeeper of the tiffin plate. Fried gram gives it body; the tadka poured over the top gives it its voice.</p>
+  <div class="meta">Makes about 1½ cups &nbsp;·&nbsp; 10 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup grated fresh or frozen coconut, thawed</li>
+        <li>3 tbsp fried gram (roasted chana dal)</li>
+        <li>2 green chilies</li>
+        <li>½-inch piece ginger</li>
+        <li>Small pinch of tamarind</li>
+        <li>½ tsp salt; ½–¾ cup water</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tsp oil; ½ tsp mustard seeds</li>
+        <li>½ tsp urad dal; 1 dried red chili</li>
+        <li>1 sprig curry leaves; pinch of hing</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Grind the coconut, fried gram, chilies, ginger, tamarind, and salt with water to a smooth, spoonable paste. Thin to taste — tiffin houses serve it pourable.</li>
+        <li>Heat the oil; pop the mustard seeds, brown the urad dal, then add the chili, curry leaves, and hing for a few seconds.</li>
+        <li>Pour the sputtering tadka over the chutney. Serve within a few hours; coconut chutney lives fast.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r16">
+  <div class="kicker">No. 16 · The Chutney Shelf</div>
+  <h3>Tomato-Onion Chutney</h3>
+  <div class="local-name">Thakkali chutney</div>
+  <p class="headnote">The red one — sweet-sour, gently smoky, the best friend a plain dosa ever had. Everything is sautéed before grinding, which is what separates it from salsa.</p>
+  <div class="meta">Makes about 1½ cups &nbsp;·&nbsp; 20 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 tbsp oil</li>
+        <li>1 large onion, sliced</li>
+        <li>3 garlic cloves</li>
+        <li>3–4 dried red chilies</li>
+        <li>1 tbsp chana dal or urad dal</li>
+        <li>3 ripe tomatoes, chopped</li>
+        <li>Small pinch of tamarind; salt</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tsp oil; ½ tsp mustard seeds; 1 sprig curry leaves</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Heat the oil and fry the dal until golden, then the chilies, garlic, and onion until the onion softens and browns at the edges.</li>
+        <li>Add the tomatoes, tamarind, and salt; cook until jammy and the oil separates, 8–10 minutes.</li>
+        <li>Cool slightly and grind — smooth or rustic, cook's call, with a splash of water if needed.</li>
+        <li>Finish with the mustard-and-curry-leaf tadka. Keeps 3–4 days refrigerated, unlike its coconut cousin.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r17">
+  <div class="kicker">No. 17 · The Chutney Shelf</div>
+  <h3>Coriander-Mint Chutney</h3>
+  <div class="local-name">Kothamalli-pudina chutney</div>
+  <p class="headnote">The green one — herbal and bright, with coconut for body and a quick sauté that keeps the herbs from tasting raw or turning bitter in the grinder.</p>
+  <div class="meta">Makes about 1¼ cups &nbsp;·&nbsp; 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 tsp oil</li>
+        <li>1 tsp cumin seeds</li>
+        <li>2 garlic cloves; ½-inch ginger</li>
+        <li>1 cup packed coriander leaves and tender stems</li>
+        <li>½ cup packed mint leaves</li>
+        <li>3 green chilies</li>
+        <li>½ cup grated coconut</li>
+        <li>2 tbsp fried gram</li>
+        <li>Small pinch of tamarind; ½ tsp salt</li>
+        <li class="subhead">Tadka (optional)</li>
+        <li>2 tsp oil; ½ tsp mustard seeds; ½ tsp urad dal</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Warm the oil and sauté the cumin, garlic, ginger, and chilies a minute; add the herbs and toss just until they slump and turn glossy — thirty seconds, no more.</li>
+        <li>Cool, then grind with the coconut, fried gram, tamarind, salt, and about ½ cup water until smooth.</li>
+        <li>Temper if you like; the chutney is complete either way. Best the day it's made.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r18">
+  <div class="kicker">No. 18 · The Chutney Shelf</div>
+  <h3>Ginger Chutney</h3>
+  <div class="local-name">Allam pachadi (Telugu) · inji chutney (Tamil)</div>
+  <p class="headnote">Andhra's sweet-hot-sour slap of a condiment — ginger fried and ground with tamarind, jaggery, and red chilies. Born to accompany pesarattu (No. 4), it will happily bully an idli too.</p>
+  <div class="meta">Makes about 1 cup &nbsp;·&nbsp; 20 min &nbsp;·&nbsp; keeps 2 weeks refrigerated</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 tbsp oil</li>
+        <li>⅓ cup sliced fresh ginger (about a 4-inch hand, peeled)</li>
+        <li>2 tbsp chana dal; 1 tbsp urad dal</li>
+        <li>5–6 dried red chilies</li>
+        <li>1 tbsp tamarind paste (or a small lime-sized soaked ball)</li>
+        <li>2 tbsp grated jaggery</li>
+        <li>½ tsp salt</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tsp oil; ½ tsp mustard seeds; 1 sprig curry leaves; pinch of hing</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Heat the oil and fry the dals to gold, then the chilies, then the ginger until its raw edge mellows and it smells warm rather than sharp — 3–4 minutes.</li>
+        <li>Cool, then grind with the tamarind, jaggery, salt, and a little water to a thick, glossy paste. Taste: the three notes — hot, sweet, sour — should arrive in that order and none should win.</li>
+        <li>Crown with the tadka. Serve in small, respectful quantities.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r19">
+  <div class="kicker">No. 19 · The Chutney Shelf</div>
+  <h3>Gunpowder</h3>
+  <div class="local-name">Milagai podi · idli podi</div>
+  <p class="headnote">The dry chutney — roasted dals, sesame, and red chilies ground to a coarse, smoky powder. Kept in a jar for the mornings when there is no time for anything wet: mix a spoonful with ghee or gingelly oil into a rough paste and drag your idli through it. The nickname is earned.</p>
+  <div class="meta">Makes about 1½ cups &nbsp;·&nbsp; 20 min &nbsp;·&nbsp; keeps 2 months airtight</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>½ cup urad dal</li>
+        <li>¼ cup chana dal</li>
+        <li>3 tbsp white sesame seeds</li>
+        <li>10–12 dried red chilies (adjust to nerve)</li>
+        <li>½ tsp hing</li>
+        <li>1 tsp salt</li>
+        <li>1 tsp jaggery (optional, Karnataka-style)</li>
+        <li>Ghee or gingelly oil, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Dry-roast the dals separately over medium-low until deep gold and nutty — patience here is the flavor.</li>
+        <li>Roast the sesame until it pops, then the chilies with the hing until brittle and glossy.</li>
+        <li>Cool everything completely. Grind with salt (and jaggery) to a coarse, sandy powder — texture is character; do not powder it to dust.</li>
+        <li>Jar airtight. To serve, wet a spoonful with melted ghee or gingelly oil into a thick paste.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>A tablespoon of curry leaves, roasted crisp and ground in, adds a deeper perfume.</li>
+      <li>Toss cubed leftover idli in a tadka with a spoonful of podi for <i class="term">podi idli</i> — arguably better than the original idli.</li>
+    </ul>
+  </div>
+</article>
+
+<div class="divider" id="ch5">
+  <div class="kicker">Chapter Five · Recipes 20–25</div>
+  <h2>The Thali: A Complete Meal</h2>
+  <div class="proverb"><em>Annam parabrahma swarupam.</em>
+    <span class="translation">— Food is a form of the divine itself. (Telugu)</span></div>
+</div>
+
+<section id="thali">
+  <div class="kicker">Chapter Five · How It Fits Together</div>
+  <h2 class="section">Composing a Thali</h2>
+  <p>A South Indian meal is not a plate of food; it is a sequence. At its fullest — a wedding, a temple feast — it arrives on a banana leaf, tip pointing left, and every item has an address: salt and pickle at the top left, poriyal and kootu across the top, appalam at the corner, a mountain of rice at the center, payasam waiting at the side. At home, a steel thali with small bowls (<i class="term">katoris</i>) does the same work.</p>
+  <p>The meal moves in courses over the same mound of rice. First, sambar is ladled on and mixed by hand with a little ghee — the hand, tradition insists, is the first organ of taste. Then comes rasam, thinner and hotter, eaten more soupily. Then curd rice, cool and settling, with pickle. Payasam ends it, and a stretch of banana leaf folded toward you says thank you to the cook. The dry dishes — poriyal, kootu, avial, appalam — are not courses but companions, taken in pinches throughout for texture and relief.</p>
+  <p>A workable home thali from this booklet: rice, classic sambar (No. 10), tomato rasam (No. 13), any two of poriyal, kootu, and avial (Nos. 20–22), curd rice (No. 23), a store-bought mango or lime pickle, appalam, and payasam (No. 24). Cook the payasam and kootu first; they hold. Fry the appalam last; it doesn't.</p>
+  <div class="callout">
+    <div class="label">Appalam &amp; Pickle</div>
+    <ul>
+      <li><i class="term">Appalam</i> (papadum) — the crisp lentil wafer. Buy a good packet; fry in hot oil for three seconds a side or blister over a gas flame. No one makes these at home, and no one should feel bad about it.</li>
+      <li><i class="term">Oorugai</i> (pickle) — fierce, salty, oil-preserved mango, lime, or gooseberry. A fingertip's worth per mouthful of curd rice. A jar from an Indian grocery (Priya and Ruchi are reliable) is the standard, not a shortcut.</li>
+    </ul>
+  </div>
+</section>
+
+<article class="recipe" id="r20">
+  <div class="kicker">No. 20 · The Thali</div>
+  <h3>Green Bean Poriyal</h3>
+  <div class="local-name">Beans poriyal</div>
+  <p class="headnote">The template dry vegetable of the Tamil table: beans (or cabbage, or carrot, or beetroot) stir-fried in a tadka and finished with fresh coconut. Master this once and you own a hundred side dishes.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 20 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>400 g green beans, chopped small (pea-sized)</li>
+        <li>1 tbsp coconut or neutral oil</li>
+        <li>1 tsp mustard seeds; 1 tsp urad dal</li>
+        <li>2 green chilies, slit; 1 dried red chili</li>
+        <li>1 sprig curry leaves; pinch of hing</li>
+        <li>1 small onion, chopped (optional)</li>
+        <li>¼ tsp turmeric; salt</li>
+        <li>3 tbsp grated coconut</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Heat the oil; pop the mustard seeds, brown the urad dal, then add both chilies, curry leaves, hing, and the onion. Sauté until the onion softens.</li>
+        <li>Add the beans, turmeric, salt, and a splash of water. Cover and cook over medium-low, stirring now and then, until just tender with a little squeak left — 8–10 minutes.</li>
+        <li>Uncover, dry off any moisture over higher heat, and fold in the coconut. One minute more, then off. The coconut should warm, not brown.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r21">
+  <div class="kicker">No. 21 · The Thali</div>
+  <h3>Chayote Kootu</h3>
+  <div class="local-name">Chow chow kootu</div>
+  <p class="headnote">Kootu means "together" — vegetable and dal simmered into one mild, spoonable dish, thickened with a fresh coconut-cumin paste. It is the gentlest thing on the leaf, and the one homesick South Indians miss first. Chayote (called <i class="term">chow chow</i> in Tamil Nadu, a vegetable Bangalore loves so much it's nicknamed "Bangalore brinjal") is classic; zucchini, snake gourd, or spinach all work.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 35 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>½ cup moong dal, rinsed</li>
+        <li>2 chayotes, peeled and diced</li>
+        <li>¼ tsp turmeric; salt</li>
+        <li class="subhead">Coconut paste</li>
+        <li>⅓ cup grated coconut</li>
+        <li>1 tsp cumin seeds</li>
+        <li>2 green chilies</li>
+        <li class="subhead">Tadka</li>
+        <li>2 tsp coconut oil or ghee</li>
+        <li>½ tsp mustard seeds; 1 tsp urad dal</li>
+        <li>1 dried red chili; 1 sprig curry leaves</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Simmer the dal with turmeric in 1½ cups water until soft but not collapsed, about 20 minutes (or pressure-cook 2 whistles).</li>
+        <li>Add the chayote and salt and cook until translucent and tender, 8–10 minutes.</li>
+        <li>Grind the coconut, cumin, and green chilies with a little water to a fine paste; stir it in and simmer 3–4 minutes. The kootu should be thick enough to sit on rice without running.</li>
+        <li>Finish with the tadka and serve warm.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r22">
+  <div class="kicker">No. 22 · The Thali</div>
+  <h3>Avial</h3>
+  <div class="local-name">Aviyal (Malayalam)</div>
+  <p class="headnote">Kerala's masterpiece of restraint: a dozen vegetables cut into batons, cooked just so, folded with a coconut-cumin paste and sour curd, and finished — crucially, rawly — with cold-pressed coconut oil and curry leaves. Legend credits its invention to Bhima, the Pandava prince-cook, throwing every vegetable in the kitchen into one pot. The legend is unverifiable; the dish is perfect.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 40 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups mixed vegetables in 2-inch batons: carrot, green beans, potato, plantain (raw banana), pumpkin, drumstick, chayote — the more kinds, the truer</li>
+        <li>¼ tsp turmeric; salt</li>
+        <li class="subhead">Coconut paste</li>
+        <li>1 cup grated coconut</li>
+        <li>1 tsp cumin seeds</li>
+        <li>3 green chilies</li>
+        <li class="subhead">To finish</li>
+        <li>½ cup sour plain yogurt, whisked</li>
+        <li>1 tbsp cold-pressed coconut oil</li>
+        <li>2 sprigs curry leaves</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Layer the vegetables in a wide pot — slow cookers (plantain, potato, drumstick) at the bottom, quick ones (pumpkin) on top. Add turmeric, salt, and ½ cup water; cover and steam-cook until each is tender but architecturally intact. Stir as little as possible.</li>
+        <li>Grind the coconut, cumin, and chilies coarsely with a minimum of water — avial paste should be rubbly, not smooth.</li>
+        <li>Fold the paste through the vegetables and cook 2–3 minutes.</li>
+        <li>Off the heat, fold in the yogurt (on the heat it splits). Pour the raw coconut oil over, crush the curry leaves on top, cover 5 minutes, and serve warm — never hot.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r23">
+  <div class="kicker">No. 23 · The Thali</div>
+  <h3>Curd Rice</h3>
+  <div class="local-name">Thayir sadam · daddojanam</div>
+  <p class="headnote">Every South Indian meal lands here: rice mashed soft with yogurt and milk, tempered with mustard and ginger, cooling everything the previous courses set alight. It is comfort food, temple food, travel food, and — with a pomegranate jewel or two — party food. Do not skip it and claim you've eaten a thali.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 20 min, with cooked rice</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups cooked rice, warm and cooked soft</li>
+        <li>1½ cups plain whole-milk yogurt</li>
+        <li>½ cup milk (it keeps the dish from souring as it sits)</li>
+        <li>Salt</li>
+        <li class="subhead">Tadka</li>
+        <li>1 tbsp oil or ghee</li>
+        <li>1 tsp mustard seeds; 1 tsp urad dal</li>
+        <li>1 tsp minced ginger; 1 green chili, minced</li>
+        <li>1 dried red chili; 1 sprig curry leaves; pinch of hing</li>
+        <li class="subhead">To garnish (optional)</li>
+        <li>Pomegranate seeds, halved grapes, chopped coriander</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Mash the warm rice coarsely with the back of a spoon — thayir sadam should be creamy, not grainy.</li>
+        <li>When it has cooled to warm (hot rice splits yogurt), fold in the yogurt, milk, and salt to a loose, spoonable softness. It thickens as it sits; err loose.</li>
+        <li>Make the tadka with all its members and pour it over. Fold, garnish, and serve at room temperature or lightly chilled, with a fingertip of pickle on the side.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r24">
+  <div class="kicker">No. 24 · The Thali</div>
+  <h3>Vermicelli Payasam</h3>
+  <div class="local-name">Semiya payasam</div>
+  <p class="headnote">The celebratory pudding — ghee-roasted vermicelli simmered in milk with cardamom, cashews, and raisins. It appears at every birthday, festival, and good report card in the South. Serve it warm in winter, chilled in summer, and always in small steel cups.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 25 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 tbsp ghee</li>
+        <li>10 cashews; 1 tbsp raisins</li>
+        <li>1 cup thin vermicelli (semiya), broken</li>
+        <li>4 cups whole milk</li>
+        <li>⅓–½ cup sugar (or ½ cup grated jaggery — see note)</li>
+        <li>¼ tsp ground cardamom</li>
+        <li>Small pinch of saffron (optional)</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>In a heavy pot, fry the cashews in ghee to gold, then the raisins until they balloon; scoop both out.</li>
+        <li>In the same ghee, roast the vermicelli over medium-low, stirring, until nutty and biscuit-colored.</li>
+        <li>Pour in the milk and simmer gently, stirring, until the vermicelli is tender and the milk has thickened slightly, 10–12 minutes.</li>
+        <li>Add the sugar, cardamom, and saffron; simmer 2 minutes more. Return the cashews and raisins.</li>
+        <li>Serve warm or chilled — it thickens dramatically as it cools, so loosen with warm milk before serving if needed.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Using jaggery? Melt it separately in 2 tbsp water, cool the payasam slightly, then stir in — jaggery added to boiling milk can curdle it.</li>
+      <li>For the temple-style <i class="term">paruppu payasam</i>, swap the vermicelli for ½ cup moong dal roasted in ghee, cook in water then coconut milk, and sweeten with jaggery only.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r25">
+  <div class="kicker">No. 25 · The Thali</div>
+  <h3>Filter Coffee</h3>
+  <div class="local-name">Kaapi · degree coffee</div>
+  <p class="headnote">The meal ends, the tumbler arrives. South Indian filter coffee is dark decoction dripped slowly through a two-chambered steel filter, cut with hot milk and sugar, then poured theatrically between the tumbler and its saucer-bowl (<i class="term">davara</i>) until it froths. The pour is not showing off; it cools, mixes, and aerates in one gesture. Well — it is also showing off.</p>
+  <div class="meta">Serves 2 &nbsp;·&nbsp; 5 min + 15 min drip</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>3 tbsp South Indian filter coffee powder — a dark roast ground fine, traditionally 80–85% coffee with 15–20% chicory</li>
+        <li>¾ cup boiling water</li>
+        <li>1½ cups whole milk</li>
+        <li>Sugar, to taste (kaapi is traditionally sweet)</li>
+        <li>A South Indian coffee filter; tumblers and davaras if you have them</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Put the coffee in the filter's upper chamber and level it; rest the pressing disc lightly on top. Pour the boiling water over, lid it, and walk away 15 minutes while it drips into strong, syrupy decoction. Do not press or hurry it.</li>
+        <li>Boil the milk — properly boil it; the skin is part of the flavor memory.</li>
+        <li>Into each tumbler: 2–4 tablespoons decoction (more for a stronger "degree"), sugar, then hot milk to fill.</li>
+        <li>Pour the coffee back and forth between tumbler and davara in long streams until a cap of froth forms — three or four confident passes. Serve immediately, too hot to hold, exactly as intended.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>No steel filter? A small metal pour-over with a fine grind gets close; a French press does not. The filter costs a few dollars at any Indian grocery and lasts forever.</li>
+      <li>The decoction keeps a day at room temperature — old tiffin houses brew it once each dawn.</li>
+    </ul>
+  </div>
+</article>
+
+<section id="menus" style="page-break-before: always;">
+  <div class="kicker">Appendix</div>
+  <h2 class="section">Two Menus</h2>
+  <p><strong>A tiffin breakfast for four.</strong> The night before: set the mother batter to ferment; make tiffin sambar (No. 11) and milagai podi (No. 19) if the jar is empty. In the morning: steam idlis first and hold them covered; grind coconut chutney (No. 15) while the steamer works; then turn the same batter into dosas or an uttapam to order. Finish with filter coffee (No. 25), poured with as much altitude as you dare.</p>
+  <p><strong>A thali lunch for six.</strong> The day before: sambar powder and rasam powder if needed; payasam (No. 24) can also be made ahead. On the day, work backward from noon: kootu (No. 21) and avial (No. 22) first, they hold warm; then classic sambar (No. 10); then poriyal (No. 20) and rice; rasam (No. 13) in the last half hour; curd rice (No. 23) assembled while the rasam simmers; appalam fried as the table is set. Banana leaves optional, second helpings not.</p>
+</section>
+
+<section id="glossary" class="glossary" style="page-break-before: always;">
+  <div class="kicker">Appendix</div>
+  <h2 class="section">A Small Glossary</h2>
+  <p><strong>Tadka / thalippu</strong> — the tempering: whole spices bloomed in hot fat and poured over a dish. The signature sound of the South Indian kitchen.</p>
+  <p><strong>Tiffin</strong> — the light meals outside the main rice meal: dosa, idli, vada, uttapam, and their kin. Also the restaurants that serve them.</p>
+  <p><strong>Podi</strong> — any dry spice powder, from sambar podi to the gunpowder of recipe No. 19.</p>
+  <p><strong>Palya</strong> (Kannada) / <strong>poriyal</strong> (Tamil) — a dry, tempered vegetable stir-fry, usually finished with coconut.</p>
+  <p><strong>Pachadi</strong> — in Andhra, a fierce ground chutney; in Kerala and Tamil Nadu, often a yogurt-based side. Context is everything.</p>
+  <p><strong>Sadam</strong> — cooked rice, in compounds: <i class="term">thayir sadam</i> (curd rice), <i class="term">puliyodarai</i> (tamarind rice).</p>
+  <p><strong>Decoction</strong> — the strong coffee essence dripped from the steel filter; the "degree" in degree coffee.</p>
+  <p><strong>Fried gram / roasted chana</strong> (<i class="term">pottukadalai</i>) — twice-roasted chickpeas that grind smooth without cooking; the invisible thickener in half the chutneys of the South.</p>
+  <p><strong>Drumstick</strong> (<i class="term">murungakkai</i>) — the long ridged pod of the moringa tree, essential to sambar. Eaten by scraping the flesh with your teeth; the husk stays on the plate.</p>
+  <p><strong>Hing</strong> — asafoetida; see the pantry. The umami of the vegetarian South.</p>
+</section>
+
+<section id="sources" style="page-break-before: always;">
+  <div class="kicker">Appendix</div>
+  <h2 class="section">Sources &amp; Further Reading</h2>
+  <p>This is a research-based booklet: no single cook stands behind these recipes, so each was cross-checked against several trusted Indian home-cooking writers, and quantities were chosen where their consensus landed. Errors of judgment are the compiler's alone.</p>
+  <p><strong>Dassana Amit — Veg Recipes of India</strong> (vegrecipesofindia.com) — the backbone reference for the Mysore masala dosa, idli batter craft, coconut chutney, pesarattu, and milagu rasam.</p>
+  <p><strong>Swasthi Shreekanth — Indian Healthy Recipes</strong> (indianhealthyrecipes.com) — sambar and rasam method, rava dosa, uttapam, medu vada, and the batter-ratio testing this booklet leans on.</p>
+  <p><strong>Hebbar's Kitchen</strong> (hebbarskitchen.com) — Karnataka-style potato palya, rava dosa proportions, pepper rasam, and pesarattu variants.</p>
+  <p><strong>Raks Kitchen</strong> (rakskitchen.net) and <strong>Sharmis Passions</strong> (sharmispassions.com) — Tamil tiffin technique, medu vada batter wisdom, and filter coffee tradition.</p>
+  <p><strong>Jeyashri's Kitchen</strong> (jeyashriskitchen.com) — Tamil Nadu village-style sambar and milagu rasam.</p>
+  <p><strong>Archana's Kitchen</strong> (archanaskitchen.com) and <strong>Chitra's Food Book</strong> (chitrasfoodbook.com) — arachuvitta rasam tradition and the wider rasam family.</p>
+  <p><strong>Further reading:</strong> for the deep history of these tables, seek out K.T. Achaya's <em>Indian Food: A Historical Companion</em>; for a lifetime of Tamil Brahmin home cooking, Meenakshi Ammal's <em>Samaithu Par</em> ("Cook and See"), the book generations of South Indian brides packed first.</p>
+</section>
+
+</div>
+</body>
+</html>
+                                          
