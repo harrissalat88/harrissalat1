@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morabeza — The Cape Verdean Kitchen — Recipe Booklet</title>
+<meta name="description" content="26 recipes from Cabo Verde — cachupa, pastels, jag, grogue &amp; more — researched and compiled by Harris Salat.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌋</text></svg>">
+<style>
+/* ============ PALETTE — volcanic rust + corn gold + volcanic charcoal ============ */
+:root {
+  --ink:     #2b2723;  /* volcanic charcoal body text */
+  --primary: #8a3a12;  /* volcanic rust: Fogo lava soil — covers, dividers, titles */
+  --accent:  #c08a2e;  /* corn gold: kickers, rules, running header */
+  --second:  #a06d1f;  /* deep gold for Kriolu terms */
+  --tint:    #fdf6e3;  /* callout background */
+  --paper:   #fffdf7;  /* page background (screen) */
+}
+body { font-family: "Lora", Georgia, "Times New Roman", serif; color: var(--ink);
+       font-size: 11pt; line-height: 1.55; background: var(--paper); margin: 0; }
+.page-col { max-width: 46rem; margin: 0 auto; padding: 2rem 1.5rem; }
+h1, h2, h3, .display { font-family: "TeX Gyre Bonum", "Playfair Display", Georgia, serif; }
+a { color: var(--second); text-decoration: none; }
+
+/* ============ COVER ============ */
+.cover { background: var(--primary); color: #f7f3e8; text-align: center;
+         padding: 7rem 2rem 8rem; page-break-after: always; }
+.cover .kicker { letter-spacing: .35em; font-size: 8pt; color: #efc571;
+                 text-transform: uppercase; font-family: Arial, sans-serif; }
+.cover h1 { font-size: 34pt; margin: 1rem 0 .5rem; }
+.cover .subtitle { font-style: italic; font-size: 12pt; opacity: .85; }
+.cover .dek { font-size: 10pt; opacity: .7; margin-top: 1.2rem; }
+.cover .revised { margin-top: 3rem; font-size: 9pt; color: #efc571; }
+.divider .kicker { color: #efc571; }
+
+/* ============ KICKERS, HEADINGS ============ */
+.kicker { letter-spacing: .18em; font-size: 8pt; text-transform: uppercase;
+          color: var(--accent); font-family: Arial, sans-serif; font-weight: bold; }
+h2.section { font-size: 20pt; color: var(--ink); margin: .3rem 0 .8rem; break-after: avoid; }
+
+/* ============ CONTENTS ============ */
+.toc { column-count: 2; column-gap: 2.5rem; }
+.toc .toc-chapter { column-span: none; margin: .9rem 0 .25rem; }
+.toc a { color: var(--ink); }
+.toc .num { color: var(--accent); font-size: 8pt; margin-right: .5em; }
+
+/* ============ CHAPTER DIVIDER ============ */
+.divider { background: var(--primary); color: #f7f3e8; padding: 2.2rem 2rem;
+           page-break-before: always; margin: 0 0 1.5rem; }
+.divider h2 { font-size: 19pt; margin: .4rem 0; }
+.divider .proverb em { opacity: .85; }
+.divider .proverb { font-size: 10pt; }
+.divider .proverb .translation { font-style: italic; opacity: .75; }
+
+/* ============ RECIPE ============ */
+.recipe { margin: 1.6rem 0; }
+.recipe h3 { font-size: 16pt; margin: .2rem 0 0; break-after: avoid; }
+.local-name { font-style: italic; color: var(--second); margin: .1rem 0 .6rem; }
+.headnote { margin: .4rem 0 .6rem; }
+.meta { font-size: 9pt; color: #7a7267; border-top: 1px solid #e5ddcf;
+        border-bottom: 1px solid #e5ddcf; padding: .3rem 0; margin: .5rem 0 .8rem; }
+.cols { display: flex; gap: 2rem; }
+.col-ing { flex: 2; } .col-method { flex: 3; }
+@media print {
+  .cols { display: table; width: 100%; table-layout: fixed; }
+  .col-ing { display: table-cell; width: 40%; padding-right: 2rem; }
+  .col-method { display: table-cell; width: 60%; }
+  .col-ing, .col-method { vertical-align: top; }
+}
+.col-label { letter-spacing: .15em; font-size: 7.5pt; color: var(--accent);
+             font-family: Arial, sans-serif; font-weight: bold; margin-bottom: .4rem; }
+.col-ing ul { padding-left: 1rem; margin: 0; } .col-ing li { margin: .25rem 0; font-size: 10pt; }
+.col-method ol { padding-left: 1.2rem; margin: 0; } .col-method li { margin: .45rem 0; }
+.subhead { font-weight: bold; font-style: italic; margin: .5rem 0 .2rem; }
+i.term { color: var(--second); }
+
+/* ============ CALLOUT ============ */
+.callout { background: var(--tint); border-left: 3px solid var(--accent);
+           padding: .7rem 1rem; margin: .9rem 0; page-break-inside: avoid; }
+.callout .label { letter-spacing: .15em; font-size: 7.5pt; color: #8a6415;
+                  font-family: Arial, sans-serif; font-weight: bold; }
+.callout ul { margin: .3rem 0 0; padding-left: 1rem; font-size: 10pt; }
+
+/* ============ SITE NAV / FOOTER / BACKTOP (web only) ============ */
+.site-nav { background: var(--primary); font-family: Arial, sans-serif; font-size: 9pt;
+            letter-spacing: .12em; text-transform: uppercase; padding: .55rem 1.2rem; }
+.site-nav a { color: #f7ecdd; }
+.footer { text-align: center; font-size: 9pt; color: #7a7267; padding: 2.5rem 1rem 3rem;
+          border-top: 1px solid #e5ddcf; margin-top: 3rem; }
+.backtop { position: fixed; right: 18px; bottom: 18px; background: var(--primary); color: #fff;
+           padding: 9px 14px; border-radius: 22px; font-family: Arial, sans-serif; font-size: 9pt;
+           font-weight: bold; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+.backtop:hover { background: var(--accent); color: #fff; text-decoration: none; }
+html { scroll-behavior: smooth; }
+
+/* ============ PRINT / PDF ============ */
+@page {
+  size: Letter; margin: 0.9in 1in;
+  @top-right { content: "Morabeza · The Cape Verdean Kitchen"; font-size: 7.5pt; color: #c08a2e; }
+  @bottom-center { content: "— " counter(page) " —"; font-size: 8pt; color: #7a7267; }
+}
+@page :first { @top-right { content: none; } @bottom-center { content: none; } }
+@media print {
+  .backtop, .site-nav, .footer { display: none; }
+  body { background: white; }
+  .page-col { max-width: none; padding: 0; }
+  .cover { margin: -0.9in -1in; padding: 3.2in 1in 3in; }
+  .divider { margin-left: -1in; margin-right: -1in; padding: 1.4in 1in 1in; }
+}
+</style>
+</head>
+<body id="top">
+<nav class="site-nav"><a href="/">← harrissalat.com</a></nav>
+
+<div class="cover">
+  <div class="kicker">A Recipe Booklet</div>
+  <h1>Morabeza</h1>
+  <div class="subtitle">The Cape Verdean Kitchen</div>
+  <div class="dek">Recipes from ten islands where Africa met Portugal<br>in the middle of the Atlantic</div>
+  <div class="revised">Revised July 9, 2026</div>
+</div>
+
+<div class="page-col">
+
+<section id="contents">
+  <div class="kicker">Bem-vindu — Welcome</div>
+  <h2 class="section">Contents</h2>
+  <div class="toc">
+    <div class="toc-chapter kicker">Before You Cook</div>
+    <div><a href="#about">A Cuisine Born at Sea</a></div>
+    <div><a href="#islands">The Islands</a></div>
+    <div><a href="#pantry">The Cape Verdean Pantry</a></div>
+    <div class="toc-chapter kicker">Chapter One · Corn, the Mother Grain</div>
+    <div><span class="num">1</span><a href="#r1">Cachupa Rica</a></div>
+    <div><span class="num">2</span><a href="#r2">Cachupa Refogada</a></div>
+    <div><span class="num">3</span><a href="#r3">Xerém</a></div>
+    <div><span class="num">4</span><a href="#r4">Corn Couscous</a></div>
+    <div><span class="num">5</span><a href="#r5">Jag (Rice &amp; Beans)</a></div>
+    <div class="toc-chapter kicker">Chapter Two · From the Atlantic</div>
+    <div><span class="num">6</span><a href="#r6">Tuna Pastels</a></div>
+    <div><span class="num">7</span><a href="#r7">Grilled Tuna, Molho Cru</a></div>
+    <div><span class="num">8</span><a href="#r8">Fish Stew</a></div>
+    <div><span class="num">9</span><a href="#r9">Lagostada</a></div>
+    <div><span class="num">10</span><a href="#r10">Búzio (Conch Stew)</a></div>
+    <div><span class="num">11</span><a href="#r11">Fried Moray Eel</a></div>
+    <div class="toc-chapter kicker">Chapter Three · Sunday Pots</div>
+    <div><span class="num">12</span><a href="#r12">Canja de Galinha</a></div>
+    <div><span class="num">13</span><a href="#r13">Modje de São Nicolau</a></div>
+    <div><span class="num">14</span><a href="#r14">Cape Verdean Feijoada</a></div>
+    <div><span class="num">15</span><a href="#r15">Carne Guisada</a></div>
+    <div class="toc-chapter kicker">Chapter Four · Street Corner &amp; Festa</div>
+    <div><span class="num">16</span><a href="#r16">Corn Pastels</a></div>
+    <div><span class="num">17</span><a href="#r17">Gufong</a></div>
+    <div><span class="num">18</span><a href="#r18">Fried Bananas</a></div>
+    <div><span class="num">19</span><a href="#r19">Tuna Rissóis</a></div>
+    <div class="toc-chapter kicker">Chapter Five · Doces</div>
+    <div><span class="num">20</span><a href="#r20">Pudim de Leite</a></div>
+    <div><span class="num">21</span><a href="#r21">Papaya Jam with Goat Cheese</a></div>
+    <div><span class="num">22</span><a href="#r22">Bolo de Mel</a></div>
+    <div><span class="num">23</span><a href="#r23">Doce de Coco</a></div>
+    <div class="toc-chapter kicker">Chapter Six · The Grogue Table</div>
+    <div><span class="num">24</span><a href="#r24">Ponche</a></div>
+    <div><span class="num">25</span><a href="#r25">Café com Grogue</a></div>
+    <div><span class="num">26</span><a href="#r26">Piri-Piri Table Sauce</a></div>
+    <div class="toc-chapter kicker">Appendix</div>
+    <div><a href="#sources">Sources &amp; Further Reading</a></div>
+  </div>
+</section>
+
+<section id="about" style="page-break-before: always;">
+  <div class="kicker">Before You Cook</div>
+  <h2 class="section">A Cuisine Born at Sea</h2>
+  <p>Most cuisines grew out of a land and its people over thousands of years. Cape Verde's did not have that luxury. When Portuguese ships reached these ten volcanic islands in 1462, no one lived here — no indigenous kitchen, no ancestral crops, nothing but dry wind and black rock five hundred kilometers off the coast of Senegal. Everything that Cape Verdeans eat today arrived by ship, and everyone who cooks it descends from the meeting — often brutal, eventually inseparable — of West African peoples and Portuguese settlers. The islands became a waypoint of the Atlantic slave trade, a provisioning stop between three continents, and out of that crossroads came a genuinely creole culture: the Kriolu language, <i class="term">morna</i> music, and this kitchen.</p>
+  <p>The African inheritance is the foundation: corn and beans pounded, soaked, and stewed in one patient pot; okra and squash; the instinct that a single dish, cooked long, should feed everyone who walks in. Portugal contributed its flavor grammar — garlic, onion, bay leaf, and olive oil at the start of nearly every recipe — plus <i class="term">linguiça</i> (cured pork sausage), salt cod, wine, and the egg-and-sugar sweets of the convent tradition. The Atlantic trade routes threaded through Brazil brought cassava, papaya, and a cousinly resemblance to Brazilian cooking that survives in dishes like <i class="term">feijoada</i> and <i class="term">xerém</i>. And because drought drove generations of Cape Verdeans onto New England whaling ships, there is a fourth ingredient: the diaspora. More Cape Verdeans live abroad than on the islands, and dishes like <i class="term">jag</i> travel back and forth between Praia and Providence, Rhode Island, changing a little with every crossing.</p>
+  <p>The word on the cover, <i class="term">morabeza</i>, is Kriolu and has no exact translation. It means something like warm-hearted hospitality — the insistence that a guest be fed, unhurried, and welcomed as family. It is the temperament of this whole cuisine: generous pots, patient fires, food meant for a crowded table.</p>
+  <p><strong>How to use this booklet.</strong> Every recipe was cross-checked against multiple Cape Verdean and Cape Verdean–American sources, credited in the appendix. Quantities are starting points — taste and adjust, exactly as any island cook would. Where an ingredient is hard to find abroad, the pantry section and the recipe callouts offer honest substitutions.</p>
+</section>
+
+<section id="islands" style="page-break-before: always;">
+  <div class="kicker">Before You Cook</div>
+  <h2 class="section">The Islands</h2>
+  <p>Cape Verde — <i class="term">Cabo Verde</i>, officially, and <i class="term">Kabu Verdi</i> in Kriolu — is an arc of ten islands, nine inhabited, split by the trade winds into the <i class="term">Barlavento</i> (windward) north and <i class="term">Sotavento</i> (leeward) south. Less than a tenth of the land can be farmed, and drought is a recurring character in the islands' history; this is a cuisine shaped as much by scarcity as by abundance. Each island cooks a little differently, and it helps to know the map:</p>
+  <p><strong>Santiago</strong>, the largest and most African of the islands, is the heartland of <i class="term">cachupa</i> and home to the capital, Praia. <strong>Santo Antão</strong>, all vertiginous green valleys, grows the sugarcane that becomes <i class="term">grogue</i>, the national spirit, in small roadside distilleries called <i class="term">trapiches</i>. <strong>Fogo</strong> is a live volcano with vineyards and coffee growing in its crater, and produces the goat cheese and wine that end a proper meal. <strong>São Vicente</strong>'s port city, Mindelo, is the islands' cultural capital — the birthplace of <i class="term">morna</i>, the blues-like music that Cesária Évora carried to the world, and a town that eats well after midnight. <strong>São Nicolau</strong> guards its own beef-and-cassava stew, <i class="term">modje</i>. The flat eastern islands — <strong>Sal</strong>, <strong>Boa Vista</strong>, <strong>Maio</strong> — historically harvested salt and today harvest tourists, feeding them very good grilled fish. <strong>Brava</strong>, the little flower island, sent more of its sons onto American whaling ships than anywhere else, which is why so much of New England eats <i class="term">jag</i>.</p>
+</section>
+
+<section id="pantry" style="page-break-before: always;">
+  <div class="kicker">Before You Cook</div>
+  <h2 class="section">The Cape Verdean Pantry</h2>
+  <p><strong>Hominy corn</strong> (<i class="term">milho</i>) — Dried whole corn, skinned and cracked, is the backbone of the cuisine. For cachupa, buy dried white or yellow hominy (sold as <i class="term">canjica</i> in Brazilian markets, or "samp" in African shops) and soak it overnight. Canned hominy is an accepted weeknight shortcut in diaspora kitchens — rinse it well and cut the simmering time drastically.</p>
+  <p><strong>Dried beans</strong> (<i class="term">fijon</i>) — Cape Verdean pots rarely hold just one variety: lima beans, kidney beans, and pigeon peas (<i class="term">feijão congo</i>) often simmer together. Stone beans (<i class="term">feijão pedra</i>) are prized in cachupa; borlotti or pinto stand in well.</p>
+  <p><strong>Linguiça</strong> — Portuguese cured pork sausage, garlicky and paprika-red, is the seasoning meat of choice. Chouriço works interchangeably; in a pinch, any garlicky smoked sausage will do. New Bedford and Fall River brands are the diaspora standard.</p>
+  <p><strong>Salt cod</strong> (<i class="term">bacalhau</i>) — The Portuguese inheritance in its purest form. Buy thick center-cut pieces, soak 24 hours with several water changes, and it becomes silky and mild.</p>
+  <p><strong>Tuna</strong> (<i class="term">atum</i>) — The islands' great fish, eaten grilled, stewed, and stuffed into pastels. Fresh yellowfin is ideal; good canned tuna in olive oil is completely legitimate for pastels and rissóis, and most island cooks use it.</p>
+  <p><strong>Malagueta chile</strong> — The small, hot African chile that gives Cape Verdean piri-piri its fire. Fresh Thai bird chiles or bottled piri-piri sauce substitute honestly.</p>
+  <p><strong>Bay leaf, garlic, olive oil</strong> — The Portuguese trinity. Nearly every savory recipe here begins with onion and garlic sweated in olive oil with a bay leaf; the islands' cooking fat is olive oil first, with lard appearing in older recipes.</p>
+  <p><strong>Cassava</strong> (<i class="term">mandioca</i>) — The Brazilian traveler, eaten boiled in stews alongside sweet potato. Sold fresh or frozen (easier) in Latin and African markets. Yuca is the same root.</p>
+  <p><strong>Sweet potato &amp; green banana</strong> (<i class="term">batata dóci, banana verde</i>) — The starchy chorus of cachupa and fish stews. Green (unripe) bananas are cooked like a vegetable; buy the greenest ones in the shop and peel them under running water.</p>
+  <p><strong>Papaya</strong> (<i class="term">papaia</i>) — Eaten green as a vegetable and ripe as fruit, and above all slow-cooked into <i class="term">doce de papaia</i>, the islands' signature preserve.</p>
+  <p><strong>Goat cheese</strong> (<i class="term">queijo de cabra</i>) — Fresh, salty rounds from Fogo and Santo Antão, served with papaya jam as dessert. A young, firm chèvre or Spanish queso fresco de cabra is the closest match abroad.</p>
+  <p><strong>Grogue &amp; cane molasses</strong> (<i class="term">grogu, mel de cana</i>) — Grogue is unaged sugarcane rum, cousin to Brazilian cachaça and Caribbean rhum agricole — either substitutes perfectly. <i class="term">Mel</i> in Cape Verde usually means cane molasses, not bee honey; buy unsulphured molasses.</p>
+  <p><strong>Corn flour</strong> (<i class="term">fuba</i>) — Finely ground cornmeal for cuscuz, gufong, and corn pastels. Fine or medium stone-ground cornmeal from any market works.</p>
+</section>
+
+<div class="divider" id="ch1">
+  <div class="kicker">Chapter One · Recipes 1–5</div>
+  <h2>Corn, the Mother Grain</h2>
+  <div class="proverb"><em>Un dedu só ka ta kume kuskus.</em>
+    <span class="translation">— One finger alone cannot eat couscous.</span></div>
+</div>
+
+<article class="recipe" id="r1">
+  <div class="kicker">No. 1 · Corn, the Mother Grain</div>
+  <h3>Cachupa Rica</h3>
+  <div class="local-name">Katxupa rika — the national dish</div>
+  <p class="headnote">Everything Cape Verde is sits in this one pot: African corn and beans, Portuguese linguiça and bay, and the patience of islands that learned to make plenty out of little. "Rica" means the full celebration version, with several meats; <i class="term">cachupa pobre</i>, the everyday one, lets the vegetables carry it. Give it an afternoon — cachupa cannot be rushed, only reheated (which improves it).</p>
+  <div class="meta">Serves 8–10 &nbsp;·&nbsp; 1 hr active + 3 hr simmer + overnight soak (or canned hominy)</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups dried hominy corn, soaked overnight</li>
+        <li>1 cup dried beans (lima, kidney, or a mix), soaked overnight</li>
+        <li>3 tbsp olive oil</li>
+        <li>2 onions, chopped</li>
+        <li>6 garlic cloves, minced</li>
+        <li>3 bay leaves</li>
+        <li>2 tomatoes, chopped (or 1 cup canned)</li>
+        <li>1 tbsp paprika</li>
+        <li>1 lb pork shoulder, in chunks</li>
+        <li>1/2 lb linguiça or chouriço, thick-sliced</li>
+        <li>1/2 lb slab bacon or salted pork, cubed</li>
+        <li>1 small green cabbage, in wedges</li>
+        <li>2 sweet potatoes, peeled, in chunks</li>
+        <li>1 lb cassava, peeled, in chunks</li>
+        <li>2 green bananas, peeled, halved</li>
+        <li>1 lb squash or pumpkin, in chunks</li>
+        <li>Salt and black pepper</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Drain the corn and beans. Put them in your largest pot with water to cover by three fingers, bring to a boil, and simmer, partly covered, about 1 hour, until the corn begins to soften.</li>
+        <li>Meanwhile, in a skillet, heat the olive oil and soften the onions with the garlic, bay leaves, tomatoes, and paprika into a rich <i class="term">refogado</i> (sofrito), about 10 minutes.</li>
+        <li>Season the pork with salt and pepper. Add the refogado, pork shoulder, linguiça, and bacon to the pot. Simmer gently 1 hour more, topping up with hot water so everything stays barely covered.</li>
+        <li>Add the cassava and sweet potato; simmer 20 minutes. Add the cabbage, green bananas, and squash; simmer 20–30 minutes more, until every vegetable is tender and the broth has thickened to a loose stew.</li>
+        <li>Taste — it should be deeply savory, faintly smoky, and generously salted. Rest 15 minutes off the heat, then serve in wide bowls with piri-piri sauce (No. 26) alongside.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Canned hominy shortcut: skip step 1, simmer the meats in the refogado and 8 cups of water for an hour, then add 2 drained cans each of hominy and beans with the vegetables.</li>
+      <li>Coastal cooks swap the meats for tuna or wahoo, added in the last 20 minutes — <i class="term">cachupa de peixe</i>.</li>
+      <li>Make more than you need. Tomorrow's breakfast (No. 2) depends on it.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r2">
+  <div class="kicker">No. 2 · Corn, the Mother Grain</div>
+  <h3>Cachupa Refogada</h3>
+  <div class="local-name">Katxupa gizado — fried cachupa, the breakfast of champions</div>
+  <p class="headnote">Yesterday's cachupa, drained and fried in a hot pan until it catches and crisps, then crowned with a fried egg and a slice of linguiça. Many Cape Verdeans will tell you — quietly, so as not to insult the original — that this is the better dish. It is the islands' morning ritual, served in every <i class="term">kafé</i> from Praia to Brockton.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 20 min, requires leftover cachupa</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups leftover cachupa, drained of broth</li>
+        <li>3 tbsp olive oil or lard</li>
+        <li>1 onion, thinly sliced</li>
+        <li>2 garlic cloves, minced</li>
+        <li>4 thick slices linguiça</li>
+        <li>4 eggs</li>
+        <li>Salt, pepper, piri-piri</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Heat 2 tablespoons of the oil in a wide skillet and brown the linguiça slices; set aside, leaving the fat.</li>
+        <li>Soften the onion and garlic in the same pan. Add the drained cachupa, pressing it into a rough cake, and let it fry undisturbed 4–5 minutes until the bottom crisps. Turn in sections and crisp the other side.</li>
+        <li>In a second pan, fry the eggs sunny-side up in the last spoon of oil.</li>
+        <li>Serve each portion topped with an egg and a slice of linguiça, with piri-piri on the table and, properly, strong coffee.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r3">
+  <div class="kicker">No. 3 · Corn, the Mother Grain</div>
+  <h3>Xerém</h3>
+  <div class="local-name">Xerém di festa — festival cracked corn</div>
+  <p class="headnote">Corn cracked fine and cooked slowly into something between polenta and risotto — a dish with a twin in northeastern Brazil, carried there along the same Atlantic routes. The festive version, <i class="term">xerém di festa</i>, is enriched with pork, beans, and tomatoes and appears at weddings and saint's-day feasts.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 1 hr 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups coarse cracked corn or coarse polenta</li>
+        <li>3 tbsp olive oil</li>
+        <li>1/2 lb pork belly or shoulder, small dice</li>
+        <li>1 onion, chopped</li>
+        <li>3 garlic cloves, minced</li>
+        <li>2 tomatoes, chopped</li>
+        <li>2 bay leaves</li>
+        <li>1 tsp paprika</li>
+        <li>1 1/2 cups cooked beans (borlotti or kidney)</li>
+        <li>6 cups hot water or stock, plus more</li>
+        <li>2 tbsp butter</li>
+        <li>Salt and black pepper</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>In a heavy pot, brown the pork in the olive oil. Add the onion, garlic, bay leaves, tomatoes, and paprika and cook down to a thick refogado.</li>
+        <li>Stir in the cracked corn to coat, then add the hot water and a big pinch of salt. Simmer gently, stirring often, 40–50 minutes, adding water as the corn drinks it.</li>
+        <li>When the corn is tender and porridge-like, fold in the beans and the butter and simmer 10 minutes more. It should fall lazily from the spoon.</li>
+        <li>Season boldly and serve hot — on its own, or as the classic bed for grilled lobster (No. 9).</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r4">
+  <div class="kicker">No. 4 · Corn, the Mother Grain</div>
+  <h3>Corn Couscous</h3>
+  <div class="local-name">Cuscuz di midju — steamed cornmeal cake</div>
+  <p class="headnote">Not the North African semolina but a steamed cake of cornmeal, sliced warm and drizzled with molasses or eaten with butter and coffee at breakfast. Traditionally it steams in an unglazed clay pot called a <i class="term">binde</i>; a cheesecloth-lined steamer basket does the job faithfully.</p>
+  <div class="meta">Serves 6–8 &nbsp;·&nbsp; 15 min active + 40 min steam + rest</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>3 cups fine or medium cornmeal</li>
+        <li>1/2 tsp salt</li>
+        <li>1/2 tsp ground cinnamon</li>
+        <li>2 tbsp sugar</li>
+        <li>About 1 cup warm water</li>
+        <li class="subhead">To serve</li>
+        <li>Butter, molasses or honey, ground cinnamon</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Whisk the cornmeal, salt, cinnamon, and sugar. Sprinkle in warm water a little at a time, rubbing with your fingers, until the meal is evenly damp and clumps when squeezed but crumbles when poked — like wet sand.</li>
+        <li>Pack the mixture loosely into a cheesecloth-lined steamer basket or colander that fits over a pot of simmering water. Cover snugly.</li>
+        <li>Steam 35–40 minutes, until a skewer comes out clean and the cake is set through.</li>
+        <li>Rest 10 minutes, unmold, and slice into wedges. Serve warm with butter and a ribbon of molasses, with coffee or warm milk.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Leftover slices toast beautifully in a buttered pan — the breakfast that follows the breakfast.</li>
+      <li>It is also the traditional partner for <i class="term">doce de papaia</i> (No. 21).</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r5">
+  <div class="kicker">No. 5 · Corn, the Mother Grain</div>
+  <h3>Jag (Rice &amp; Beans)</h3>
+  <div class="local-name">Djagasida / jagacida — the diaspora's dish</div>
+  <p class="headnote">Rice and beans seasoned with bay, paprika, and onion — humble on the islands, beloved abroad. In the Cape Verdean neighborhoods of Rhode Island and southeastern Massachusetts, "jag" is the potluck dish, the cookout dish, the funeral dish; every family swears by its own ratio. This version, with lima beans, is the New England standard.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 45 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>3 tbsp olive oil</li>
+        <li>1 large onion, chopped</li>
+        <li>3 garlic cloves, minced</li>
+        <li>2 bay leaves</li>
+        <li>1 tbsp paprika</li>
+        <li>1 tbsp tomato paste</li>
+        <li>2 cups long-grain rice, rinsed</li>
+        <li>1 can (15 oz) lima or kidney beans, drained</li>
+        <li>4 cups water or chicken stock</li>
+        <li>1 tsp salt, 1/2 tsp white pepper</li>
+        <li>Optional: 1/2 lb linguiça, diced</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>In a heavy pot, soften the onion, garlic, and bay leaves in the oil (with the linguiça, if using) until golden. Stir in the paprika and tomato paste and cook 1 minute.</li>
+        <li>Add the rice and stir to coat in the seasoned oil. Add the beans, water, salt, and pepper and bring to a boil.</li>
+        <li>Cover tightly, drop the heat to its lowest, and cook 18–20 minutes without peeking.</li>
+        <li>Rest 10 minutes off the heat, fluff with a fork, and pull out the bay leaves. Serve with anything — that is its whole purpose.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<div class="divider" id="ch2">
+  <div class="kicker">Chapter Two · Recipes 6–11</div>
+  <h2>From the Atlantic</h2>
+  <div class="proverb"><em>Ken ka riska, ka ta petiska.</em>
+    <span class="translation">— Who doesn't take a risk doesn't get a taste.</span></div>
+</div>
+
+<article class="recipe" id="r6">
+  <div class="kicker">No. 6 · From the Atlantic</div>
+  <h3>Tuna Pastels</h3>
+  <div class="local-name">Pastel ku diabu dentu — "pastry with the devil inside"</div>
+  <p class="headnote">Cape Verde's most famous street food: a crisp half-moon of dough hiding a spiced tuna filling with enough malagueta heat to earn its magnificent name. Sold at every festa, beach, and bus stop on the islands.</p>
+  <div class="meta">Makes ~20 &nbsp;·&nbsp; 1 hr 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li class="subhead">Filling</li>
+        <li>2 tbsp olive oil</li>
+        <li>1 onion, finely chopped</li>
+        <li>3 garlic cloves, minced</li>
+        <li>1 tomato, finely chopped</li>
+        <li>2 cans good tuna in olive oil, drained</li>
+        <li>1–2 malagueta or bird chiles, minced</li>
+        <li>1 bay leaf · 1/2 tsp paprika</li>
+        <li>Handful chopped parsley or cilantro</li>
+        <li class="subhead">Dough</li>
+        <li>3 cups flour · 1 tsp salt</li>
+        <li>3 tbsp olive oil</li>
+        <li>About 1 cup warm water</li>
+        <li class="subhead">To fry</li>
+        <li>Neutral oil, 2 inches deep</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Make the filling: soften the onion and garlic in the oil with the bay leaf. Add the tomato, paprika, and chiles and cook down 5 minutes. Fold in the tuna and herbs, season, and cool completely. Discard the bay leaf.</li>
+        <li>Make the dough: rub the oil into the flour and salt, then knead in warm water until smooth and supple, about 5 minutes. Rest 20 minutes under a cloth.</li>
+        <li>Roll thin (about 2 mm) and cut 4-inch rounds. Spoon filling onto each, wet the edge, fold into a half-moon, and crimp firmly with a fork.</li>
+        <li>Fry in 350°F (175°C) oil, a few at a time, turning once, until deep gold, 3–4 minutes. Drain on paper.</li>
+        <li>Eat hot, with cold beer or <i class="term">ponche</i>, and more piri-piri for the brave.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Island cooks often work boiled sweet potato or a little cornmeal into the dough for tenderness — replace 1/2 cup of flour with 1/2 cup mashed sweet potato and reduce the water.</li>
+      <li>Fresh tuna, poached and flaked, is the fancy version; canned is the true street version.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r7">
+  <div class="kicker">No. 7 · From the Atlantic</div>
+  <h3>Grilled Tuna with Molho Cru</h3>
+  <div class="local-name">Atum grelhadu ku molhu kru — with "raw sauce"</div>
+  <p class="headnote">On the eastern islands the day's tuna goes straight from boat to grill, dressed only with <i class="term">molho cru</i> — a sharp raw sauce of onion, garlic, chile, and vinegar that is Cape Verde's answer to chimichurri.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 25 min + 30 min marinade</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 tuna steaks, 1 inch thick</li>
+        <li>3 garlic cloves, crushed</li>
+        <li>Juice of 1 lime · 3 tbsp olive oil</li>
+        <li>1 tsp paprika · salt and pepper</li>
+        <li class="subhead">Molho cru</li>
+        <li>1 small red onion, minced fine</li>
+        <li>2 garlic cloves, minced</li>
+        <li>1 malagueta or bird chile, minced</li>
+        <li>1 small tomato, finely diced</li>
+        <li>3 tbsp white wine vinegar</li>
+        <li>4 tbsp olive oil</li>
+        <li>Chopped parsley · salt</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Marinate the tuna in the garlic, lime, oil, paprika, salt, and pepper, 30 minutes.</li>
+        <li>Stir all the molho cru ingredients together and let stand while the fish marinates — the vinegar tames the onion.</li>
+        <li>Grill or sear the tuna over high heat, 2–3 minutes per side, leaving the center rosy.</li>
+        <li>Rest briefly, spoon the molho cru generously over, and serve with boiled sweet potato, rice, or xerém.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r8">
+  <div class="kicker">No. 8 · From the Atlantic</div>
+  <h3>Fish Stew</h3>
+  <div class="local-name">Caldo di pexe — the fisherman's pot</div>
+  <p class="headnote">The everyday soul food of the coasts: firm white fish simmered with root vegetables and green banana in a broth built on the eternal refogado. Every port has a version; this one leans on São Vicente's, finished with a squeeze of lime.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 1 hr</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 lb firm white fish (grouper, wahoo, snapper), thick pieces</li>
+        <li>Juice of 1 lime, plus more to serve</li>
+        <li>4 tbsp olive oil</li>
+        <li>2 onions, sliced</li>
+        <li>4 garlic cloves, minced</li>
+        <li>2 tomatoes, chopped</li>
+        <li>2 bay leaves · 1 tsp paprika</li>
+        <li>1 malagueta chile, whole</li>
+        <li>2 sweet potatoes, thick rounds</li>
+        <li>1/2 lb cassava, chunks</li>
+        <li>2 green bananas, thick rounds</li>
+        <li>8 cups water · salt</li>
+        <li>Chopped cilantro or parsley</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Season the fish with salt and the lime juice; set aside.</li>
+        <li>In a wide pot, build the refogado: soften the onions and garlic in the oil, then add tomatoes, bay, paprika, and the whole chile and cook down 8 minutes.</li>
+        <li>Add the water, cassava, and sweet potato and simmer 15 minutes. Add the green banana and simmer 10 more, until the roots are nearly tender.</li>
+        <li>Lay the fish gently on top, cover, and poach at a bare simmer 8–10 minutes.</li>
+        <li>Taste for salt, pull the chile before it bursts (unless you want it to), and shower with herbs. Serve with rice or a wedge of cuscuz and lime.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r9">
+  <div class="kicker">No. 9 · From the Atlantic</div>
+  <h3>Lagostada</h3>
+  <div class="local-name">Lagostada — the lobster feast</div>
+  <p class="headnote">The celebration dish of the beach restaurants: spiny lobster split and grilled over coals, basted with garlic butter, and served on a bed of soft xerém. On Boa Vista and Sal, ordering a lagostada is how you mark a good day.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 40 min (plus xerém)</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 spiny lobsters or 4 lobster tails</li>
+        <li>6 tbsp butter, melted</li>
+        <li>4 garlic cloves, minced</li>
+        <li>Juice of 1 lime</li>
+        <li>1 tsp paprika</li>
+        <li>Pinch of minced malagueta chile</li>
+        <li>Salt · chopped parsley</li>
+        <li>Xerém (No. 3) or rice, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Split the lobsters lengthwise (or butterfly the tails). Stir the butter with the garlic, lime, paprika, chile, and salt.</li>
+        <li>Grill flesh-side down over hot coals 3–4 minutes, then turn shell-side down, brush lavishly with the garlic butter, and grill 5–6 minutes more, basting, until just opaque.</li>
+        <li>Rest 2 minutes, scatter with parsley, and serve over xerém with the remaining butter spooned over everything.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r10">
+  <div class="kicker">No. 10 · From the Atlantic</div>
+  <h3>Búzio (Conch Stew)</h3>
+  <div class="local-name">Búzio — sea snail, simmered to silk</div>
+  <p class="headnote">Big sea snails pounded tender and stewed for hours with beans and refogado until they take on the texture of the best braised meat. It is patient cooking from a cuisine that trusts time; conch or even squid make honest stand-ins abroad.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 2 hr 30 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 lb conch or large whelks, cleaned and pounded</li>
+        <li>Juice of 2 limes</li>
+        <li>4 tbsp olive oil</li>
+        <li>2 onions, chopped</li>
+        <li>5 garlic cloves, minced</li>
+        <li>3 tomatoes, chopped</li>
+        <li>2 bay leaves · 1 tbsp paprika</li>
+        <li>1 malagueta chile, minced</li>
+        <li>1/2 cup white wine</li>
+        <li>2 cups cooked beans (borlotti or kidney)</li>
+        <li>Water to cover · salt and pepper</li>
+        <li>Chopped cilantro</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Rub the conch with lime juice and salt, rinse, and cut into bite-size pieces.</li>
+        <li>Build a deep refogado with the oil, onions, garlic, tomatoes, bay, paprika, and chile. Splash in the wine and let it boil off.</li>
+        <li>Add the conch and water to cover. Simmer, lidded, 1 1/2–2 hours, until the conch yields easily to a fork.</li>
+        <li>Add the beans and simmer 20 minutes more, until the sauce is rich and clinging. Season, finish with cilantro, and serve with rice or boiled cassava.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r11">
+  <div class="kicker">No. 11 · From the Atlantic</div>
+  <h3>Fried Moray Eel</h3>
+  <div class="local-name">Moreia frita — a Portuguese inheritance</div>
+  <p class="headnote">Crisp-fried moray is a taverna dish the islands share with the Portuguese Atlantic — the Azores and Madeira fry it too. Brined briefly, dusted in cornmeal, and fried hard, the rich flesh turns crackling outside and custardy within. Monkfish or eel make good substitutes.</p>
+  <div class="meta">Serves 4 as a petisco &nbsp;·&nbsp; 30 min + 1 hr brine</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 1/2 lb moray or monkfish, skin on, in 2-inch pieces</li>
+        <li>4 cups water + 1/4 cup salt (brine)</li>
+        <li>Juice of 1 lime</li>
+        <li>3 garlic cloves, crushed</li>
+        <li>1 cup fine cornmeal or flour</li>
+        <li>1 tsp paprika</li>
+        <li>Oil for shallow frying</li>
+        <li>Lime wedges and piri-piri, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Brine the fish 1 hour. Drain, pat very dry, and toss with the lime juice and garlic.</li>
+        <li>Mix the cornmeal with the paprika and dredge each piece thoroughly.</li>
+        <li>Shallow-fry in 1/2 inch of hot oil, turning, until deeply golden and crisp, 6–8 minutes.</li>
+        <li>Salt lightly and serve blazing hot with lime, piri-piri, and something cold to drink.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<div class="divider" id="ch3">
+  <div class="kicker">Chapter Three · Recipes 12–15</div>
+  <h2>Sunday Pots</h2>
+  <div class="proverb"><em>Divagar si ta ba lonji.</em>
+    <span class="translation">— Slowly is how you go far.</span></div>
+</div>
+
+<article class="recipe" id="r12">
+  <div class="kicker">No. 12 · Sunday Pots</div>
+  <h3>Canja de Galinha</h3>
+  <div class="local-name">Kanja di galinha — the soup of every occasion</div>
+  <p class="headnote">Chicken and rice simmered into a thick, restorative porridge-soup. Portuguese in origin, Cape Verdean in devotion: canja opens New Year's Eve, comforts the sick, and closes funerals. It is the pot that shows up when words fall short.</p>
+  <div class="meta">Serves 6–8 &nbsp;·&nbsp; 1 hr 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 whole chicken (3–4 lb), cut in pieces</li>
+        <li>3 tbsp olive oil</li>
+        <li>1 large onion, finely chopped</li>
+        <li>4 garlic cloves, minced</li>
+        <li>1 tomato, chopped</li>
+        <li>2 bay leaves · 1 tsp paprika</li>
+        <li>10 cups water</li>
+        <li>1 cup short or medium rice, rinsed</li>
+        <li>Salt and black pepper</li>
+        <li>Chopped mint or parsley</li>
+        <li>Lime, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Brown the chicken lightly in the oil in a soup pot; remove. Soften the onion, garlic, tomato, bay, and paprika in the same fat.</li>
+        <li>Return the chicken, add the water and a big pinch of salt, and simmer gently 40 minutes, skimming.</li>
+        <li>Lift out the chicken, pull the meat from the bones, and return it to the pot with the rice. Simmer 20 minutes, stirring now and then, until the rice is very soft and the soup has thickened.</li>
+        <li>Season, finish with herbs, and serve hot with a squeeze of lime. It should be thick enough to console.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Some families enrich it with a beaten egg stirred in off the heat; others add small pasta instead of rice. Both are correct in the house that makes them.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r13">
+  <div class="kicker">No. 13 · Sunday Pots</div>
+  <h3>Modje de São Nicolau</h3>
+  <div class="local-name">Modje — the stew an island is known by</div>
+  <p class="headnote">São Nicolau's signature: a rustic stew of beef (or goat, in older kitchens) with cassava, sweet potato, and greens, sharpened with lime. Islanders abroad speak of it the way Santiago people speak of cachupa — as home in a bowl.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 2 hr</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 lb beef chuck or goat shoulder, in chunks</li>
+        <li>Juice of 1 lime</li>
+        <li>4 tbsp olive oil</li>
+        <li>2 onions, chopped</li>
+        <li>5 garlic cloves, minced</li>
+        <li>2 tomatoes, chopped</li>
+        <li>2 bay leaves · 1 tbsp paprika</li>
+        <li>1/2 cup white wine</li>
+        <li>1 lb cassava, peeled, chunks</li>
+        <li>2 sweet potatoes, chunks</li>
+        <li>1/2 small cabbage, wedges</li>
+        <li>Water to cover · salt and pepper</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Toss the meat with lime juice, salt, and pepper. Brown it in the oil in a heavy pot.</li>
+        <li>Add the onions, garlic, tomatoes, bay, and paprika and cook into a refogado around the meat. Add the wine and let it bubble away.</li>
+        <li>Cover with water and simmer, lidded, 1–1 1/4 hours, until the meat begins to yield.</li>
+        <li>Add cassava and sweet potato; simmer 20 minutes. Add the cabbage and simmer 15 more, until everything is tender and the broth is savory and slightly thickened by the cassava.</li>
+        <li>Season and serve in deep bowls, with rice for those who want it and lime for everyone.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r14">
+  <div class="kicker">No. 14 · Sunday Pots</div>
+  <h3>Cape Verdean Feijoada</h3>
+  <div class="local-name">Feijoada kriola — cousin to Brazil's</div>
+  <p class="headnote">The bean-and-pork stew of the Portuguese Atlantic, in its island accent: multiple beans, linguiça, and whatever smoked pork the house has, simmered dark and served over rice. Brazil's version is more famous; Cape Verde's is older company on the same trade routes.</p>
+  <div class="meta">Serves 8 &nbsp;·&nbsp; 2 hr + overnight soak (or canned beans)</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups mixed dried beans (kidney, lima, pigeon peas), soaked overnight</li>
+        <li>3 tbsp olive oil</li>
+        <li>1/2 lb linguiça, thick slices</li>
+        <li>1/2 lb pork ribs or smoked pork, chunks</li>
+        <li>1/4 lb slab bacon, cubed</li>
+        <li>2 onions, chopped</li>
+        <li>5 garlic cloves, minced</li>
+        <li>2 tomatoes, chopped</li>
+        <li>2 bay leaves · 1 tbsp paprika</li>
+        <li>1 malagueta chile, whole</li>
+        <li>Water to cover · salt and pepper</li>
+        <li>White rice, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>In a heavy pot, render the bacon in the oil, then brown the ribs and linguiça.</li>
+        <li>Add the onions, garlic, tomatoes, bay, and paprika and cook into a refogado.</li>
+        <li>Add the drained beans, the whole chile, and water to cover by two fingers. Simmer, partly covered, 1 1/2 hours, topping up as needed, until the beans are creamy and the broth dark and thick.</li>
+        <li>Crush a ladleful of beans against the pot to thicken the sauce. Season boldly and rest 10 minutes.</li>
+        <li>Serve over white rice, with piri-piri and orange slices if you like the Brazilian habit.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r15">
+  <div class="kicker">No. 15 · Sunday Pots</div>
+  <h3>Carne Guisada</h3>
+  <div class="local-name">Karni gizado — everyday braised beef</div>
+  <p class="headnote">The weeknight workhorse: beef braised in wine and refogado until spoon-tender, its sauce destined for rice or boiled roots. It is the dish that proves the Portuguese base of the cuisine — and the Cape Verdean habit of making it stretch.</p>
+  <div class="meta">Serves 6 &nbsp;·&nbsp; 1 hr 45 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 lb beef chuck, in 1 1/2-inch pieces</li>
+        <li>3 tbsp olive oil</li>
+        <li>2 onions, sliced</li>
+        <li>4 garlic cloves, minced</li>
+        <li>2 tbsp tomato paste</li>
+        <li>2 bay leaves · 1 tbsp paprika</li>
+        <li>1 cup white or red wine</li>
+        <li>2 cups water or stock</li>
+        <li>3 carrots, thick rounds</li>
+        <li>1 lb potatoes, chunks</li>
+        <li>Salt, pepper, chopped parsley</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Season and brown the beef in the oil, in batches. Set aside.</li>
+        <li>Soften the onions and garlic in the same pot; stir in the tomato paste, bay, and paprika and cook 2 minutes. Add the wine, scraping up the browned bits.</li>
+        <li>Return the beef with the water and simmer, covered, 1 hour.</li>
+        <li>Add carrots and potatoes and simmer 25–30 minutes more, until the meat is falling apart and the sauce coats a spoon.</li>
+        <li>Season, scatter with parsley, and serve with rice or jag (No. 5).</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<div class="divider" id="ch4">
+  <div class="kicker">Chapter Four · Recipes 16–19</div>
+  <h2>Street Corner &amp; Festa</h2>
+  <div class="proverb"><em>Barriga xeiu, korason kontenti.</em>
+    <span class="translation">— A full belly, a happy heart.</span></div>
+</div>
+
+<article class="recipe" id="r16">
+  <div class="kicker">No. 16 · Street Corner &amp; Festa</div>
+  <h3>Corn Pastels</h3>
+  <div class="local-name">Pastel di midju — the corn-dough cousin</div>
+  <p class="headnote">The older, more African sibling of the flour pastel: a dough of cornmeal and sweet potato, wrapped around the same devilish tuna filling and fried. The corn shell fries up more rustic and more fragrant — many islanders' favorite.</p>
+  <div class="meta">Makes ~16 &nbsp;·&nbsp; 1 hr 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li class="subhead">Dough</li>
+        <li>1 lb sweet potatoes, boiled and mashed</li>
+        <li>1 1/2 cups fine cornmeal, plus more</li>
+        <li>1 tsp salt</li>
+        <li class="subhead">Filling &amp; frying</li>
+        <li>1 batch tuna filling (No. 6)</li>
+        <li>Neutral oil, 2 inches deep</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Knead the warm mashed sweet potato with the cornmeal and salt into a pliable dough, adding cornmeal until it no longer sticks to your hands.</li>
+        <li>Pinch off golf-ball pieces, flatten into 4-inch rounds between oiled palms or plastic, fill, fold, and press the edges to seal.</li>
+        <li>Fry at 350°F (175°C), turning once, until crusty and golden, 4–5 minutes.</li>
+        <li>Drain and serve hot — these do not wait well, which has never been a problem.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r17">
+  <div class="kicker">No. 17 · Street Corner &amp; Festa</div>
+  <h3>Gufong</h3>
+  <div class="local-name">Gufong — sweet cornmeal fritters</div>
+  <p class="headnote">Little cylinders of cornmeal-and-sweet-potato dough, spiced with cinnamon, fried until crunchy outside and doughy within. Sold in paper cones at festas and made at home by grandmothers who deny having a recipe.</p>
+  <div class="meta">Makes ~24 &nbsp;·&nbsp; 45 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup mashed boiled sweet potato</li>
+        <li>1 1/2 cups fine cornmeal</li>
+        <li>1/2 cup flour</li>
+        <li>1/3 cup sugar</li>
+        <li>1 tsp cinnamon · pinch of salt</li>
+        <li>1 tsp baking powder</li>
+        <li>Warm water, as needed</li>
+        <li>Oil for deep frying</li>
+        <li>Sugar-cinnamon, to dust</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Knead everything but the water into the sweet potato, then add warm water a spoonful at a time until you have a soft, rollable dough.</li>
+        <li>Roll into finger-thick logs and cut into 2-inch lengths.</li>
+        <li>Fry at 340°F (170°C) in batches, rolling them over, until deep brown and crisp, 4–5 minutes.</li>
+        <li>Drain and dust with cinnamon sugar. Eat warm, ideally outdoors, ideally with music.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r18">
+  <div class="kicker">No. 18 · Street Corner &amp; Festa</div>
+  <h3>Fried Bananas</h3>
+  <div class="local-name">Banana frita — the universal side</div>
+  <p class="headnote">Ripe bananas fried in butter until caramelized — served beside grilled fish, on top of cachupa refogada, or straight from the pan with cinnamon. The islands grow small, sweet bananas that turn to caramel almost on their own.</p>
+  <div class="meta">Serves 4 &nbsp;·&nbsp; 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 ripe (not mushy) bananas or 2 plantains</li>
+        <li>2 tbsp butter + 1 tbsp oil</li>
+        <li>1 tbsp sugar (optional)</li>
+        <li>Cinnamon · pinch of salt</li>
+        <li>Lime, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Peel and halve the bananas lengthwise.</li>
+        <li>Heat the butter and oil in a wide skillet over medium-high. Fry the bananas cut-side down until deeply golden, 2–3 minutes; turn and repeat, sprinkling with the sugar if using.</li>
+        <li>Finish with salt, cinnamon, and a small squeeze of lime. Serve immediately, sweet or savory as the plate demands.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r19">
+  <div class="kicker">No. 19 · Street Corner &amp; Festa</div>
+  <h3>Tuna Rissóis</h3>
+  <div class="local-name">Rissóis di atum — creamy, crumbed half-moons</div>
+  <p class="headnote">Portugal's beloved béchamel-filled party pastry, adopted island-wide with tuna standing in for shrimp. Breaded, fried, and inhaled at every birthday and baptism from Mindelo to Boston.</p>
+  <div class="meta">Makes ~20 &nbsp;·&nbsp; 1 hr 30 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li class="subhead">Dough</li>
+        <li>1 cup water · 1 cup milk</li>
+        <li>3 tbsp butter · 1 tsp salt</li>
+        <li>2 cups flour</li>
+        <li class="subhead">Filling</li>
+        <li>2 tbsp butter · 2 tbsp flour</li>
+        <li>1 cup milk, warm</li>
+        <li>1 can tuna, drained and flaked</li>
+        <li>1 small onion, minced, softened in butter</li>
+        <li>Squeeze of lime · parsley · pinch of nutmeg</li>
+        <li class="subhead">To finish</li>
+        <li>2 eggs, beaten · fine breadcrumbs · oil for frying</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Filling first: make a thick béchamel with the butter, flour, and milk; fold in the tuna, onion, lime, parsley, and nutmeg. Cool completely.</li>
+        <li>Dough: boil the water, milk, butter, and salt; dump in the flour all at once and stir hard over the heat until it forms a smooth ball. Cool until handleable, then knead briefly.</li>
+        <li>Roll thin, cut 3 1/2-inch rounds, fill, fold, and seal into half-moons.</li>
+        <li>Dip each in egg, then breadcrumbs. Fry at 350°F (175°C) until golden, 2–3 minutes, and drain.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>They freeze perfectly after breading — fry from frozen, one minute longer. Every Cape Verdean freezer holds a bag against surprise guests; morabeza demands it.</li>
+    </ul>
+  </div>
+</article>
+
+<div class="divider" id="ch5">
+  <div class="kicker">Chapter Five · Recipes 20–23</div>
+  <h2>Doces</h2>
+  <div class="proverb"><em>Ken ki ta spera, sempri ta alkansa.</em>
+    <span class="translation">— Who waits always gets there in the end.</span></div>
+</div>
+
+<article class="recipe" id="r20">
+  <div class="kicker">No. 20 · Doces</div>
+  <h3>Pudim de Leite</h3>
+  <div class="local-name">Pudim di leti — Cape Verdean flan</div>
+  <p class="headnote">The Portuguese convent sweet that conquered every lusophone table: a dense, caramel-capped custard of condensed milk and eggs. On the islands it anchors every holiday spread, and in diaspora kitchens the recipe is guarded like a passport.</p>
+  <div class="meta">Serves 8 &nbsp;·&nbsp; 20 min active + 1 hr bake + chilling</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li class="subhead">Caramel</li>
+        <li>1 cup sugar · 3 tbsp water</li>
+        <li class="subhead">Custard</li>
+        <li>1 can (14 oz) sweetened condensed milk</li>
+        <li>1 can (12 oz) evaporated milk</li>
+        <li>4 eggs + 2 yolks</li>
+        <li>1 tsp vanilla · pinch of salt</li>
+        <li>Zest of 1 lime (the island touch)</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Cook the sugar and water to a deep amber caramel and immediately swirl it around the base of a flan mold or 9-inch cake pan.</li>
+        <li>Blend the custard ingredients until smooth; pour over the set caramel.</li>
+        <li>Bake in a water bath at 325°F (160°C) about 1 hour, until set with a central tremble.</li>
+        <li>Cool, then chill at least 4 hours. Run a knife around the edge and invert onto a lipped plate so the caramel floods over.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r21">
+  <div class="kicker">No. 21 · Doces</div>
+  <h3>Papaya Jam with Goat Cheese</h3>
+  <div class="local-name">Dóci di papaia ku keju — the classic ending</div>
+  <p class="headnote">The islands' signature dessert is barely a recipe and entirely a ritual: papaya cooked slowly with sugar, lime, and cinnamon into an amber preserve, served in a thick slice against salty fresh goat cheese from Fogo. Sweet and salt, volcano and orchard.</p>
+  <div class="meta">Makes ~3 cups &nbsp;·&nbsp; 1 hr 15 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 lb firm-ripe papaya, peeled, seeded, chopped</li>
+        <li>2 cups sugar</li>
+        <li>Juice and zest of 1 lime</li>
+        <li>1 cinnamon stick · 3 cloves</li>
+        <li>Pinch of salt</li>
+        <li>Fresh goat cheese or queso fresco, to serve</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Toss the papaya with the sugar and let it sit 30 minutes to weep its juice.</li>
+        <li>Add the lime, cinnamon, cloves, and salt and cook at a lazy simmer, stirring more often as it thickens, 45–60 minutes, until deep amber and thick enough to mound.</li>
+        <li>Fish out the spices. Pot in clean jars; it keeps a month refrigerated.</li>
+        <li>Serve a generous spoonful beside a slab of goat cheese, with cuscuz (No. 4) or plain crackers.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="label">From the Kitchen</div>
+    <ul>
+      <li>Green (unripe) papaya makes a firmer, old-fashioned <i class="term">dóci</i> that cooks longer; ripe papaya makes this softer, quicker jam. Both are traditional.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="recipe" id="r22">
+  <div class="kicker">No. 22 · Doces</div>
+  <h3>Bolo de Mel</h3>
+  <div class="local-name">Bolu di mel — molasses Christmas cake</div>
+  <p class="headnote">"Honey cake" that contains no honey: <i class="term">mel</i> here is sugarcane molasses, the dark heart of the grogue trade. Dense, spiced with cinnamon and clove, it is the smell of a Cape Verdean December.</p>
+  <div class="meta">One 9-inch cake &nbsp;·&nbsp; 20 min active + 50 min bake</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups flour</li>
+        <li>1 tsp baking soda · pinch of salt</li>
+        <li>2 tsp cinnamon · 1/2 tsp ground cloves · 1/2 tsp nutmeg</li>
+        <li>3/4 cup unsulphured molasses</li>
+        <li>3/4 cup sugar</li>
+        <li>1/2 cup melted butter or oil</li>
+        <li>2 eggs</li>
+        <li>1/2 cup warm water or milk</li>
+        <li>Zest of 1 lime or orange</li>
+        <li>Optional: 1/2 cup raisins or chopped walnuts, 2 tbsp grogue</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Whisk the dry ingredients and spices in one bowl; whisk the molasses, sugar, butter, eggs, water, zest, and grogue in another.</li>
+        <li>Fold wet into dry just until smooth; add raisins or nuts if using.</li>
+        <li>Bake in a buttered, floured 9-inch pan at 350°F (175°C) for 45–50 minutes, until a skewer comes out clean.</li>
+        <li>Cool completely. Like all molasses cakes it improves overnight, wrapped, and keeps a week — which is why it survives until Christmas at all.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r23">
+  <div class="kicker">No. 23 · Doces</div>
+  <h3>Doce de Coco</h3>
+  <div class="local-name">Dóci di koku — chewy coconut sweet</div>
+  <p class="headnote">Grated coconut cooked with sugar and lime into a fudge-like sweet, cut in diamonds and stacked at every festa table. A cousin to Brazil's cocada — the same Atlantic recipe, a different shore.</p>
+  <div class="meta">Makes ~30 pieces &nbsp;·&nbsp; 40 min + setting</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>4 cups grated coconut (fresh or frozen, not desiccated)</li>
+        <li>2 cups sugar</li>
+        <li>1/2 cup water or coconut water</li>
+        <li>Zest of 1 lime</li>
+        <li>1 cinnamon stick · pinch of salt</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Dissolve the sugar in the water with the cinnamon and boil 5 minutes to a light syrup.</li>
+        <li>Add the coconut, zest, and salt and cook over medium, stirring constantly, 20–25 minutes, until the mass thickens, turns faintly golden, and pulls away from the pan.</li>
+        <li>Press into a buttered dish about 3/4 inch thick. Cool fully, then cut into diamonds.</li>
+        <li>Keeps two weeks in a tin — in theory.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<div class="divider" id="ch6">
+  <div class="kicker">Chapter Six · Recipes 24–26</div>
+  <h2>The Grogue Table</h2>
+  <div class="proverb"><em>Ka ten festa sen grogu.</em>
+    <span class="translation">— There is no festa without grogue.</span></div>
+</div>
+
+<section>
+  <div class="kicker">A Short Essay</div>
+  <h2 class="section" style="font-size:15pt;">Grogue, Morna &amp; the Long Goodbye</h2>
+  <p>In the green valleys of Santo Antão, sugarcane is still crushed in small mills called <i class="term">trapiches</i> and distilled into <i class="term">grogue</i> — a clear, grassy cane spirit, sibling to Brazilian cachaça and the rhum agricole of the French islands. It is drunk neat in thimble glasses, softened into <i class="term">ponche</i> with molasses and lime, and poured wherever <i class="term">morna</i> is played. Morna is the islands' great music — slow, minor-key songs of <i class="term">sodade</i>, the ache for people and places gone away, that Cesária Évora, the barefoot diva of Mindelo, carried to the world. A cuisine built by drought and departure needed a drink and a music for the goodbye; it made both, and made them beautiful. Cook from this chapter with a record on.</p>
+</section>
+
+<article class="recipe" id="r24">
+  <div class="kicker">No. 24 · The Grogue Table</div>
+  <h3>Ponche</h3>
+  <div class="local-name">Pontxe — grogue and molasses cordial</div>
+  <p class="headnote">Grogue's gentler public face: cane spirit rounded with molasses and lime into a sweet, sippable cordial. Every household bottles its own for holidays; coconut and tamarind versions abound.</p>
+  <div class="meta">Makes ~1 bottle &nbsp;·&nbsp; 10 min + resting</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 cups grogue, cachaça, or rhum agricole</li>
+        <li>3/4 cup unsulphured molasses (or 1/2 cup honey)</li>
+        <li>Juice and peeled zest of 2 limes</li>
+        <li>1 cinnamon stick</li>
+        <li>Optional: 1/2 cup coconut milk for <i class="term">pontxe di koku</i></li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Warm the molasses gently with the lime juice until pourable; cool.</li>
+        <li>Whisk in the spirit, then bottle with the lime zest and cinnamon stick (and coconut milk, if using — shake before serving and refrigerate).</li>
+        <li>Rest at least 3 days; a few weeks is better. Serve in small glasses, cool but not iced.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r25">
+  <div class="kicker">No. 25 · The Grogue Table</div>
+  <h3>Café com Grogue</h3>
+  <div class="local-name">Kafé ku grogu — volcano coffee, corrected</div>
+  <p class="headnote">Fogo grows arabica coffee inside its volcanic crater, and the classic way to end a long lunch is a small strong cup "corrected" with a pour of grogue — the Cape Verdean carajillo.</p>
+  <div class="meta">Serves 2 &nbsp;·&nbsp; 5 min</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>2 small cups strong, dark coffee (moka pot or espresso)</li>
+        <li>2 tbsp grogue or cachaça</li>
+        <li>Sugar or molasses, to taste</li>
+        <li>Strip of lime zest</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Sweeten the hot coffee to taste.</li>
+        <li>Add a tablespoon of grogue to each cup and a twist of lime zest over the top.</li>
+        <li>Drink while arguing gently about whose cachupa is best.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<article class="recipe" id="r26">
+  <div class="kicker">No. 26 · The Grogue Table</div>
+  <h3>Piri-Piri Table Sauce</h3>
+  <div class="local-name">Molhu di malageta — the fire on every table</div>
+  <p class="headnote">No Cape Verdean table is fully set without a jar of chiles steeped in oil, vinegar, and grogue. It ages and improves for months, and the jar is refilled, never emptied — some households claim theirs is decades old.</p>
+  <div class="meta">Makes 1 jar &nbsp;·&nbsp; 10 min + 1 week steeping</div>
+  <div class="cols">
+    <div class="col-ing">
+      <div class="col-label">Ingredients</div>
+      <ul>
+        <li>1 cup malagueta or bird chiles, stemmed</li>
+        <li>3 garlic cloves, sliced</li>
+        <li>1 bay leaf</li>
+        <li>1 tsp coarse salt</li>
+        <li>1/2 cup olive oil</li>
+        <li>1/4 cup white vinegar</li>
+        <li>2 tbsp grogue or cachaça</li>
+      </ul>
+    </div>
+    <div class="col-method">
+      <div class="col-label">Method</div>
+      <ol>
+        <li>Bruise the chiles lightly — halve the biggest — and pack into a clean jar with the garlic, bay, and salt.</li>
+        <li>Cover with the oil, vinegar, and grogue. Seal and shake.</li>
+        <li>Steep at least a week at room temperature, shaking daily. Spoon the liquid over everything in this booklet; top up the jar as it falls.</li>
+      </ol>
+    </div>
+  </div>
+</article>
+
+<section id="sources" style="page-break-before: always;">
+  <div class="kicker">Appendix</div>
+  <h2 class="section">Sources &amp; Further Reading</h2>
+  <p>This booklet is research-based: no single cook stands behind these recipes, so each was cross-checked across several Cape Verdean and Cape Verdean–American sources and adjusted for kitchens far from the islands. Notable debts:</p>
+  <p><strong>Crumb-Snatched</strong> (crumbsnatched.com) — a Cape Verdean–American recipe site that documents diaspora standards like jag, pastel, gufong, and pudim de leite with family authority; the most useful single source for home quantities.</p>
+  <p><strong>Wikipedia, "Cape Verdean cuisine"</strong> — the historical frame: Portuguese colonization from 1462, the West African foundations, and the islands' course structure.</p>
+  <p><strong>Paulina on the Road &amp; Chef's Pencil</strong> — broad surveys of island dishes (xerém, djagacida, canja, moreia frita, lagostada, percebes) with regional notes.</p>
+  <p><strong>cabo-verde.cv and the Portuguese Historical Museum</strong> — cultural background on cachupa's history, morabeza, and the creole identity of the islands.</p>
+  <p><strong>TasteAtlas &amp; Travel Food Atlas</strong> — cross-checks on dish names, local spellings, and what islanders actually rate.</p>
+  <p>For the table's soundtrack, start with 
