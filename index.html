@@ -1,223 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Campfire Ukraine Mission 2026 — Team Hub</title>
+<title>Harris Salat — Food Writer & Cookbook Author</title>
+<meta name="description" content="Harris Salat, James Beard Award–nominated food writer. New book: Japanese Comfort Cooking. Plus free cook booklets — Gujarati, Swahili Coastal, South Indian, and Cape Verdean home cooking.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
 <style>
-  :root {
-    --cream: #faf6f0;
-    --paper: #ffffff;
-    --charcoal: #2b2320;
-    --soft: #6b5d54;
-    --amber: #c96a2e;
-    --amber-light: #f4e3d3;
-    --ember: #7a3b1e;
-    --line: #e8ddd2;
-    --safe: #2e6e4e;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--cream); color: var(--charcoal); line-height: 1.55;
-  }
-  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
-  a { color: var(--amber); }
+:root {
+  --ink:    #26221e;
+  --primary:#3d2f24;   /* dark roast brown */
+  --accent: #c8860d;   /* turmeric gold */
+  --paper:  #fdfbf5;
+  --tint:   #f6f0e2;
+  /* booklet accents */
+  --guj:    #7B1E1E;   /* maroon */
+  --swa:    #0f3d52;   /* ocean blue */
+  --sin:    #1e4633;   /* curry-leaf green */
+  --cv:     #8a3a12;   /* volcanic rust */
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink);
+       font-family: "Lora", Georgia, "Times New Roman", serif; line-height: 1.6; font-size: 17px; }
+h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; }
+a { color: var(--guj); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.4rem; }
+.kicker { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: .25em;
+          text-transform: uppercase; color: var(--accent); font-weight: bold; }
 
-  header.hero {
-    background: var(--charcoal); color: var(--cream);
-    padding: 2.2rem 1.2rem 1.8rem; text-align: center;
-  }
-  header.hero .flame { font-size: 1.6rem; }
-  header.hero h1 { font-size: 1.7rem; letter-spacing: .5px; margin: .3rem 0 .2rem; }
-  header.hero p { color: #d8c9bc; font-size: .95rem; }
+/* ===== HERO ===== */
+.hero { background: var(--primary); color: #f4eee2; padding: 4.5rem 0 4rem; text-align: center; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: .6rem 0 .4rem; }
+.hero .tag { font-style: italic; font-size: 1.1rem; opacity: .85; max-width: 40rem; margin: 0 auto; }
+.hero img.portrait { width: 240px; height: 240px; object-fit: cover; object-position: 50% 12%; border-radius: 50%;
+                     border: 3px solid var(--accent); margin-bottom: 1.2rem; }
 
-  nav {
-    position: sticky; top: 0; z-index: 50; background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
-    padding: 0 .6rem; text-align: center;
-  }
-  nav a {
-    display: inline-block; padding: .7rem .65rem; font-size: .85rem;
-    color: var(--charcoal); text-decoration: none; font-weight: 500;
-  }
-  nav a:hover { color: var(--amber); }
+/* ===== ABOUT ===== */
+.about { padding: 3rem 0 1rem; max-width: 44rem; margin: 0 auto; }
 
-  main { max-width: 760px; margin: 0 auto; padding: 1rem 1.1rem 4rem; }
+/* ===== BOOK ===== */
+.book { background: var(--tint); border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent);
+        margin: 2.5rem 0; padding: 3rem 0; }
+.book .inner { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; justify-content: center; }
+.book img.cover { width: 240px; max-width: 70vw; box-shadow: 0 10px 28px rgba(0,0,0,.28); border-radius: 4px; }
+.book .txt { flex: 1 1 22rem; max-width: 34rem; }
+.book h2 { font-size: 1.9rem; margin: .3rem 0 .2rem; }
+.booklets h2 { font-size: 1.9rem; }
+.book .sub { font-style: italic; color: #6b5d4a; margin: 0 0 1rem; }
+.btn { display: inline-block; background: var(--guj); color: #fff !important; font-family: Arial, sans-serif;
+       font-size: 15px; font-weight: bold; padding: .8rem 1.6rem; border-radius: 6px; margin-top: 1rem; }
+.btn:hover { background: #9c2a2a; text-decoration: none; }
 
-  section { margin-top: 2.4rem; scroll-margin-top: 3.5rem; }
-  section > h2 {
-    font-size: 1.35rem; color: var(--ember);
-    border-bottom: 2px solid var(--amber); padding-bottom: .3rem; margin-bottom: .9rem;
-  }
-  h3 { font-size: 1.05rem; margin: 1.1rem 0 .4rem; }
-  p, li { font-size: .95rem; }
-  ul { padding-left: 1.2rem; margin: .4rem 0 .8rem; }
-  li { margin: .25rem 0; }
+/* ===== BOOKLETS ===== */
+.booklets { padding: 3rem 0 2rem; }
+.booklets > .wrap > p.lede { max-width: 44rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 2rem; }
+.card { display: flex; flex-direction: column; color: #f4eee2; border-radius: 10px; padding: 1.8rem 1.5rem;
+        min-height: 15rem; box-shadow: 0 6px 18px rgba(0,0,0,.15); transition: transform .15s ease; }
+.card:hover { transform: translateY(-4px); text-decoration: none; }
+.card .ck { font-family: Arial, sans-serif; font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+            opacity: .8; font-weight: bold; }
+.card h3 { font-size: 1.45rem; margin: .5rem 0 .4rem; color: #fff; }
+.card p { font-size: .93rem; opacity: .88; margin: 0; flex: 1; }
+.card .go { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; margin-top: 1.1rem; }
+.card.guj { background: var(--guj); }
+.card.swa { background: var(--swa); }
+.card.sin { background: var(--sin); }
+.card.cv  { background: var(--cv); }
 
-  .card {
-    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
-    padding: .9rem 1rem; margin: .7rem 0;
-  }
-  .day { display: flex; gap: .8rem; align-items: baseline; }
-  .day .date { flex: 0 0 4.6rem; font-weight: 700; font-size: .85rem; color: var(--ember); }
-  .day .what { font-size: .92rem; }
-
-  table { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: 8px; overflow: hidden; font-size: .88rem; margin: .6rem 0; }
-  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { background: var(--amber-light); color: var(--ember); font-size: .78rem; text-transform: uppercase; letter-spacing: .5px; }
-
-  .tbd {
-    display: inline-block; background: #fff3cd; color: #8a6d1a; border: 1px solid #e6cf7a;
-    border-radius: 4px; font-size: .68rem; font-weight: 700; letter-spacing: .5px;
-    padding: .05rem .35rem; vertical-align: middle;
-  }
-  .alert {
-    background: #fdeeee; border: 1px solid #d9534f; border-radius: 10px;
-    padding: .9rem 1rem; margin: .7rem 0;
-  }
-  .alert h3 { color: #a33; margin-top: 0; }
-  .quiet { color: var(--soft); font-size: .85rem; }
-  .linkrow a { display: block; padding: .55rem 0; border-bottom: 1px dashed var(--line); text-decoration: none; font-weight: 500; }
-  .linkrow a:last-child { border-bottom: none; }
-
-  /* Placeholder "links" — styled like links (amber, bold, underlined) but not yet clickable.
-     Real URLs to be dropped in once confirmed. */
-  .fakelink { color: var(--amber); font-weight: 700; text-decoration: underline; }
-  .linkrow .fakelink { display: block; padding: .55rem 0; border-bottom: 1px dashed var(--line); }
-  .linkrow .fakelink:last-child { border-bottom: none; }
-
-  .btn {
-    display: inline-block; background: var(--amber); color: #fff;
-    padding: .55rem 1rem; border-radius: 8px; text-decoration: none;
-    font-weight: 600; font-size: .92rem; margin: .3rem 0 .6rem;
-  }
-  .btn:hover { background: var(--ember); }
-
-  footer { text-align: center; padding: 2rem 1rem 3rem; color: var(--soft); font-size: .8rem; }
+/* ===== FOOTER ===== */
+footer { border-top: 1px solid #e5ddca; padding: 2rem 0 2.6rem; text-align: center;
+         font-size: .85rem; color: #82735c; }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <h1>Campfire Ukraine Mission 2026</h1>
+  <div class="wrap">
+    <img class="portrait" src="/assets/harris.jpg" alt="Harris Salat" onerror="this.style.display='none'">
+    <div class="kicker">Food Writer · Cookbook Author</div>
+    <h1>Harris Salat</h1>
+    <p class="tag">Cooking with people, writing down what they know, and&nbsp;passing&nbsp;it&nbsp;on.</p>
+  </div>
 </header>
 
-<nav>
-  <a href="#itinerary">Itinerary</a>
-  <a href="#rundown">Daily Rundown</a>
-  <a href="#registrants">Registrants</a>
-  <a href="#safety">Safety</a>
-  <a href="#lunch">Lunch</a>
-  <a href="#links">Team Links</a>
-  <a href="#practical">Practical</a>
-</nav>
 
-<main>
-
-  <section id="itinerary">
-    <h2>Itinerary</h2>
-    <p><span class="btn">Live Itinerary →</span></p>
-  </section>
-
-  <section id="rundown">
-    <h2>Daily Rundown</h2>
-    <p><span class="btn">Live Daily Rundown →</span></p>
-    <h3>Camp days · 10:00–16:00</h3>
-    <p>Full run-of-day (opening circle, rotations, lunch stagger, closing circle) lives in the Live Daily Rundown above.</p>
-    <h3>Training Workshop · 10:00–16:00</h3>
-    <p>Detailed agenda: <span class="fakelink">Training Workshop agenda</span></p>
-  </section>
-
-  <section id="registrants">
-    <h2>Registrants</h2>
-    <p><span class="btn">Camp Participants →</span></p>
-    <p><span class="btn">Workshop Participants →</span></p>
-  </section>
-
-  <section id="safety">
-    <h2>Safety</h2>
-    <div class="alert">
-      <h3>Siren protocol</h3>
-      <ul>
-        <li>You typically have <strong>~15 minutes</strong> to reach shelter. The area is usually quiet, but sirens can occur.</li>
-        <li><strong>During camp:</strong> everyone moves to the school shelter. All children are accompanied — <strong>no one goes home alone.</strong> If a parent prefers home sheltering, they must come pick their child up at the school.</li>
-        <li>Count every child against the day's attendance list, going in and coming out.</li>
-        <li>Typical stay is 15–20 min, occasionally up to 1 hr. Distraction kit (toys, face paint) lives in the shelter.</li>
-        <li><strong>At the hotel (night alarms):</strong> go to the lobby. Alternative: underground parking shelter at nearby shopping center, 10-min walk.</li>
-      </ul>
+<section class="booklets" id="booklets">
+  <div class="wrap">
+    <div class="kicker">Free Cook Booklets</div>
+    <h2>From Their Kitchens to Yours</h2>
+    <p class="lede">Recipe collections built from cooking sessions and interviews with home cooks, backed by research into each cuisine's traditions and sources. Free to read, print, and cook from.</p>
+    <div class="grid">
+      <a class="card guj" href="/gujarati/">
+        <span class="ck">Booklet No. 1 · Gujarat, India</span>
+        <h3>Manoj's Gujarati Kitchen</h3>
+        <p>Everyday recipes transcribed from cooking sessions with Manoj — rotli and thepla, shaak and dal, dhokla and khandvi, a dozen chutneys, and the balanced thali that holds it all together.</p>
+        <span class="go">Open the booklet →</span>
+      </a>
+      <a class="card swa" href="/coastal-swahili/">
+        <span class="ck">Booklet No. 2 · Kenyan Coast</span>
+        <h3>The Swahili Coastal Kitchen</h3>
+        <p>Twenty-eight recipes and stories from Mombasa, Lamu, Malindi &amp; Kilifi — a cuisine born of monsoon winds: mbaazi and mahamri, pilau and biryani, samaki wa kupaka, and Old Town street food.</p>
+        <span class="go">Open the booklet →</span>
+      </a>
+      <a class="card sin" href="/south-indian/">
+        <span class="ck">Booklet No. 3 · South India</span>
+        <h3>The South Indian Kitchen</h3>
+        <p>Dosas, idlis &amp; the rhythm of the tiffin table — twenty-five recipes from Tamil Nadu, Karnataka, Andhra &amp; Kerala, from the mother batter to the last tumbler of filter coffee.</p>
+        <span class="go">Open the booklet →</span>
+      </a>
+      <a class="card cv" href="/cabo-verde/">
+        <span class="ck">Booklet No. 4 · Cabo Verde</span>
+        <h3>Morabeza — The Cape Verdean Kitchen</h3>
+        <p>Twenty-six recipes from ten islands where Africa met Portugal mid-Atlantic — cachupa and jag, tuna pastels "with the devil inside," Sunday pots, doces, and the grogue table.</p>
+        <span class="go">Open the booklet →</span>
+      </a>
     </div>
-    <h3>Child pickup</h3>
-    <ul>
-      <li>Most kids arrive and leave on their own; parents bring the youngest.</li>
-      <li>Children aged 5–6: confirm they leave with a relative. When in doubt, ask our local partners — they know the families.</li>
-    </ul>
-    <h3>Border crossings</h3>
-    <ul>
-      <li>State clearly that we are doing humanitarian work; carry organization documentation.</li>
-      <li>Expect luggage checks — pack in an organized way; supplies are divided across bags (see the <a href="https://docs.google.com/spreadsheets/d/1vQFFmEml_1wioCgKT_zLMctrJP5TTTFhlpvntaF4kr4/edit?gid=0#gid=0" target="_blank" rel="noopener">Supplies Checklist</a>).</li>
-      <li>Let the Ukrainian citizens in the group speak for us where possible. Cross together.</li>
-      <li>All US team members register with the State Department (STEP) before departure.</li>
-    </ul>
-    <p><strong>Emergencies:</strong> alert the leads.</p>
-  </section>
+  </div>
+</section>
 
-  <section id="lunch">
-    <h2>Lunch</h2>
-    <ul>
-      <li>Served in the <strong>school canteen</strong>, staggered by group across the lunch hour to avoid crowding.</li>
-      <li>Prepared by a local cook — hot, home-style Ukrainian cooking.</li>
-      <li>Staff eat the same catering, except those with food restrictions (3–4 people) who bring packed lunches from the hotel.</li>
-      <li>Water available at the school and at the Folkowisko center.</li>
-      <li>Training days: lunches at the hotel restaurant for staff and participants.</li>
-    </ul>
-    <p><strong>Menu:</strong> the final menu will be shared on WhatsApp.</p>
-  </section>
-
-  <section id="links">
-    <h2>Team Links</h2>
-    <div class="card linkrow">
-      <span class="fakelink">🗓 Live Itinerary</span>
-      <span class="fakelink">📋 Live Daily Rundown</span>
-      <span class="fakelink">🧒 Camp Participants</span>
-      <span class="fakelink">🎓 Workshop Participants</span>
-      <span class="fakelink">📚 Training Workshop agenda</span>
-      <a href="https://docs.google.com/spreadsheets/d/1vQFFmEml_1wioCgKT_zLMctrJP5TTTFhlpvntaF4kr4/edit?gid=0#gid=0" target="_blank" rel="noopener">🎨 Supplies Checklist</a>
-      <a href="https://drive.google.com/drive/u/0/folders/128YrayA18shzoVjg_uwWOk786S5vFsfc" target="_blank" rel="noopener">📸 Media Drop folder — photos/clips for donor comms</a>
-      <a href="https://drive.google.com/drive/u/0/folders/1WSCohR-oycYnDyw73CKET9fAufhSbEqe" target="_blank" rel="noopener">🧾 Staff Receipts folder — photograph every mission expense receipt and drop it here</a>
+<section class="book">
+  <div class="wrap" style="text-align:center; margin-bottom:2.2rem">
+    <div class="kicker">★ Out Now ★</div>
+    <h2 style="margin:.4rem 0 0">4th Cookbook by the Authors of the Bestselling<br><a href="https://a.co/d/0gNz1rOP" target="_blank" rel="noopener" style="white-space:nowrap"><i>Japanese Soul Cooking</i></a></h2>
+  </div>
+  <div class="wrap inner">
+    <a href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener"><img class="cover" src="https://images4.penguinrandomhouse.com/cover/9780593837016" alt="Japanese Comfort Cooking book cover"></a>
+    <div class="txt">
+      <div class="kicker">New · Ten Speed Press · 2026</div>
+      <h2>Japanese Comfort Cooking</h2>
+      <p class="sub">An Opinionated Guide to Modern, Homey, Classic Japanese Recipes — with Tadashi Ono</p>
+      <p>Over 100 achievable recipes — fast enough for weeknights, elegant enough for the weekend: soul-satisfying miso soups, toothsome soba, broiled fish three ways, Japanese-style sandwiches, wagyu burgers, and the best fried chicken on planet Earth (promise).</p>
+      <a class="btn" href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener">Get it on Amazon →</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="practical">
-    <h2>Practical</h2>
-    <h3>Packing</h3>
-    <ul>
-      <li>Snacks — bars, easy things to carry</li>
-      <li>Raincoat</li>
-      <li>Coffee/energy items if you're particular</li>
-      <li>Power bank</li>
-      <li>Plug converter/adapter (Ukraine/Poland: type C/E, 230V)</li>
-      <li>Basic first aid</li>
-    </ul>
-    <h3>Phones &amp; connectivity</h3>
-    <p>We use <a href="https://www.airalo.com/" target="_blank" rel="noopener">Airalo</a> eSIMs — they connect to a local network for data, calls, and texts. <strong>Buy and install before you leave the US</strong>; you <strong>can't test an eSIM until you land in the country it's for.</strong> They don't come with a local phone number, so make calls and texts over WhatsApp (or similar).</p>
-    <ul>
-      <li><strong>Poland:</strong> the shortest plan — 1&nbsp;GB / 3 days (~$4).</li>
-      <li><strong>Ukraine:</strong> the <strong>Unlimited</strong> plan matching your days in country (3, 5, 7, 10, 15 or 30 days).</li>
-    </ul>
-    <p><strong>Campfire reimburses every eSIM</strong> — Polish and Ukrainian. Save your receipts.</p>
-
-    <h3>Receipts &amp; expenses</h3>
-    <p>Save <strong>every receipt</strong> for costs tied to the project days — travel or general (transport, cash payments, supplies, meals, eSIMs). Photograph each one and upload it to the <a href="https://drive.google.com/drive/u/0/folders/1WSCohR-oycYnDyw73CKET9fAufhSbEqe" target="_blank" rel="noopener">Staff Receipts folder</a> <strong>in real time</strong> — don't wait until you're home. This keeps the accountant's records clean and gets you reimbursed faster.</p>
-  </section>
-
-  <footer>
-    Campfire Project × Folkowisko · Ukraine Mission 2026
-  </footer>
-
-</main>
+<footer>
+  <div class="wrap">
+    © 2026 Harris Salat · <b style="font-size:1.02rem">Contact me: <a href="mailto:hello@harrissalat.com">hello@harrissalat.com</a></b> · <a href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener">Japanese Comfort Cooking on Amazon</a><br>
+    Booklet recipes are researched, adapted, and synthesized from the home cooks and sources credited inside each booklet.
+  </div>
+</footer>
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
