@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harris Salat — Food Writer & Cookbook Author</title>
-<meta name="description" content="Harris Salat, James Beard Award–nominated food writer. New book: Japanese Comfort Cooking. Plus free cook booklets — Gujarati, Swahili Coastal, South Indian, and Cape Verdean home cooking.">
+<meta name="description" content="Harris Salat, James Beard Award–nominated food writer. New book: Japanese Comfort Cooking. Plus free cook booklets — one built from cooking sessions with a home cook, three compiled from published sources: Gujarati, Swahili Coastal, South Indian, and Cape Verdean cooking.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
 <style>
 :root {
@@ -31,8 +31,7 @@ a:hover { text-decoration: underline; }
 
 /* ===== HERO ===== */
 .hero { background: var(--primary); color: #f4eee2; padding: 4.5rem 0 4rem; text-align: center; }
-.hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: .6rem 0 .4rem; }
-.hero .tag { font-style: italic; font-size: 1.1rem; opacity: .85; max-width: 40rem; margin: 0 auto; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: .6rem 0 0; }
 .hero img.portrait { width: 240px; height: 240px; object-fit: cover; object-position: 50% 12%; border-radius: 50%;
                      border: 3px solid var(--accent); margin-bottom: 1.2rem; }
 
@@ -55,7 +54,7 @@ a:hover { text-decoration: underline; }
 /* ===== BOOKLETS ===== */
 .booklets { padding: 3rem 0 2rem; }
 .booklets > .wrap > p.lede { max-width: 44rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 1.4rem; }
 .card { display: flex; flex-direction: column; color: #f4eee2; border-radius: 10px; padding: 1.8rem 1.5rem;
         min-height: 15rem; box-shadow: 0 6px 18px rgba(0,0,0,.15); transition: transform .15s ease; }
 .card:hover { transform: translateY(-4px); text-decoration: none; }
@@ -69,9 +68,27 @@ a:hover { text-decoration: underline; }
 .card.sin { background: var(--sin); }
 .card.cv  { background: var(--cv); }
 
+/* ===== TRACKS ===== */
+.track { margin-top: 3rem; }
+.track:first-of-type { margin-top: 2.4rem; }
+.track-head { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap;
+              border-top: 2px solid #e5ddca; padding-top: 1rem; }
+.track-head h3 { font-size: 1.35rem; margin: 0; }
+.track-head .note { font-family: Arial, sans-serif; font-size: .8rem; color: #82735c; }
+
+/* featured card — the one with firsthand provenance */
+.card.feature { min-height: 0; padding: 2.2rem 2rem; }
+.card.feature h3 { font-size: 1.9rem; }
+.card.feature p { font-size: 1rem; max-width: 46rem; }
+@media (min-width: 46rem) {
+  .card.feature .go { margin-top: 1.3rem; }
+}
+
 /* ===== FOOTER ===== */
 footer { border-top: 1px solid #e5ddca; padding: 2rem 0 2.6rem; text-align: center;
-         font-size: .85rem; color: #82735c; }
+         font-size: .95rem; color: #82735c; }
+footer a { font-size: inherit; }
+footer .sep { font-size: 1.5em; line-height: 0; vertical-align: -.06em; margin: 0 .35em; color: #b9ab90; }
 </style>
 </head>
 <body>
@@ -81,41 +98,53 @@ footer { border-top: 1px solid #e5ddca; padding: 2rem 0 2.6rem; text-align: cent
     <img class="portrait" src="/assets/harris.jpg" alt="Harris Salat" onerror="this.style.display='none'">
     <div class="kicker">Food Writer · Cookbook Author</div>
     <h1>Harris Salat</h1>
-    <p class="tag">Cooking with people, writing down what they know, and&nbsp;passing&nbsp;it&nbsp;on.</p>
   </div>
 </header>
 
 
 <section class="booklets" id="booklets">
   <div class="wrap">
-    <div class="kicker">Free Cook Booklets</div>
-    <h2>From Their Kitchens to Yours</h2>
-    <p class="lede">Recipe collections built from cooking sessions and interviews with home cooks, backed by research into each cuisine's traditions and sources. Free to read, print, and cook from.</p>
-    <div class="grid">
-      <a class="card guj" href="/gujarati/">
-        <span class="ck">Booklet No. 1 · Gujarat, India</span>
-        <h3>Manoj's Gujarati Kitchen</h3>
-        <p>Everyday recipes transcribed from cooking sessions with Manoj — rotli and thepla, shaak and dal, dhokla and khandvi, a dozen chutneys, and the balanced thali that holds it all together.</p>
-        <span class="go">Open the booklet →</span>
-      </a>
-      <a class="card swa" href="/coastal-swahili/">
-        <span class="ck">Booklet No. 2 · Kenyan Coast</span>
-        <h3>The Swahili Coastal Kitchen</h3>
-        <p>Twenty-eight recipes and stories from Mombasa, Lamu, Malindi &amp; Kilifi — a cuisine born of monsoon winds: mbaazi and mahamri, pilau and biryani, samaki wa kupaka, and Old Town street food.</p>
-        <span class="go">Open the booklet →</span>
-      </a>
-      <a class="card sin" href="/south-indian/">
-        <span class="ck">Booklet No. 3 · South India</span>
-        <h3>The South Indian Kitchen</h3>
-        <p>Dosas, idlis &amp; the rhythm of the tiffin table — twenty-five recipes from Tamil Nadu, Karnataka, Andhra &amp; Kerala, from the mother batter to the last tumbler of filter coffee.</p>
-        <span class="go">Open the booklet →</span>
-      </a>
-      <a class="card cv" href="/cabo-verde/">
-        <span class="ck">Booklet No. 4 · Cabo Verde</span>
-        <h3>Morabeza — The Cape Verdean Kitchen</h3>
-        <p>Twenty-six recipes from ten islands where Africa met Portugal mid-Atlantic — cachupa and jag, tuna pastels "with the devil inside," Sunday pots, doces, and the grogue table.</p>
-        <span class="go">Open the booklet →</span>
-      </a>
+    <h2>Free Cook Booklets</h2>
+
+    <div class="track">
+      <div class="track-head">
+        <h3>Cooked Together</h3>
+      </div>
+      <div class="grid">
+        <a class="card guj feature" href="/gujarati/">
+          <span class="ck">Gujarat, India</span>
+          <h3>Manoj's Gujarati Kitchen</h3>
+          <p>Everyday recipes transcribed from cooking sessions with Manoj — rotli and thepla, shaak and dal, dhokla and khandvi, a dozen chutneys, and the balanced thali that holds it all together. Every recipe began as a transcript of Manoj cooking at home; quantities and techniques were then checked against traditional Gujarati practice.</p>
+          <span class="go">Open the booklet →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="track-head">
+        <h3>Researched &amp; Compiled</h3>
+        <span class="note">Built from published sources</span>
+      </div>
+      <div class="grid">
+        <a class="card swa" href="/coastal-swahili/">
+          <span class="ck">Kenyan Coast</span>
+          <h3>The Swahili Coastal Kitchen</h3>
+          <p>Twenty-eight recipes from Mombasa, Lamu, Malindi &amp; Kilifi — a cuisine born of monsoon winds: mbaazi and mahamri, pilau and biryani, samaki wa kupaka, and Old Town street food.</p>
+          <span class="go">Open the booklet →</span>
+        </a>
+        <a class="card sin" href="/south-indian/">
+          <span class="ck">South India</span>
+          <h3>The South Indian Kitchen</h3>
+          <p>Dosas, idlis &amp; the rhythm of the tiffin table — twenty-five recipes from Tamil Nadu, Karnataka, Andhra &amp; Kerala, from the mother batter to the last tumbler of filter coffee.</p>
+          <span class="go">Open the booklet →</span>
+        </a>
+        <a class="card cv" href="/cabo-verde/">
+          <span class="ck">Cabo Verde</span>
+          <h3>Morabeza — The Cape Verdean Kitchen</h3>
+          <p>Twenty-six recipes from ten islands where Africa met Portugal mid-Atlantic — cachupa and jag, tuna pastels "with the devil inside," Sunday pots, doces, and the grogue table.</p>
+          <span class="go">Open the booklet →</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -123,10 +152,10 @@ footer { border-top: 1px solid #e5ddca; padding: 2rem 0 2.6rem; text-align: cent
 <section class="book">
   <div class="wrap" style="text-align:center; margin-bottom:2.2rem">
     <div class="kicker">★ Out Now ★</div>
-    <h2 style="margin:.4rem 0 0">4th Cookbook by the Authors of the Bestselling<br><a href="https://a.co/d/0gNz1rOP" target="_blank" rel="noopener" style="white-space:nowrap"><i>Japanese Soul Cooking</i></a></h2>
+    <h2 style="margin:.4rem 0 0">Fourth Cookbook by the Authors of the Bestselling<br><a href="https://a.co/d/0gNz1rOP" target="_blank" rel="noopener" style="white-space:nowrap"><i>Japanese Soul Cooking</i></a></h2>
   </div>
   <div class="wrap inner">
-    <a href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener"><img class="cover" src="https://images4.penguinrandomhouse.com/cover/9780593837016" alt="Japanese Comfort Cooking book cover"></a>
+    <a href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener"><img class="cover" src="/assets/japanese-comfort-cooking.jpg" alt="Japanese Comfort Cooking book cover" onerror="this.onerror=null;this.src='https://images4.penguinrandomhouse.com/cover/9780593837016'"></a>
     <div class="txt">
       <div class="kicker">New · Ten Speed Press · 2026</div>
       <h2>Japanese Comfort Cooking</h2>
@@ -139,8 +168,7 @@ footer { border-top: 1px solid #e5ddca; padding: 2rem 0 2.6rem; text-align: cent
 
 <footer>
   <div class="wrap">
-    © 2026 Harris Salat · <b style="font-size:1.02rem">Contact me: <a href="mailto:hello@harrissalat.com">hello@harrissalat.com</a></b> · <a href="https://a.co/d/0iiXrwBN" target="_blank" rel="noopener">Japanese Comfort Cooking on Amazon</a><br>
-    Booklet recipes are researched, adapted, and synthesized from the home cooks and sources credited inside each booklet.
+    © 2026 Harris Salat <span class="sep">·</span> Contact me: <a href="mailto:hello@harrissalat.com">hello@harrissalat.com</a>
   </div>
 </footer>
 
