@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harris Salat — Food Writer & Cookbook Author</title>
-<meta name="description" content="Harris Salat, James Beard Award–nominated food writer. New book: Japanese Comfort Cooking. Plus free cook booklets — one built from cooking sessions with a home cook, three compiled from published sources: Gujarati, Swahili Coastal, South Indian, and Cape Verdean cooking.">
+<meta name="description" content="Harris Salat, James Beard Award–nominated food writer. New book: Japanese Comfort Cooking. Plus free cook booklets — two built from cooking sessions with home cooks, three compiled from published sources: Tamil, Gujarati, Swahili Coastal, South Indian, and Cape Verdean cooking.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
 <style>
 :root {
@@ -14,6 +14,7 @@
   --paper:  #fdfbf5;
   --tint:   #f6f0e2;
   /* booklet accents */
+  --tam:    #5A2D0C;   /* tamarind brown */
   --guj:    #7B1E1E;   /* maroon */
   --swa:    #0f3d52;   /* ocean blue */
   --sin:    #1e4633;   /* curry-leaf green */
@@ -63,6 +64,7 @@ a:hover { text-decoration: underline; }
 .card h3 { font-size: 1.45rem; margin: .5rem 0 .4rem; color: #fff; }
 .card p { font-size: .93rem; opacity: .88; margin: 0; flex: 1; }
 .card .go { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; margin-top: 1.1rem; }
+.card.tam { background: var(--tam); }
 .card.guj { background: var(--guj); }
 .card.swa { background: var(--swa); }
 .card.sin { background: var(--sin); }
@@ -76,9 +78,10 @@ a:hover { text-decoration: underline; }
 .track-head h3 { font-size: 1.35rem; margin: 0; }
 .track-head .note { font-family: Arial, sans-serif; font-size: .8rem; color: #82735c; }
 
-/* featured card — the one with firsthand provenance */
+/* featured cards — the ones with firsthand provenance */
+.grid.cooked { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .card.feature { min-height: 0; padding: 2.2rem 2rem; }
-.card.feature h3 { font-size: 1.9rem; }
+.card.feature h3 { font-size: 1.7rem; }
 .card.feature p { font-size: 1rem; max-width: 46rem; }
 @media (min-width: 46rem) {
   .card.feature .go { margin-top: 1.3rem; }
@@ -110,7 +113,13 @@ footer .sep { font-size: 1.5em; line-height: 0; vertical-align: -.06em; margin: 
       <div class="track-head">
         <h3>Cooked Together</h3>
       </div>
-      <div class="grid">
+      <div class="grid cooked">
+        <a class="card tam feature" href="/tamil/">
+          <span class="ck">Tamil Nadu, India</span>
+          <h3>Bharathi's Tamil Kitchen</h3>
+          <p>Everyday recipes transcribed from cooking sessions with Bharathi in Tiruvannamalai. Chapati and chutneys, her village fish curry, shrimp thokku and fried anchovies, the family rasam, and the kurmas and gravies of the Tamil chapati table.</p>
+          <span class="go">Open the booklet →</span>
+        </a>
         <a class="card guj feature" href="/gujarati/">
           <span class="ck">Gujarat, India</span>
           <h3>Manoj's Gujarati Kitchen</h3>

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharathi's Tamil Kitchen — Recipe Booklet</title>
+<meta name="description" content="Bharathi's Tamil Kitchen: a free home-cooking booklet of Tamil Nadu recipes transcribed from cooking sessions with Bharathi in Tiruvannamalai, plus the kurmas, dal and gravies of the Tamil home table.">
+<style>
+:root{
+  --tam:#5A2D0C; --terra:#A8461A; --saffron:#C8860D;
+  --cream:#FBF3E4; --creambd:#E8C98A; --ink:#2B2B2B; --paper:#fffdf9; --leaf:#3F6B3A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f3ece0;color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;line-height:1.6;font-size:17px}
+.page{max-width:820px;margin:0 auto;background:var(--paper);
+  box-shadow:0 0 30px rgba(0,0,0,.08);padding:0 0 60px}
+a{color:var(--tam);text-decoration:none}
+a:hover{color:var(--terra);text-decoration:underline}
+nav.site{background:var(--tam);font-family:Arial,sans-serif;font-size:9pt;letter-spacing:.12em;
+  text-transform:uppercase;padding:.55rem 1.2rem;display:flex;justify-content:space-between;gap:1rem}
+nav.site a{color:#f0e9d8;text-decoration:none}
+nav.site a:hover{color:#fff;text-decoration:underline}
+
+/* cover */
+.cover{text-align:center;padding:90px 30px 50px;border-bottom:3px solid var(--saffron)}
+.cover .kicker{color:var(--terra);font-weight:bold;letter-spacing:2px;font-size:22px}
+.cover h1{color:var(--tam);font-size:54px;line-height:1.05;margin:6px 0 18px}
+.cover .sub{color:var(--terra);font-style:italic;font-size:23px;margin:14px 0 6px}
+.cover .tag{color:var(--ink);font-size:15px;max-width:460px;margin:0 auto}
+.cover .rev{color:var(--saffron);font-weight:bold;font-size:14px;margin-top:26px;letter-spacing:.5px}
+.cover .dl{display:inline-block;margin-top:22px;background:var(--tam);color:#fff;font-family:Arial,sans-serif;
+  font-size:13px;font-weight:bold;letter-spacing:.06em;padding:10px 18px;border-radius:24px}
+.cover .dl:hover{background:var(--terra);color:#fff;text-decoration:none}
+
+section{padding:34px 48px}
+h2{color:var(--tam);font-size:30px;margin:0 0 14px;border-bottom:2px solid var(--saffron);padding-bottom:8px}
+.block .kicker,.recipe .kicker{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--saffron);font-weight:bold;margin-bottom:4px}
+.sec-intro{font-style:italic;color:#4a4a4a;margin:0 0 18px}
+.sec > .sec-intro:first-child{margin-top:0}
+
+/* contents */
+.toc{padding:34px 48px 10px}
+.toc-list{list-style:none;margin:0;padding:0;columns:2;column-gap:36px}
+.toc-list > li{break-inside:avoid;margin-bottom:8px}
+.toc-sec > a, .toc-front > a{color:var(--terra);font-weight:bold;font-size:17px}
+.toc-sec ul{list-style:none;margin:3px 0 0;padding:0 0 0 14px}
+.toc-sec ul a{color:var(--ink);font-size:15px}
+.toc .num{color:var(--saffron);font-size:12px;font-family:Arial,sans-serif;font-weight:bold;margin-right:6px}
+
+/* chapter divider */
+.divider{background:var(--tam);color:#f7f0e4;padding:38px 48px;margin:0}
+.divider .kicker{font-family:Arial,sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);font-weight:bold}
+.divider h2{color:#fff;border:0;padding:0;margin:6px 0 10px;font-size:34px}
+.divider .proverb{font-size:16px}
+.divider .proverb em{color:#f7f0e4}
+.divider .gloss{font-style:italic;opacity:.8;font-size:14.5px}
+
+/* recipe */
+.recipe{padding:14px 0 8px;border-top:1px solid #eadfca}
+.recipe:first-of-type{border-top:none}
+.recipe h3{color:var(--terra);font-size:23px;margin:2px 0 0}
+.recipe .local{font-style:italic;color:var(--leaf);margin:0 0 8px;font-size:16px}
+.recipe .sec-intro{margin:4px 0 8px}
+.meta{margin:0 0 10px;font-variant:small-caps;letter-spacing:1px;color:var(--terra);font-weight:bold;font-size:14px}
+.meta .dot{color:var(--saffron);margin:0 12px}
+.label{text-transform:uppercase;letter-spacing:1px;color:var(--tam);font-weight:bold;font-size:14px;margin:14px 0 4px}
+.sub{font-style:italic;font-weight:bold;color:#3a3a3a;margin:8px 0 2px;list-style:none;margin-left:-18px}
+ul,ol{margin:4px 0 4px;padding-left:24px}
+li{margin:3px 0}
+.masala-h{color:var(--terra);font-size:21px;margin-top:26px}
+
+/* notes callout */
+.notes{background:var(--cream);border:1px solid var(--creambd);border-left:5px solid var(--saffron);
+  border-radius:6px;padding:12px 16px;margin:14px 0 6px}
+.notes-h{color:var(--tam);font-weight:bold;font-size:13px;letter-spacing:1px;margin:0 0 6px}
+.notes ul{margin:0;padding-left:20px}
+.notes li{font-size:15.5px}
+
+/* pantry table */
+table.pantry{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px}
+table.pantry thead th{background:var(--tam);color:#fff;text-align:left;padding:8px 12px;font-size:14px;letter-spacing:.5px}
+table.pantry th{width:31%;color:var(--tam);text-align:left;vertical-align:top;padding:8px 12px;font-weight:bold}
+table.pantry td{padding:8px 12px;vertical-align:top}
+table.pantry tbody tr:nth-child(odd){background:var(--cream)}
+table.pantry tbody tr{border:1px solid var(--creambd)}
+
+/* floating back-to-contents */
+.fab{position:fixed;right:20px;bottom:20px;background:var(--tam);color:#fff;padding:10px 16px;border-radius:24px;
+  font-size:14px;font-weight:bold;box-shadow:0 3px 10px rgba(0,0,0,.25);z-index:50}
+.fab:hover{background:var(--terra);color:#fff;text-decoration:none}
+
+@media (max-width:680px){
+  section,.toc,.cover,.divider{padding-left:22px;padding-right:22px}
+  .toc-list{columns:1}
+  .cover h1{font-size:40px}
+  .divider h2{font-size:28px}
+}
+
+/* ===== print / PDF ===== */
+@page{ size:Letter; margin:0.85in 0.9in;
+  @top-right{ content:"Bharathi\2019s Tamil Kitchen"; font-family:Georgia,serif; font-size:8pt; color:#C8860D; }
+  @bottom-center{ content:"\2014 " counter(page) " \2014"; font-family:Georgia,serif; font-size:8.5pt; color:#7a7267; } }
+@page :first{ @top-right{ content:none } @bottom-center{ content:none } }
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.5}
+  .page{box-shadow:none;max-width:none;padding:0}
+  nav.site,.fab,.cover .dl{display:none}
+  .cover{border-bottom:0;padding:2.6in .5in 0;page-break-after:always}
+  .cover h1{font-size:34pt}.cover .kicker{font-size:15pt}.cover .sub{font-size:14pt}.cover .tag{font-size:10.5pt}.cover .rev{font-size:9.5pt}
+  .toc{padding:0 0 .2in}
+  section{padding:0}
+  .block{page-break-before:always}
+  #cooking-with-tamarind{page-break-before:auto;margin-top:.35in}
+  h2{font-size:20pt}
+  .divider{page-break-before:always;margin:-0.85in -0.9in 0.3in;padding:1.2in 0.9in 0.9in;page-break-after:avoid}
+  .divider h2{font-size:24pt}.divider .proverb{font-size:11pt}.divider .gloss{font-size:10pt}
+  .recipe{page-break-inside:auto}
+  .recipe h3{page-break-after:avoid;font-size:15.5pt}
+  .recipe .kicker,.recipe .local,.meta,.label{page-break-after:avoid}
+  .notes{page-break-inside:avoid}
+  table.pantry{font-size:9.5pt}
+  table.pantry tr{page-break-inside:avoid}
+  .toc-list{columns:2}
+  .notes li,.toc-sec ul a{font-size:9.5pt}
+  a{color:inherit}
+}
+</style>
+</head>
+<body>
+<nav class="site"><a href="/">&larr; harrissalat.com</a><a href="Bharathis-Tamil-Kitchen.pdf" download>Download PDF &darr;</a></nav>
+<div class="page" id="top">
+  <header class="cover">
+    <div class="kicker">BHARATHI'S</div>
+    <h1>TAMIL<br>KITCHEN</h1>
+    <div class="sub">A Home Cooking Booklet</div>
+    <div class="tag">Bharathi's everyday recipes, and the gravies of the Tamil home table, transcribed, tested, and refined with traditional Tamil methods</div>
+    <div class="rev">Revised September 19, 2026</div>
+    <a class="dl" href="Bharathis-Tamil-Kitchen.pdf" download>Download the PDF</a>
+  </header>
+  <nav id="contents" class="toc"><h2>Contents</h2><ul class="toc-list">
+<li class="toc-front"><a href="#about-tamil-cooking">About Tamil Cooking</a></li>
+<li class="toc-front"><a href="#the-tamil-pantry">The Tamil Pantry</a></li>
+<li class="toc-front"><a href="#bharathi-s-masala-curry-powder">Bharathi’s Masala Curry Powder</a></li>
+<li class="toc-front"><a href="#cooking-with-tamarind">Cooking with Tamarind</a></li>
+<li class="toc-sec"><a href="#breads-chutneys">Breads &amp; Chutneys</a><ul>
+<li><span class="num">1</span><a href="#r-chapati">Chapati</a></li>
+<li><span class="num">2</span><a href="#r-tomato-chutney">Tomato Chutney</a></li>
+<li><span class="num">3</span><a href="#r-onion-tomato-thokku">Onion-Tomato Thokku</a></li>
+</ul></li>
+<li class="toc-sec"><a href="#fish-shrimp">Fish &amp; Shrimp</a><ul>
+<li><span class="num">4</span><a href="#r-bharathi-s-fish-curry">Bharathi’s Fish Curry</a></li>
+<li><span class="num">5</span><a href="#r-shrimp-thokku">Shrimp Thokku</a></li>
+<li><span class="num">6</span><a href="#r-fried-anchovies">Fried Anchovies</a></li>
+</ul></li>
+<li class="toc-sec"><a href="#kurma-the-chapati-gravies">Kurma &amp; the Chapati Gravies</a><ul>
+<li><span class="num">7</span><a href="#r-vegetable-kurma">Vegetable Kurma</a></li>
+<li><span class="num">8</span><a href="#r-potato-kurma">Potato Kurma</a></li>
+<li><span class="num">9</span><a href="#r-peas-kurma">Peas Kurma</a></li>
+<li><span class="num">10</span><a href="#r-chickpea-kurma">Chickpea Kurma</a></li>
+<li><span class="num">11</span><a href="#r-white-kurma">White Kurma</a></li>
+<li><span class="num">12</span><a href="#r-egg-curry">Egg Curry</a></li>
+<li><span class="num">13</span><a href="#r-salna">Salna</a></li>
+<li><span class="num">14</span><a href="#r-everyday-dal">Everyday Dal</a></li>
+</ul></li>
+<li class="toc-sec"><a href="#rasam">Rasam</a><ul>
+<li><span class="num">15</span><a href="#r-garlic-rasam">Garlic Rasam</a></li>
+</ul></li>
+<li class="toc-front"><a href="#the-tamil-meal">The Tamil Meal</a></li>
+<li class="toc-front"><a href="#the-tamil-kitchen">The Tamil Kitchen</a></li>
+  </ul></nav>
+<section class="block" id="about-tamil-cooking"><div class="kicker">Before You Cook</div><h2>About Tamil Cooking</h2><p>Tamil cooking is, at its heart, a vegetarian cuisine. The everyday meal is rice with a lentil-and-tamarind gravy, a thin peppery rasam, a dry vegetable stir-fry, a lentil-and-vegetable kootu, a crisp papad and, to finish, yogurt. Temple kitchens, the great old cookbooks, and the tiffin repertoire of idli, dosa and chutney are all vegetarian, and a Tamil family can eat for a week without a thought of meat. Most families do eat meat and fish, a few times a week and especially on Sundays, and those dishes are cooked in the same language: the same tamarind, the same shallots, the same tempering. This booklet touches on both. The chutneys, the kurmas, the dal and the rasam are the vegetarian backbone; the fish curry, shrimp and fried anchovies are the seafood Bharathi’s family loves.</p>
+<p>Tamil food is built on sourness and heat. Tamarind gives the sour, dried red chili and black pepper the heat, and a tempering of mustard seeds, fenugreek and curry leaves crackled in hot oil carries the aroma through everything. Small red shallots, garlic and a pinch of hing do the savory work, and fresh coconut, ground to a paste, softens and sweetens the gravies made for bread. An old Tamil proverb says that with “the five and the three” at hand even an untaught girl can cook a curry; the five are usually taken to be pepper, salt, mustard, cumin and tamarind, the three water, fire and fuel. Chili came later, with the Portuguese, and joined the five.</p>
+<p>Tiruvannamalai, where these recipes were cooked, is a temple town in the dry interior of northern Tamil Nadu, three hours from Chennai. The great Arunachaleswarar temple sits at the foot of Arunachala hill, which pilgrims circle barefoot on full-moon nights, and once a year at Karthigai Deepam a cauldron of ghee is lit on the summit and burns for days, visible for miles. The town’s food is plain inland Tamil cooking: shallot-and-tamarind gravies, peanut oil, rice from the paddy fields around Arni, and sea fish trucked up from the coast.</p>
+<p>A note on fat: Bharathi cooks in peanut oil. Cold-pressed sesame oil (called gingelly oil) is the older choice for tamarind gravies and gives a nuttier finish. Use either.</p>
+<p>How to use this booklet: every recipe in the first two chapters and the rasam began as a transcript of Bharathi cooking at her sister Dhanalakshmi’s house in Tiruvannamalai. Her quantities and techniques were then cross-checked against traditional Tamil recipes and the gaps filled in. The kurma chapter is drawn from Tamil home cooks and written to sit alongside her recipes. Treat the quantities as starting points; taste and adjust, exactly as she did. Her own tricks appear throughout in the “From the kitchen” notes.</p>
+<p>With thanks: to Bharathi and Babu; to Dhanalakshmi, who opened her home and her kitchen for these sessions; and to Babu’s mother for the rasam. Another proverb says to remember, as long as you live, the one who gave you salt.</p></section>
+<section class="block" id="the-tamil-pantry"><div class="kicker">Before You Cook</div><h2>The Tamil Pantry</h2><p>A quick glossary of the ingredients that recur throughout these recipes. Most are at any Indian grocer, and the fish at any good Asian fish counter.</p>
+<table class="pantry"><thead><tr><th>Ingredient</th><th>What It Is &amp; How It’S Used</th></tr></thead><tbody>
+<tr><th>Tamarind (puli)</th><td>The sour backbone of the fish curry, rasam and every kuzhambu. Sold as a seedless block or as paste; see Cooking with Tamarind.</td></tr>
+<tr><th>Curry leaves (kariveppilai)</th><td>Fresh only. A handful goes into hot oil at the start, and Bharathi folds another handful into the thokku near the end so they steam. Keep a bag in the freezer.</td></tr>
+<tr><th>Small shallots (chinna vengayam)</th><td>Grape-sized red shallots, sold as “sambar onions.” Sweeter than onion once cooked; used whole in the chutney and by the handful in the fish curry. Thai shallots are the closest substitute; regular shallots or red onion will do.</td></tr>
+<tr><th>Mustard seeds (kadugu)</th><td>Black or brown. Popped in hot oil to begin almost every tempering.</td></tr>
+<tr><th>Fenugreek seeds (vendhayam)</th><td>Small amber seeds that give Tamil fish curry its signature bitter edge. Fry only until reddish; darker and they turn bitter.</td></tr>
+<tr><th>Hing (asafoetida)</th><td>A pinch bloomed in hot oil gives savory depth. Bharathi uses the powder.</td></tr>
+<tr><th>Dried red chilies (varamilagai)</th><td>Whole in the chutney and rasam, ground in the masala curry powder. Bharathi shakes out the seeds for the rasam, for aroma more than heat.</td></tr>
+<tr><th>Red chili powder and Kashmiri chili powder</th><td>Regular Indian chili powder is hot; Kashmiri is mild and deep red, used for color. Bharathi uses both in the fish fry. Not American chili powder, which is a cumin blend.</td></tr>
+<tr><th>Coriander seeds and powder (kothamalli)</th><td>With chili, the bulk of the masala curry powder.</td></tr>
+<tr><th>Cumin (seeragam)</th><td>Toasted into the powder, and crushed raw with pepper and garlic for the rasam.</td></tr>
+<tr><th>Black pepper (milagu)</th><td>Tamil Nadu’s heat before chilies arrived, and the reason rasam is the family cold remedy. Buy whole and crush fresh.</td></tr>
+<tr><th>Turmeric (manjal)</th><td>Half a teaspoon in most dishes, and a pinch in the water fish is washed in.</td></tr>
+<tr><th>Dried ginger (sukku)</th><td>Ground dry ginger, the note that makes Bharathi’s masala curry powder her own.</td></tr>
+<tr><th>Fennel seeds (sombu)</th><td>The sweet anise seed that separates a Tamil kurma from a north-Indian one. It goes into the hot oil and again into the coconut paste.</td></tr>
+<tr><th>Whole spices for kurma</th><td>Cinnamon, cloves, green cardamom and a bay leaf, bloomed in oil for a few seconds before the onion. Small quantities; a little goes far.</td></tr>
+<tr><th>Coconut (thengai)</th><td>Fresh grated coconut, ground to a paste, is what thickens and sweetens a kurma. Frozen grated coconut from an Indian grocer, thawed, works just like fresh.</td></tr>
+<tr><th>Cashews, poppy seeds, roasted gram (pottukadalai)</th><td>The smoothing agents ground with coconut in a kurma. Any one works; cashew is the easiest. Use raw, unsalted cashews, never roasted ones, which turn the paste brown and bitter. Poppy seeds are the white kind and need a 10-minute soak.</td></tr>
+<tr><th>Chana dal (kadalai paruppu)</th><td>Split chickpeas. A tablespoon fried gold at the start of the tomato chutney gives it body and a nutty note.</td></tr>
+<tr><th>Toor dal (thuvaram paruppu)</th><td>Split pigeon peas, the everyday Tamil dal. Yellow split peas are a different legume and stay firm; not a substitute.</td></tr>
+<tr><th>Chickpeas (kondakadalai)</th><td>White kabuli chickpeas for the chickpea kurma. Soak overnight and pressure-cook, or use canned.</td></tr>
+<tr><th>Atta</th><td>Finely milled Indian whole-wheat flour for chapati. Supermarket whole-wheat flour is coarser and makes a stiff chapati.</td></tr>
+<tr><th>Rock salt (kal uppu)</th><td>Coarse crystal sea salt, the everyday cooking salt in Bharathi’s kitchen. A spoon of it is less salty than a spoon of fine salt, so the recipes give fine-salt amounts. Kosher or coarse sea salt is the same thing.</td></tr>
+<tr><th>Peanut oil and gingelly (sesame) oil</th><td>Peanut oil is what Bharathi cooks in. Gingelly oil is raw, untoasted sesame oil, pale and nutty, the classic oil for tamarind gravies. Not dark toasted sesame oil.</td></tr>
+<tr><th>Ghee (nei)</th><td>Kneaded into the chapati dough to soften it, and a spoon on the rice at the table.</td></tr>
+<tr><th>Rice (arisi)</th><td>Ponni or Sona Masoori, the plump medium-grain rice of the south. Basmati is wrong for rasam rice.</td></tr>
+<tr><th>Fish</th><td>Whole red snapper cut into steaks is what Bharathi used; king mackerel steaks (sold frozen as king fish), pomfret, whole tilapia cut in steaks, porgy, mackerel and sardines all work. Skinless fillets fall apart. No salmon.</td></tr>
+<tr><th>Anchovies (nethili)</th><td>Small fresh or frozen anchovies, sold in bags at Indian and Southeast Asian groceries. Eaten whole, bones and all.</td></tr>
+</tbody></table></section>
+<section class="block" id="bharathi-s-masala-curry-powder"><div class="kicker">Before You Cook</div><h2>Bharathi’s Masala Curry Powder</h2><p>Bharathi’s homemade curry powder is dried red chili, coriander, cumin, fenugreek, dried ginger and turmeric, roasted, ground fine and kept airtight, and it is the seasoning in the thokku, the fish curry and the shrimp. Tamil cooks call this family of blends kuzhambu milagai thool, “gravy chili powder,” and every household has its own ratio. Chili and coriander make up most of it; the dried ginger is Bharathi’s signature.</p>
+<div class="meta">Makes about 1½ cups<span class="dot">•</span>45 min</div>
+<div class="label">Ingredients</div><ul>
+<li>1 cup dried red chilies, stems removed (about 30; use half Kashmiri for a milder, redder powder)</li>
+<li>¾ cup coriander seeds</li>
+<li>1 tbsp cumin seeds</li>
+<li>½ tsp fenugreek seeds</li>
+<li>1½ tsp dried ginger powder</li>
+<li>1½ tsp turmeric</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Dry-roast each ingredient separately in a pan over low heat, just until fragrant and crisp: chilies until they stiffen (not darken), coriander until lightly browned, cumin until it smells toasted, fenugreek about a minute, until reddish.</li>
+<li>Cool completely. Grind fine in a spice grinder in batches, sift once, and stir in the ginger and turmeric.</li>
+<li>Cool again and jar. Keeps a month at room temperature, six months in the freezer.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>The boxed blends sold as “kulambu chilli masala” at Indian grocers are the same idea; stir in a pinch of dried ginger to bring one closer to Bharathi’s. Plain “curry powder” is a different, turmeric-heavy thing and tastes wrong here.</li>
+<li>Use about 1 tablespoon per pound of vegetables, 2 in a pot of thokku, 4 in a big fish curry. Bharathi adds it in two stages and tastes between.</li>
+<li>In Tamil Nadu the chilies and coriander go out in the sun for a day instead of into a pan, and then to the mill. A dry skillet does the same job.</li>
+</ul></div>
+<h3 class="masala-h">The Tempering Mix</h3>
+<p>The fish curry begins with a dark, crumbly ball fried in the oil: sun-dried shallots and garlic bound with mustard, cumin, fenugreek, urad dal and curry leaves, made once a year in the hot season and kept for two. Tamil cooks call it vadagam. Bharathi’s own advice is not to worry about it. For one pot of curry, pound together in a mortar 1 teaspoon mustard seeds, ½ teaspoon fenugreek seeds and 3 garlic cloves, with a few curry leaves and a chopped shallot if you like, and fry that in the hot oil until the mustard pops and the garlic edges turn gold. That is the tempering in every seafood recipe here.</p></section>
+<section class="block" id="cooking-with-tamarind"><div class="kicker">Before You Cook</div><h2>Cooking with Tamarind</h2><p class="sec-intro">Puli, “sour,” is the one word every Tamil gravy depends on.</p>
+<p>Tamarind is the pulp of a brown pod, and in the Tamil kitchen it is what lemon and vinegar are elsewhere: the sour that makes the chili and the salt make sense. It goes into the fish curry, the rasam, the shrimp, and every kuzhambu meant for rice. It is never used in a kurma, which is why kurma is pale and mild and goes with bread.</p>
+<div class="label">HOW TO MAKE TAMARIND WATER</div>
+<p>Buy seedless block tamarind. Break off a lime-sized lump (about 2 tablespoons packed) and soak it in 1 cup hot water for 15 minutes. Squeeze and massage it hard with your fingers to work the pulp off the fibers, strain, then add water to the amount the recipe calls for. Taste it: it should be pleasantly sour, not harsh. Old, dark tamarind is sourer than pale new tamarind, so adjust.</p>
+<div class="label">IF YOU CAN’T FIND THE BLOCK: CONCENTRATE AND PASTE</div>
+<p>In most American cities the jar is easier to find than the block, and Bharathi said the jar is fine. Two kinds are sold. Tamarind concentrate is the thick, near-black one, strong enough that a teaspoon does real work; stir 1 tablespoon into 1 cup hot water for the equivalent of block-made tamarind water, and use about 2 tablespoons for the rasam’s “small lump.” Tamarind paste is thinner and browner and closer to what you’d squeeze from the block; figure 1½ to 2 tablespoons per cup of water. Both keep in the fridge for months. Whichever you use, taste the water before it goes in and adjust; brands vary more than blocks do, and it is easier to add sour than to take it away.</p>
+<div class="label">WHERE IT APPEARS IN THIS BOOK</div>
+<p>The fish curry (about 4 cups of tamarind water for a big pot), the rasam (a small lump), and a spoonful in the shrimp thokku. Green mango can stand in for part of it in the fish curry, which is how Bharathi likes it.</p>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Simmer the tamarind water at least 10 to 15 minutes before the fish goes in; the raw, puckering edge cooks off and the gravy turns round and deep.</li>
+<li>Taste the gravy after the tamarind has cooked, not before. That is when you decide on more powder, more salt, or a little more tamarind.</li>
+<li>A tamarind gravy is better after it rests. Bharathi’s fish curry sits an hour off the heat; Tamil families prize yesterday’s fish curry over today’s.</li>
+</ul></div></section>
+<div class="divider" id="breads-chutneys"><div class="kicker">Chapter One · Recipes 1–3</div><h2>Breads &amp; Chutneys</h2><div class="proverb"><em>Even if you are throwing it in the river, measure it first.</em><br><span class="gloss">A Tamil proverb on proportion: cook by feel, but cook with care.</span></div></div>
+<section class="sec"><p class="sec-intro">In a Tamil home, rice rules the day and chapati rules the night. The soft whole-wheat flatbread is now the standard Tamil dinner, eaten with a thokku, a chutney, or one of the kurmas later in this book. These two chutneys are the pair Bharathi made for it: one ground smooth, one cooked down chunky.</p>
+<article class="recipe" id="r-chapati">
+<div class="kicker">No. 1</div>
+<h3>Chapati</h3>
+<div class="local">Chappathi</div>
+<p class="sec-intro">The everyday soft flatbread, made from atta, water, salt, and a little ghee kneaded in at the end. Bharathi makes a whole bag of flour at a time, by hand and by feel.</p>
+<div class="meta">Makes 8<span class="dot">•</span>30 min + rest</div>
+<div class="label">Ingredients</div><ul>
+<li>2 cups atta (whole-wheat flour), plus extra for dusting</li>
+<li>½ tsp salt</li>
+<li>~¾ cup lukewarm water, added gradually</li>
+<li>2 tsp ghee, plus more for the layered version</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Mix the atta and salt. Add water a few tablespoons at a time, turning the flour with your fingers, until it just gathers into a shaggy mass with no dry flour left. Stop early rather than late.</li>
+<li>Knead 3 to 5 minutes to a smooth, firm dough. It should feel tight; that is on purpose.</li>
+<li>Add the ghee and knead 2 to 3 minutes more, until soft and pillowy. Press a fingertip in: the dent should stay and your hand should come away clean.</li>
+<li>Divide into 8 balls, cover with a damp cloth, and rest 15 minutes to 3 hours.</li>
+<li>Roll each ball into a 7-inch round, giving it a quarter turn every few strokes so it stays round, to the thickness of thick cardboard. Shake off excess flour.</li>
+<li>Cook on a hot, dry tawa or cast-iron skillet: 20 to 30 seconds until bubbles rise, flip, cook until brown spots form, flip again and press the edges with a folded cloth so it puffs. Under 2 minutes total. Stack in a cloth-lined container.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Water first, then knead, then ghee. The dough is kneaded firm and the ghee goes in last to soften it; melted butter works if there is no ghee.</li>
+<li>A damp cloth, not a wet one. For a long rest, refrigerate under the cloth and bring back to room temperature 30 minutes before rolling.</li>
+<li>Layered chapati: smear ½ teaspoon ghee over the rolled round, fold in thirds, fold in thirds again, and re-roll gently. Cook with a touch of ghee on the pan. Flaky and a little crisp; Bharathi makes it when she wants “another variety.”</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-tomato-chutney">
+<div class="kicker">No. 2</div>
+<h3>Tomato Chutney</h3>
+<div class="local">Thakkali Chutney</div>
+<p class="sec-intro">A smooth, bright orange chutney of tomatoes and whole shallots, thickened with a spoon of chana dal and finished with a mustard-seed tempering. The one for idli, dosa, and chapati.</p>
+<div class="meta">Makes ~1¼ cups<span class="dot">•</span>30 min + cooling</div>
+<div class="label">Ingredients</div><ul>
+<li>2 tsp oil</li>
+<li>1 tbsp chana dal</li>
+<li>2 to 3 dried red chilies</li>
+<li>12 to 15 small shallots, peeled and left whole (about 1 cup), or 1 red onion in chunks</li>
+<li>3 to 4 small ripe tomatoes, quartered (about 1 cup)</li>
+<li>2 to 4 tbsp water</li>
+<li>½ tsp salt</li>
+<li class="sub">Tempering</li>
+<li>1 tbsp oil</li>
+<li>½ tsp mustard seeds</li>
+<li>1 sprig curry leaves; a pinch of hing</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Heat the oil over medium. Fry the chana dal, stirring, until gold, then add the chilies and let them darken a shade.</li>
+<li>Add the whole shallots and cook 3 to 4 minutes. Add the tomatoes and a splash of water, cover, and cook on low 8 to 10 minutes, crushing the tomatoes as they soften, until the shallots are cooked through and everything is soft and soupy.</li>
+<li>Cool completely, then blend smooth with the salt.</li>
+<li>Tempering: heat the oil, pop the mustard seeds, add the curry leaves and hing for a few seconds, take off the heat, and stir the chutney into the tempering.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Cool before you blend; hot vegetables turn gluey in the blender.</li>
+<li>No garlic, no coconut, no tamarind: this is the plain shallot-and-tomato style, and its sweetness comes from the shallots cooked whole until they collapse.</li>
+<li>It keeps 2 days in the fridge. Simmer it in the tempering oil until oil shows at the edge and it keeps a week; that is the point at which Tamil cooks start calling a chutney a thokku.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-onion-tomato-thokku">
+<div class="kicker">No. 3</div>
+<h3>Onion-Tomato Thokku</h3>
+<div class="local">Vengayam Thakkali Thokku</div>
+<p class="sec-intro">The chunky one: chopped onion, shallot and tomato cooked down until the oil shows, with curry leaves and a spoonful of masala curry powder toasted in near the end. Bharathi’s rule is simple. A chutney is ground; a thokku is cooked from chopped ingredients and never ground. This is the one for chapati.</p>
+<div class="meta">Makes ~2 cups<span class="dot">•</span>40 min</div>
+<div class="label">Ingredients</div><ul>
+<li>3 to 4 tbsp oil</li>
+<li>1 tsp mustard seeds</li>
+<li>1 cup finely chopped onion (1 medium)</li>
+<li>1 cup finely chopped small shallots (12 to 15)</li>
+<li>1 tsp salt, plus more to taste</li>
+<li>2 cups chopped ripe tomatoes (4 to 5 medium)</li>
+<li>2 sprigs curry leaves, left whole</li>
+<li>2 tbsp masala curry powder</li>
+<li>2 tbsp chopped coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Heat the oil over medium and pop the mustard seeds.</li>
+<li>Add the onion, shallots and salt. Cover and cook on medium-low, stirring now and then, until soft and just coloring, 8 to 10 minutes.</li>
+<li>Add the tomatoes, cover, and cook on low, mashing them against the pan as they soften, until collapsed, 10 to 15 minutes.</li>
+<li>Add the curry leaves, cover, and cook 2 minutes.</li>
+<li>Stir in the masala curry powder and cook a minute so the spices toast in the oil. Cover and cook 5 minutes more.</li>
+<li>Uncover and cook until thick, glossy, and the oil shows at the edges. Off the heat, stir in the coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Half onion, half shallot is the household’s touch; all onion works. Tomatoes go in equal to the onions by volume.</li>
+<li>Bharathi lets the dry spices toast in the oil for a minute before covering the pot; that is when the kitchen starts to smell right.</li>
+<li>Keeps 2 days at room temperature or a week in the fridge. Made with a little more oil and no coriander leaves, it is the classic Tamil travel food, packed with a stack of chapatis.</li>
+</ul></div>
+</article>
+</section>
+<div class="divider" id="fish-shrimp"><div class="kicker">Chapter Two · Recipes 4–6</div><h2>Fish &amp; Shrimp</h2><div class="proverb"><em>Remember, as long as you live, the one who gave you salt.</em><br><span class="gloss">A Tamil proverb on gratitude; salt stands for food and kindness.</span></div></div>
+<section class="sec"><p class="sec-intro">Fish is the animal protein Tamil families reach for most often, and in Bharathi’s house it means three things: a whole snapper cooked into a thin, red tamarind gravy, with a handful of anchovies dropped in for a big family; shrimp in the same masala cooked down dry; and the rest of the anchovies fried crisp. All three start from the same tempering and the same jar of masala curry powder. There is no coconut in any of them, plenty of shallots, and enough oil to float on top when the curry is done.</p>
+<article class="recipe" id="r-bharathi-s-fish-curry">
+<div class="kicker">No. 4</div>
+<h3>Bharathi’s Fish Curry</h3>
+<div class="local">Meen Kuzhambu</div>
+<p class="sec-intro">The village fish curry: shallots and tamarind, a tempering of mustard, fenugreek and garlic, and a generous spoonful of masala curry powder. Then the pot comes off the heat and waits. In Tamil, yesterday’s fish curry is a compliment.</p>
+<div class="meta">Serves 6<span class="dot">•</span>1 hour + 1 hour rest</div>
+<div class="label">Ingredients</div><ul>
+<li class="sub">Fish</li>
+<li>2 lb bone-in fish, cut into 1-inch steaks or chunks</li>
+<li>½ tsp turmeric and 1 tsp salt, for washing the fish</li>
+<li>optional: ½ lb small anchovies, cleaned</li>
+<li class="sub">Gravy</li>
+<li>Tamarind: 2 lime-sized lumps of block tamarind, or 3 to 4 tbsp paste, made into 4 cups tamarind water</li>
+<li>½ cup peanut oil</li>
+<li>The tempering mix: 1 tsp mustard seeds, 1 tsp fenugreek seeds, 6 to 8 garlic cloves, crushed together</li>
+<li>3 cups small shallots, peeled and halved (about 40)</li>
+<li>3 to 4 green chilies, slit</li>
+<li>2 large tomatoes, chopped</li>
+<li>3 to 4 sprigs curry leaves</li>
+<li>4 tbsp masala curry powder, plus more to taste</li>
+<li>1 tbsp salt, plus more to taste</li>
+<li>optional: 1 small unripe green mango, cut in 8 wedges</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Wash the fish in water with the turmeric and salt, rinse, and drain. No marinade.</li>
+<li>Heat the oil in a wide, heavy pot over medium. Fry the crushed mustard, fenugreek and garlic until the mustard pops and the garlic edges turn gold, 30 to 40 seconds.</li>
+<li>Add the shallots and green chilies with a pinch of salt; cook 4 to 6 minutes until translucent with browned edges.</li>
+<li>Add the tomatoes, curry leaves, masala curry powder and salt. Cover and cook 5 to 10 minutes until the tomatoes collapse and the oil starts to show.</li>
+<li>Pour in the tamarind water (and the mango). Bring to a boil, cover, and simmer 15 minutes until the raw tamarind smell is gone and the oil floats in orange beads. Taste for sour, salt and heat; add more powder if it needs it.</li>
+<li>Slide in the fish one piece at a time. Do not stir; swirl the pot. Simmer half-covered on medium-low 5 to 8 minutes until the flesh is opaque. Anchovies go in 2 to 3 minutes after the big pieces.</li>
+<li>Turn off the heat, cover, and rest 30 to 60 minutes before serving with rice.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>The fish for the curry is washed in turmeric and salt and goes in plain; the flavor is all in the gravy.</li>
+<li>Bharathi’s pot is big and her measures are by hand. About ¼ cup of powder for a large pot is right; add it in two stages and taste after the tamarind has cooked.</li>
+<li>Green mango is for extra sourness. If you use it, ease off the tamarind a little.</li>
+<li>Whole red snapper cut in steaks is the direct match. King mackerel steaks, pomfret, whole tilapia cut in steaks, porgy, mackerel and sardines all hold up; fillets fall apart.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-shrimp-thokku">
+<div class="kicker">No. 5</div>
+<h3>Shrimp Thokku</h3>
+<div class="local">Eral Thokku</div>
+<p class="sec-intro">Shrimp in the same shallot-and-tomato masala as the fish curry, cooked down until it clings. The shrimp release their water and take it back into the masala, so this is drier than a curry and eaten with rice.</p>
+<div class="meta">Serves 4<span class="dot">•</span>45 min</div>
+<div class="label">Ingredients</div><ul>
+<li>1 lb medium shrimp, peeled and deveined</li>
+<li>½ tsp turmeric and ½ tsp salt, for the shrimp</li>
+<li>¼ cup peanut oil</li>
+<li>The tempering mix: 1 tsp mustard seeds, ½ tsp fenugreek seeds, 4 garlic cloves, crushed together</li>
+<li>2 sprigs curry leaves, plus 1 to finish</li>
+<li>2 cups finely chopped small shallots, or half shallot and half onion</li>
+<li>2 green chilies, chopped</li>
+<li>2 medium tomatoes, finely chopped</li>
+<li>2 to 3 tbsp masala curry powder</li>
+<li>1 tsp salt, to taste</li>
+<li>1 tbsp tamarind water, or 1 tsp paste</li>
+<li>2 to 4 tbsp water</li>
+<li>2 tbsp chopped coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Toss the shrimp with the turmeric and salt; set aside 15 minutes.</li>
+<li>Heat the oil over medium. Fry the crushed mustard, fenugreek and garlic until the mustard pops; add the curry leaves.</li>
+<li>Add the shallots, green chilies and a pinch of salt; cook 6 to 8 minutes until soft and golden at the edges. Add the tomatoes, cover, and cook 5 to 8 minutes until collapsed.</li>
+<li>Stir in the masala curry powder and salt and cook a minute. Add the tamarind and 2 to 4 tablespoons water; cook until the masala is thick and the oil separates, about 5 minutes. It should be dry before the shrimp go in.</li>
+<li>Add the shrimp, stir to coat, cover, and cook on low. After 3 minutes the pan will look wet; stir once, cover again, and cook until the liquid has gone back into the masala, 8 to 12 minutes total.</li>
+<li>Uncover, raise the heat for a minute to dry the masala until it clings and glistens. Add the last curry leaves and the coriander. Rest 5 minutes.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Tamil home cooks give shrimp longer than the three minutes Western cooks swear by, covered on low, because the dish depends on the shrimp giving up their liquid and taking it back. Medium shrimp stay tender through it.</li>
+<li>Loosen the same masala with 2 cups of tamarind water, simmer, and you have eral kuzhambu, the gravy version.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-fried-anchovies">
+<div class="kicker">No. 6</div>
+<h3>Fried Anchovies</h3>
+<div class="local">Nethili Varuval</div>
+<p class="sec-intro">Small whole anchovies marinated in two chili powders, turmeric, ginger and garlic, rolled in starch and shallow-fried crisp. Eaten whole; the bones go crunchy.</p>
+<div class="meta">Serves 4 as a side<span class="dot">•</span>20 min + 30 min marinating</div>
+<div class="label">Ingredients</div><ul>
+<li>1 lb fresh or thawed frozen anchovies, heads and guts removed, washed in turmeric water and patted dry</li>
+<li>1 tsp Kashmiri chili powder; 1 tsp red chili powder</li>
+<li>¼ tsp turmeric</li>
+<li>1 tbsp crushed fresh ginger and garlic (equal parts)</li>
+<li>¾ tsp salt</li>
+<li>1 sprig curry leaves, torn, plus 1 sprig to fry at the end</li>
+<li>3 tbsp potato starch (or 3 tbsp rice flour plus 1½ tbsp cornstarch)</li>
+<li>½ cup peanut oil</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Mix the chili powders, turmeric, ginger-garlic, salt and torn curry leaves into a paste with a spoon of water. Rub into the fish and leave 30 minutes.</li>
+<li>Just before frying, toss the fish in the starch so the coating stays dry.</li>
+<li>Heat the oil in a heavy skillet over medium-high until it shimmers. Fry in a single layer, 6 to 8 at a time, 4 to 5 minutes, turning once, until crisp and deep gold. Drain on a rack.</li>
+<li>Fry the last sprig of curry leaves in the oil for a few seconds and scatter over. Serve with raw onion rings and lime.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Kashmiri for color, regular chili powder for heat; that is Bharathi’s two-chili marinade.</li>
+<li>The oil must be properly hot before the first batch, or the fish softens and breaks. Don’t crowd the pan.</li>
+<li>Potato starch is Bharathi’s coating; rice flour with a little cornstarch is the older Tamil one and works the same way. Smelts are the nearest substitute and need 6 to 8 minutes.</li>
+</ul></div>
+</article>
+</section>
+<div class="divider" id="kurma-the-chapati-gravies"><div class="kicker">Chapter Three · Recipes 7–14</div><h2>Kurma &amp; the Chapati Gravies</h2><div class="proverb"><em>When hunger comes, the ten fly away.</em><br><span class="gloss">A Tamil proverb: hunger drives out the ten virtues, so feed people first.</span></div></div>
+<section class="sec"><p class="sec-intro">A kuzhambu is soured with tamarind, colored red with chili, and mixed into rice. A kurma has no tamarind at all. Its body and pale color come from a paste of fresh coconut ground with cashew or poppy seed and fennel, and it is the gravy Tamil families make for the evening chapati, and for parotta and idiyappam. Salna sits between the two, and the everyday dal and egg curry round out the weeknight table.</p>
+<article class="recipe" id="r-vegetable-kurma">
+<div class="kicker">No. 7</div>
+<h3>Vegetable Kurma</h3>
+<div class="local">Kaykari Kurma</div>
+<p class="sec-intro">The all-purpose coconut gravy of the Tamil home, mild and fragrant with fennel, and the thing most families eat with their night chapati. It should never cloy, and it should always smell good.</p>
+<div class="meta">Serves 4<span class="dot">•</span>45 min</div>
+<div class="label">Ingredients</div><ul>
+<li class="sub">Paste</li>
+<li>½ cup grated coconut, fresh or thawed frozen</li>
+<li>8 raw cashews; 1 tsp white poppy seeds, soaked 10 minutes (or 1 tbsp roasted gram)</li>
+<li>1 tsp fennel seeds; 1 green chili</li>
+<li class="sub">Vegetables</li>
+<li>1 medium potato, 1 carrot, 10 green beans, ½ cup peas, 1 cup small cauliflower florets, all in ½-inch pieces (about 3 cups)</li>
+<li class="sub">Gravy</li>
+<li>2 tbsp oil, plus 1 tsp ghee if you like</li>
+<li>1 inch cinnamon; 2 cloves; 2 green cardamom; 1 bay leaf; ½ tsp fennel seeds</li>
+<li>8 curry leaves</li>
+<li>1 large onion, finely chopped; 2 green chilies, slit</li>
+<li>1½ tsp ginger-garlic paste</li>
+<li>2 medium tomatoes, chopped</li>
+<li>¼ tsp turmeric; 1 tsp red chili powder; 1½ tsp coriander powder</li>
+<li>1¼ tsp salt</li>
+<li>1½ cups water, part of it the vegetable cooking water</li>
+<li>½ tsp garam masala</li>
+<li>2 tbsp chopped coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Grind the paste ingredients with ¼ to ⅓ cup water until completely smooth.</li>
+<li>Boil the potato, carrot, beans and peas in salted water with a pinch of turmeric until just tender; blanch the cauliflower separately 2 minutes. Keep the water.</li>
+<li>Heat the oil over medium. Bloom the whole spices and fennel 10 seconds, then add the curry leaves, onion and slit chilies; fry until soft.</li>
+<li>Add the ginger-garlic paste and fry a minute. Add the tomatoes, turmeric, chili powder, coriander powder and salt; cook until the tomatoes collapse and oil shows, about 5 minutes.</li>
+<li>Add the vegetables and their water; simmer 2 minutes.</li>
+<li>Stir in the coconut paste and garam masala. Simmer gently 3 to 5 minutes until the raw coconut smell is gone and the gravy is creamy and pourable. Rest 10 minutes; finish with coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Raw cashews only; roasted or salted ones darken the paste. Grind until there is no grit at all; any grit shows in the finished gravy.</li>
+<li>Don’t boil hard once the coconut is in, or it splits. The color should be pale orange-cream, never red.</li>
+<li>Home shortcut: 2 teaspoons sambar powder in place of the chili and coriander powders.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-potato-kurma">
+<div class="kicker">No. 8</div>
+<h3>Potato Kurma</h3>
+<div class="local">Urulaikizhangu Kurma</div>
+<p class="sec-intro">The same coconut gravy with potatoes cooked right in it, a little ginger and pepper in the paste. Simpler than the mixed vegetable version and a favorite with chapati and poori.</p>
+<div class="meta">Serves 4<span class="dot">•</span>40 min</div>
+<div class="label">Ingredients</div><ul>
+<li>The vegetable kurma paste, with ½ inch ginger, 2 garlic cloves and ¼ tsp black peppercorns ground in</li>
+<li>3 medium potatoes, peeled and cut in 1-inch cubes</li>
+<li>The vegetable kurma tempering, onion, tomato and powders</li>
+<li>1½ cups water; 1¼ tsp salt</li>
+<li>coriander leaves, to finish</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Make the paste and cook the tempering, onion, ginger-garlic, tomatoes and powders as for the vegetable kurma, steps 1, 3 and 4.</li>
+<li>Add the raw potatoes, the paste, the water and salt. Cover and simmer 15 to 18 minutes until the potatoes are tender and the gravy thickens (or pressure-cook 2 whistles).</li>
+<li>Finish with coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>The potatoes cook in the gravy and give it body; no need to boil them first.</li>
+<li>Mash a few pieces against the pan at the end if you want it thicker.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-peas-kurma">
+<div class="kicker">No. 9</div>
+<h3>Peas Kurma</h3>
+<div class="local">Pattani Kurma</div>
+<p class="sec-intro">Green peas in the coconut-fennel gravy; a quick weeknight kurma from the freezer.</p>
+<div class="meta">Serves 4<span class="dot">•</span>30 min</div>
+<div class="label">Ingredients</div><ul>
+<li>The vegetable kurma paste, tempering, onion, tomato and powders</li>
+<li>1½ cups green peas, fresh or frozen</li>
+<li>1½ cups water; 1¼ tsp salt</li>
+<li>coriander leaves, to finish</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Make the paste and cook the base as for the vegetable kurma, steps 1, 3 and 4.</li>
+<li>Add the peas, water and salt; simmer 5 minutes.</li>
+<li>Stir in the paste and simmer gently 3 to 5 minutes. Finish with coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Dried white peas, soaked overnight and pressure-cooked soft, are the older version; use their cooking liquid as the water.</li>
+<li>Some cooks grind 6 garlic cloves into the paste instead of using ginger-garlic paste in the pan.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-chickpea-kurma">
+<div class="kicker">No. 10</div>
+<h3>Chickpea Kurma</h3>
+<div class="local">Kondakadalai Kurma</div>
+<p class="sec-intro">Ask for channa masala in a Tamil home and this is what you get: chickpeas in the coconut and fennel gravy, nothing like the Punjabi dish. The everyday protein kurma, made when there are no vegetables in the house.</p>
+<div class="meta">Serves 4<span class="dot">•</span>45 min + overnight soak (or use canned)</div>
+<div class="label">Ingredients</div><ul>
+<li>1 cup dried white chickpeas, soaked overnight (or two 15-oz cans, drained, plus ½ cup water)</li>
+<li>¼ tsp turmeric and ½ tsp salt, for cooking the chickpeas</li>
+<li class="sub">Paste</li>
+<li>½ cup grated coconut; 8 raw cashews; 1 tsp fennel seeds</li>
+<li>½ inch ginger; 3 garlic cloves; 1 green chili</li>
+<li class="sub">Gravy</li>
+<li>2 tbsp oil</li>
+<li>1 bay leaf; 1 clove; 1 cardamom; ½ inch cinnamon; ½ tsp cumin seeds</li>
+<li>8 curry leaves</li>
+<li>1 large onion, finely chopped</li>
+<li>2 medium tomatoes, chopped</li>
+<li>½ tsp turmeric; 1 tsp red chili powder; 1½ tsp coriander powder</li>
+<li>1¼ tsp salt</li>
+<li>2 tbsp chopped mint (optional)</li>
+<li>1½ to 2 cups water, including the chickpea liquid</li>
+<li>½ tsp garam masala; 1 tsp lime juice; coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Drain the soaked chickpeas, cover with fresh water by an inch, add the turmeric and salt, and pressure-cook until they crush easily between your fingers, 4 to 5 whistles. Keep the liquid.</li>
+<li>Grind the paste smooth with ½ cup water.</li>
+<li>Heat the oil; bloom the whole spices and cumin, then add the curry leaves and onion and fry until golden at the edges.</li>
+<li>Add the tomatoes, salt and powders; cook until soft and the oil shows.</li>
+<li>Add the chickpeas with 1 cup of their liquid and the mint; simmer 8 to 10 minutes. Crush a spoonful against the pan to thicken.</li>
+<li>Stir in the paste and ½ cup water; simmer 5 to 6 minutes until it thickens and oil rises. Off the heat add the garam masala, lime and coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>The chickpea liquid is the stock; don’t pour it away.</li>
+<li>Both this and the north-Indian version are cooked in Tamil homes now. This one, with coconut and fennel, is the older.</li>
+<li>Black chickpeas (kala chana) work the same way and make a darker, nuttier kurma.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-white-kurma">
+<div class="kicker">No. 11</div>
+<h3>White Kurma</h3>
+<div class="local">Vellai Kurma</div>
+<p class="sec-intro">A kurma with no chili powder, no turmeric and no tomato, so it comes out white. Coconut, cashew, green chili and fennel do all the work. A Chettinad Sunday dish that became a favorite across the state with parotta and idiyappam.</p>
+<div class="meta">Serves 4<span class="dot">•</span>40 min</div>
+<div class="label">Ingredients</div><ul>
+<li class="sub">Paste</li>
+<li>¾ cup grated coconut; 12 raw cashews</li>
+<li>3 to 5 green chilies (3 mild, 5 Chettinad)</li>
+<li>1 tsp fennel seeds; 1 clove; 2 cardamom; ½ inch cinnamon</li>
+<li class="sub">Gravy</li>
+<li>2 cups mixed vegetables in ½-inch dice: carrot, green beans, potato, peas</li>
+<li>2 tbsp oil, plus 1 tsp ghee if you like</li>
+<li>1 tsp fennel seeds; ½ tsp cumin seeds; 2 cloves; 1 bay leaf</li>
+<li>8 curry leaves</li>
+<li>1 medium onion, finely chopped; 2 green chilies, slit</li>
+<li>1¼ tsp salt; 1½ cups water</li>
+<li>¼ cup whole milk, or 1 tbsp whisked yogurt, or 1 tbsp lime juice, to finish</li>
+<li>coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Grind the paste with ¾ cup water until silky.</li>
+<li>Boil the vegetables in salted water until just tender; drain and keep the water.</li>
+<li>Heat the oil; bloom the fennel, cumin, cloves and bay. Add the curry leaves, onion, slit chilies and salt, and fry only until translucent.</li>
+<li>Add the paste and 1 cup water; simmer on low 5 minutes, stirring, until the raw coconut smell goes.</li>
+<li>Add the vegetables and their water; simmer 2 to 3 minutes.</li>
+<li>Off the heat, stir in the milk or yogurt, or the lime, and the coriander.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Whiteness is the goal: stop the onion at translucent, grind the whole spices into the paste so there are no brown specks, and never let it boil hard.</li>
+<li>The green chili count decides the whole dish. Taste the paste before it goes in.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-egg-curry">
+<div class="kicker">No. 12</div>
+<h3>Egg Curry</h3>
+<div class="local">Muttai Kuzhambu</div>
+<p class="sec-intro">Halved hard-boiled eggs simmered in a shallot and tomato gravy with fennel in the tempering and a small coconut paste for body. Made for rice first, then for chapati, idli and dosa.</p>
+<div class="meta">Serves 4<span class="dot">•</span>40 min</div>
+<div class="label">Ingredients</div><ul>
+<li>6 eggs, hard-boiled, peeled, and halved or slit 3 or 4 times</li>
+<li>3 tbsp gingelly or peanut oil</li>
+<li>½ tsp mustard seeds; ½ tsp cumin seeds; 1 tsp fennel seeds</li>
+<li>1 sprig curry leaves</li>
+<li>1 cup sliced small shallots, or red onion; 2 green chilies, slit</li>
+<li>1 tsp ginger-garlic paste</li>
+<li>½ tsp turmeric; 1½ tsp red chili powder (part Kashmiri); 2 tsp coriander powder</li>
+<li>2 medium tomatoes, chopped</li>
+<li>1¼ tsp salt</li>
+<li>Paste: ⅓ cup grated coconut, 1 tsp fennel seeds, 5 raw cashews, ground with ½ cup water</li>
+<li>optional: 1 tsp tamarind paste in ½ cup hot water</li>
+<li>1 cup water</li>
+<li>2 tbsp chopped coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Heat the oil; pop the mustard, add the cumin and fennel, then the curry leaves. Fry the shallots and green chilies until the edges brown. Add the ginger-garlic and fry until fragrant.</li>
+<li>Add the powders and toast 20 seconds, then the tomatoes and salt. Cover and cook on low until mushy and the oil separates.</li>
+<li>Add the tamarind, if using, and simmer 5 minutes. Add the water and bring to a boil.</li>
+<li>Stir in the coconut paste; simmer 5 minutes on low until glossy.</li>
+<li>Slide in the eggs, spoon gravy over, cover, and simmer 4 to 5 minutes. Finish with coriander and rest 10 minutes.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Roll the eggs in a pinch of turmeric and chili powder and fry them a minute in a teaspoon of oil first; it keeps them from splitting and gives a golden skin.</li>
+<li>Egg-drop version: keep the gravy at a bare simmer, crack in raw eggs one at a time, don’t stir, cover 5 to 10 minutes until set. A beloved weeknight dinner in the Kongu country.</li>
+<li>Any longer than 5 minutes in the gravy and the eggs turn rubbery.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-salna">
+<div class="kicker">No. 13</div>
+<h3>Salna</h3>
+<div class="local">Madurai Gravy for Parotta</div>
+<p class="sec-intro">The thin, spiced tomato-and-coconut gravy of Madurai, made to be poured over torn parotta or chapati until the bread dissolves into it. Roasted whole spices in the paste, loud with fennel and pepper, a modest amount of coconut cut with peanut, and thin enough to drink.</p>
+<div class="meta">Serves 4<span class="dot">•</span>1 hour</div>
+<div class="label">Ingredients</div><ul>
+<li class="sub">Paste (roast, cool, grind smooth with 1 cup water)</li>
+<li>1 tsp oil</li>
+<li>1 tbsp fennel seeds; ½ tsp cumin; 1 tsp black peppercorns; ½ inch cinnamon; 2 cloves; 2 cardamom; 1 small star anise</li>
+<li>½ inch ginger; 4 garlic cloves; 5 small shallots</li>
+<li>⅓ cup grated coconut</li>
+<li>2 tbsp roasted peanuts; 5 raw cashews</li>
+<li class="sub">Gravy</li>
+<li>3 tbsp oil</li>
+<li>1 bay leaf; 1 inch cinnamon; 2 cloves; 2 cardamom; 1 star anise</li>
+<li>8 curry leaves; 1 green chili, slit</li>
+<li>2 medium onions, sliced thin</li>
+<li>1 tbsp ginger-garlic paste</li>
+<li>3 ripe tomatoes, chopped</li>
+<li>2 tbsp chopped mint; 2 tbsp coriander leaves</li>
+<li>¼ tsp turmeric; 1½ tsp red chili powder (part Kashmiri); 1½ tbsp coriander powder; ½ tsp garam masala; ½ tsp fennel powder</li>
+<li>1½ tsp salt</li>
+<li>3½ to 4 cups water</li>
+<li>To finish: 1 tsp lime juice; 1 tbsp oil heated with ½ tsp Kashmiri chili powder and a few curry leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Warm the teaspoon of oil and roast the paste spices, ginger, garlic and shallots until fragrant and lightly browned. Add the coconut and peanuts, stir a minute, cool, and grind as smooth as you can with the water.</li>
+<li>Heat the oil; bloom the whole spices, then add the curry leaves, chili and onions with a pinch of salt; fry until golden.</li>
+<li>Add the ginger-garlic paste and fry. Add the tomatoes, mint, salt and all the powders; cook until the tomatoes collapse and oil floats.</li>
+<li>Add the paste and water. Bring to a boil, cover, and simmer 15 minutes; uncover and simmer 7 to 10 more until an oil sheen appears.</li>
+<li>Finish with the lime, the herbs, and the chili oil poured over the top.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Keep it thin. It thickens as it cools, and if it starts thick it scorches on the bottom.</li>
+<li>Chicken salna: after step 3 add 1 lb bone-in chicken, turn it in the masala 4 to 5 minutes, add 2 cups water and pressure-cook 10 to 12 minutes; then add the paste and 1½ cups more water and simmer 10 minutes. Bone-in goat, cooked 25 to 30 minutes, is the Madurai classic.</li>
+<li>The name is probably a Tamil turn on the Urdu salan, a gravy.</li>
+</ul></div>
+</article>
+<article class="recipe" id="r-everyday-dal">
+<div class="kicker">No. 14</div>
+<h3>Everyday Dal</h3>
+<div class="local">Paruppu</div>
+<p class="sec-intro">The plainest dal in the Tamil kitchen: toor dal cooked soft with turmeric, mashed with a whisk, and finished with a tempering of mustard, cumin, garlic and shallots. Mildly spiced, a little grainy, and made for chapati as much as rice.</p>
+<div class="meta">Serves 4<span class="dot">•</span>35 min</div>
+<div class="label">Ingredients</div><ul>
+<li class="sub">Dal</li>
+<li>1 cup toor dal, rinsed</li>
+<li>3 cups water; ¼ tsp turmeric; ¼ tsp oil</li>
+<li>1 medium tomato, quartered; 3 garlic cloves, crushed; 1 green chili, slit</li>
+<li>2 pinches hing</li>
+<li>1 tsp salt</li>
+<li class="sub">Tempering</li>
+<li>1 tbsp ghee or oil</li>
+<li>½ tsp mustard seeds; ½ tsp cumin seeds; ½ tsp urad dal</li>
+<li>1 to 2 dried red chilies</li>
+<li>4 to 5 small shallots, sliced; 1 sprig curry leaves</li>
+<li>2 tbsp chopped coriander leaves</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Pressure-cook the dal with the water, turmeric, oil, tomato, garlic, chili and hing, 3 to 4 whistles (or simmer covered 35 to 45 minutes, topping up with hot water), until the grains crush to paste between your fingers.</li>
+<li>Mash with a whisk until smooth but not silky. Thin with ½ to 1 cup hot water to a pourable consistency that still coats a spoon; add the salt and simmer 2 to 3 minutes.</li>
+<li>Tempering: heat the ghee, pop the mustard, add the cumin and urad dal until the dal turns gold, then the chilies, shallots and curry leaves; fry until the shallots soften.</li>
+<li>Pour over the dal, cover 3 minutes, and stir in the coriander. Serve with a spoon of ghee.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>The drop of oil in the cooker keeps the foam down and makes the dal soft.</li>
+<li>Whisk, don’t blend; a slightly grainy dal is the point.</li>
+<li>Rice version: fry crushed cumin and garlic, curry leaves, broken chilies and ¼ cup sliced shallots in the tempering, add ½ cup tamarind water and cook 2 minutes, then the mashed dal. A Kongu paruppu kuzhambu, for rice and papad.</li>
+</ul></div>
+</article>
+</section>
+<div class="divider" id="rasam"><div class="kicker">Chapter Four · Recipe 15</div><h2>Rasam</h2><div class="proverb"><em>Where there is gruel is Kailasa; where there is rice is heaven.</em><br><span class="gloss">A Tamil proverb: wherever one is fed is paradise.</span></div></div>
+<section class="sec"><p class="sec-intro">Rasam means “juice,” and the old Tamil name is milagu thanni, pepper water, the ancestor of mulligatawny. It is the thin, sour, peppery broth poured over rice at the end of a meal, or drunk hot from a tumbler when someone is unwell.</p>
+<article class="recipe" id="r-garlic-rasam">
+<div class="kicker">No. 15</div>
+<h3>Garlic Rasam</h3>
+<div class="local">Poondu Rasam</div>
+<p class="sec-intro">Babu’s mother’s rasam, made without rasam powder and without dal, which is the older, plainer way. A coarse paste of pepper, cumin, garlic and green chili carries the flavor. When someone in the family has a fever, this is what they get.</p>
+<div class="meta">Serves 4<span class="dot">•</span>25 min</div>
+<div class="label">Ingredients</div><ul>
+<li>Tamarind: a small gooseberry-sized lump (about 1 tbsp packed), or 2 tsp paste</li>
+<li>1 ripe tomato</li>
+<li>Crushed coarse in a mortar: 1 tsp black peppercorns, 1 tsp cumin seeds, 8 garlic cloves, 1 green chili</li>
+<li>2 tsp oil or ghee</li>
+<li>½ tsp mustard seeds; ¼ tsp hing</li>
+<li>2 dried red chilies, seeds shaken out, torn</li>
+<li>½ tsp turmeric</li>
+<li>1 tsp salt, to taste</li>
+<li>a handful of coriander leaves with stems, roughly chopped; 1 sprig curry leaves</li>
+<li>water to make 4 cups</li>
+</ul>
+<div class="label">Method</div><ol>
+<li>Soak the tamarind in 1 cup warm water 10 minutes. Squeeze, strain, then crush the tomato into the tamarind water with your hand. Let stand 10 minutes.</li>
+<li>Heat the oil over medium; pop the mustard seeds, add the hing and the torn chilies, and let them puff.</li>
+<li>Pour in the tamarind-tomato water with the turmeric, salt, and enough water to make 4 cups. Simmer 3 to 5 minutes until the raw tamarind smell is gone.</li>
+<li>Add the crushed paste, coriander and curry leaves. Bring just to a boil. The moment froth rises on the surface, switch off, cover, and rest 5 minutes.</li>
+</ol>
+<div class="notes"><div class="notes-h">FROM THE KITCHEN</div><ul>
+<li>Never boil rasam hard. Every Tamil cook says the same thing: off the heat the instant it froths, or the pepper and garlic aroma is gone.</li>
+<li>Crush the paste coarse in a mortar, not fine in a grinder; some cooks leave the garlic skins on.</li>
+<li>The chili seeds come out for a reason: Bharathi wants aroma from the red chilies, not heat. Keeps 3 to 4 days in the fridge; reheat until steaming, not boiling.</li>
+</ul></div>
+</article>
+</section>
+<section class="block" id="the-tamil-meal"><div class="kicker">After the Meal</div><h2>The Tamil Meal</h2><p class="sec-intro">Sappadu, “the eating,” is the word for the midday meal, and the meal is a sequence, not a spread.</p>
+<p>A Tamil meal is served on a banana leaf or a steel plate with rice in the center, and everything else exists to be mixed into it. Rather than courses on separate plates, the meal moves through the rice in stages, each gravy poured over a fresh portion and mixed in by hand. The six tastes of Tamil medicine, sweet, sour, salt, pungent, bitter and astringent, are all supposed to be on the leaf before anyone begins, and the old prescription is to eat them in that order, which is exactly the order the leaf follows: something sweet first, then the sour and salty gravies, then the pepper of the rasam, and cool, astringent curd at the end.</p>
+<div class="label">THE GRAMMAR OF THE LEAF</div>
+<p>The leaf has rules. It is laid with its narrow tip to the diner’s left and the broad end to the right, and sprinkled with water before anything goes on it. The small things run along the top edge: a sweet at the right corner, pickle at the left, then the dry vegetable stir-fry (poriyal), the lentil-and-vegetable kootu, a papad (appalam). Rice goes in the middle, with a spoon of ghee on the first serving. The gravies come in order over fresh rice: the tamarind kuzhambu or sambar first, then rasam, then curd or buttermilk with the pickle to finish. Only the right hand is used, and only the fingertips; the food should never pass the first knuckle. A well is made in the rice for the rasam, and the server keeps coming back. A nineteenth-century collector of Tamil proverbs noted that it was thought bad manners not to take a second helping, and the line the server used on a hesitant guest survives: “He who will not take rice the second time it is passed is born a bullock.”</p>
+<p>When the meal is over, the leaf is folded toward you, top edge down, to thank the cook. At a funeral meal it is folded the other way. Fold it away from you at any other table and you have said something you did not mean.</p>
+<div class="label">WHY THE HAND</div>
+<p>Ask why Tamils eat with the hand and you will get several answers about the body: the fingertips feel the temperature, the touch prepares the stomach, the five fingers stand for the five elements. The practical answer is in the food. Rice, gravy and a dry vegetable are meant to be pressed together into a single mouthful, and no spoon does that. A proverb catches the other half of it. “The ghee belongs to the village, but the hand that serves it is my wife’s.” The food may be anyone’s; the hand is what you remember.</p>
+<div class="label">WHY EVERY MEAL ENDS IN CURD RICE</div>
+<p>Thayir sadam, rice mashed with yogurt and a little salt, closes every vegetarian meal in the south. It cools the mouth after the chili and the pepper, it settles the stomach, and before refrigerators it was how leftover rice was kept overnight, in a clay pot under buttermilk, to be eaten by the men going out to the fields at dawn with a bite of salted citron pickle. In the big temples the same dish, tempered with mustard seed and curry leaf, is handed out to pilgrims as the god’s own food. A Tamil meal is not finished until the curd rice has been eaten.</p>
+<div class="label">RICE BY DAY, TIFFIN BY NIGHT</div>
+<p>The leaf meal is lunch. Morning and evening belong to tiffin, the Tamil word for the light meals of idli, dosa, vada, upma and pongal, and in more and more homes over the last generation, chapati with a kurma or thokku. The word is Anglo-Indian slang from the East India Company days, when “tiffing” meant taking a little something, and the meal is nearly as recent: Tamils did not eat breakfast until the clerks who kept British office hours started to, and idli and dosa, until then main-meal foods, were drafted into the morning slot.</p>
+<div class="label">DOSA AND IDLI AT HOME</div>
+<p>Dosa and idli are the most home-cooked foods in Tamil Nadu, which is why they are missing from this book: nobody makes them for a guest who is there to learn, any more than an American would demonstrate toast. The heart of it is the batter. Once or twice a week, four parts parboiled idli rice and one part skinned black gram are soaked separately for five or six hours with a pinch of fenugreek, ground fine, and left overnight in a big vessel to ferment until the batter doubles and smells faintly sour. The first day’s batter makes idli like cotton, steamed in a perforated stand. As the batter ages and sours it moves down the ladder: thin, crisp dosa on the second and third day, then thick uthappam with onion and chili pressed into the top, then paniyaram, little fried dumplings, to use up the last of it. The rule of thumb is that batter holds three days and turns properly sour on the fourth; the household trick is to refrigerate it unsalted and salt only what you use.</p>
+<p>The grinding used to be done on a stone hand mill and was the hardest work in the kitchen; children were put to pushing the grain back toward the center. In 1955 a mechanic in Coimbatore fitted granite stones inside a motorized drum, and the wet grinder became the one appliance every Tamil kitchen owns. Coimbatore still makes three quarters of India’s grinders. In the cities the newest habit is to skip even that and buy the batter from a neighborhood batter shop, and the Tamil press scolds people for it the way an Italian paper might about jarred sauce.</p>
+<div class="label">THE “HOTEL”</div>
+<p>When a Tamil says “let’s go to a hotel,” they mean a restaurant, and the usage is not a mistake but a fossil. Hotel, hostel and hospital all descend from the same medieval word for a house that takes in and feeds travelers, and Indian English kept that sense. The classic tiffin hotel is the Udupi or Brahmin hotel, a chain of which reached Madras in the 1920s serving idli, dosa, vada and coffee, and whose names often end in Bhavan, “abode.” A “military hotel” serves meat, the word being a polite 1960s code for it in a state where vegetarianism was thought virtuous. A “mess” serves home-style food and grew out of bachelors’ lodgings. And a kaiyendhi bhavan, “hand-holding house,” is the roadside stall where you eat standing with the plate in your hand. Hotel food is its own thing: hotel sambar is thin, dal-heavy, a little sweet with pumpkin and finished with ghee, while home sambar is tamarind-forward, full of vegetables, and different in every house. Bharathi’s food is home food, and no hotel makes it.</p></section>
+<section class="block" id="the-tamil-kitchen"><div class="kicker">After the Meal</div><h2>The Tamil Kitchen</h2><p class="sec-intro">Kai manam, “the fragrance of the hand,” is the Tamil word for the thing a recipe cannot hold.</p>
+<div class="label">THE FRAGRANCE OF THE HAND</div>
+<p>Tamil cooks say the same dish tastes different from every cook and that the difference is the cook. That is kai manam, and it is why Bharathi measures by the handful, judges the tamarind by tasting the water, and knows the chapati is done by feel. It is also, as Tamil writers like to point out, forty or fifty years of doing the same thing every day. A woman learns it standing at the stove beside her mother, not from a book, and the old test of a new bride was whether her idlis came out soft. The novelist Jeyamohan, who writes a column on taste, puts the principle behind it in four words: taste lives in contrast. Sour against sweet, chili against curd, the crisp fried fish against the soft rice.</p>
+<div class="label">STONE, CLAY, BRONZE, IRON</div>
+<p>The traditional kitchen grinds and pounds. The ammi is a flat granite slab with a rolling stone, for chutneys and spice pastes, and it gives a texture no blender does; at a Tamil wedding the groom places the bride’s right foot on the grindstone so the marriage will be as firm as the stone. The ural is the stone mortar, with a long pestle, for pounding pepper, cumin and garlic for rasam, exactly as Bharathi does it. Fish curry is cooked, wherever possible, in a man chatti, an unglazed clay pot that has been seasoned with rice water, because clay holds heat gently and, the cooks say, makes the next-day curry better still. Pongal is boiled in a bronze pot with a holed lid, and everything that fries goes into an iron kadai. None of it is required for the recipes in this book, but all of it explains their textures.</p>
+<div class="label">THE THRESHOLD AND THE CROW</div>
+<p>The Tamil day begins before dawn with the kolam, a pattern of dots and looping lines drawn in rice flour on the swept, water-sprinkled threshold. It is a welcome to Lakshmi, a fence against ill luck, and, scholars point out, a small act of charity: the flour feeds the ants and the birds. Inside, the first handful of cooked rice is set out for the crows before anyone eats, because the ancestors are believed to visit as crows. And feeding others is merit in itself. Annadanam, the gift of food, is the highest gift in the old texts, which is why the great temples run free kitchens at midday, and why at Tiruvannamalai the temple hall serves rice, sambar, rasam, a vegetable, curd and buttermilk on a banana leaf to anyone who sits down.</p>
+<div class="label">FOOD AS MEDICINE</div>
+<p>Every Tamil family keeps a small pharmacy in the kitchen, and paati vaidhyam, grandmother’s medicine, comes before the doctor. Pepper-and-garlic rasam is for colds, fever and a heavy stomach, and it is the dish that gave English the word mulligatawny, from milagu thanni, “pepper water.” Dried ginger, the sukku in Bharathi’s curry powder, is for headaches and digestion; fenugreek and hing are in the tempering as much for the stomach as for the taste; buttermilk with ginger and curry leaf cools the body in the hot months. On Deepavali morning, after the oil bath and before a single sweet, the family eats a spoon of legiyam, a dark paste of dried ginger, long pepper, ajwain, jaggery and ghee, to ready the stomach for the day. This is why Bharathi, asked what she makes when someone is sick, answered without hesitating: rasam and rice.</p>
+<div class="label">THE FESTIVAL POT</div>
+<p>The year’s great food festival is Pongal, in mid-January, when new rice is boiled with milk and jaggery in a clay pot decorated with turmeric leaves and sugarcane, and the whole family watches for it to boil over. When it does, everyone shouts “Pongalo Pongal!” and the first of it goes to the sun. The next day the cattle are bathed and their horns painted. In Tiruvannamalai the other great day is Karthigai Deepam, when the flame is lit on the hill and every house makes puffed-rice balls bound with jaggery, and adai, the thick lentil pancakes. In the hot month of Aadi, women cook koozh, a millet porridge with buttermilk and onion, at the goddess temples and hand it out free. Nine nights of Navaratri mean nine different sundal, a boiled and tempered legume, one each evening for the visitors who come to see the dolls.</p>
+<div class="label">PROVERBS FROM THE KITCHEN</div>
+<p>Tamil has a proverb for everything, and the kitchen has more than its share. These are old; most were collected by missionaries in the 1870s and 1890s and are still in daily use.</p>
+<ul>
+<li>One grain tells you the whole pot is cooked. (Oru paanai sotrukku oru soru padham.) Test a little and you know the rest; Bharathi presses a grain of rice between her fingers.</li>
+<li>Remember, as long as you live, the one who gave you salt. (Uppittavarai ullalavum ninai.) Gratitude to whoever fed you.</li>
+<li>Food without salt belongs on the rubbish heap. (Uppillaa pandam kuppaiyile.)</li>
+<li>What use is salt in a pot that forgot the rice? Get the essentials first.</li>
+<li>The ghee is the village’s, but the hand that serves it is my wife’s. (Ooraar veettu neyye, en pensaadhi kaiye.)</li>
+<li>With the five and the three at hand, even an untaught girl can cook a curry. The pantry in one line: the basic spices and sours, plus water, fire and fuel.</li>
+<li>Where there is gruel is Kailasa; where there is rice is heaven. (Kanji kanda idam Kailasam, soru kanda idam sorgam.)</li>
+<li>When hunger comes, the ten fly away. Hunger drives out self-respect, learning, manners, charity and the rest.</li>
+<li>Hunger knows no taste; sleep knows no comfort.</li>
+<li>Chilies are the whip that makes you eat your gruel.</li>
+<li>Though the mustard seed is small, does its bite go?</li>
+<li>A drop of curd is enough for a whole measure of milk. A little leaven does the work.</li>
+<li>Like pouring ghee into dal. Said of a perfect pairing.</li>
+<li>Why wander for ghee when there is butter in the pot at home?</li>
+<li>A guest and a medicine, three days each. Hospitality and medicine both have a limit.</li>
+<li>If the one holding the ladle is your own, what does it matter whether you sit in the first row or the last?</li>
+<li>Chew it fine and live a hundred years.</li>
+<li>Past its measure, even nectar is poison.</li>
+</ul>
+<p>And from the Thirukkural, the two-thousand-year-old book of Tamil couplets, a line every schoolchild knows: there is nothing sweeter than even the watery gruel earned by one’s own hands.</p></section>
+</div>
+<a class="fab" href="#contents">&uarr; Contents</a>
+</body>
+</html>
