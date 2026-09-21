@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Oyaji Bros</title>
+<style>
+  :root { --bg: #141414; --panel: #1f1f1f; --ink: #f4efe6; --muted: #9a958c; --red: #c8102e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font-family: Georgia, "Times New Roman", serif; line-height: 1.5; }
+  .wrap { max-width: 56rem; margin: 0 auto; padding: 2.5rem 1.2rem 4rem; }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; letter-spacing: .01em; }
+  .sub { color: var(--muted); margin: 0 0 2rem; font-size: .95rem; }
+  h2 { font-size: 1.1rem; color: var(--muted); font-weight: normal; text-transform: uppercase;
+       letter-spacing: .12em; margin: 3rem 0 1rem; }
+  .video { display: flex; justify-content: center; background: var(--panel); border-radius: 12px; padding: 1rem; }
+  video { width: 100%; max-width: 420px; height: auto; border-radius: 8px; background: #000; }
+  .logos { display: grid; gap: 1.2rem; }
+  .logos figure { margin: 0; background: var(--panel); border-radius: 12px; padding: 1rem; }
+  .logos img { width: 100%; height: auto; display: block; border-radius: 6px; }
+  figcaption { color: var(--muted); font-size: .9rem; margin-top: .6rem; }
+  .dl { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Oyaji Bros</h1>
+  <p class="sub">Test video and logo mockups. Private page.</p>
+
+  <div class="video">
+    <video controls playsinline preload="metadata" src="oyaji-bros-test.mp4"></video>
+  </div>
+  <p class="sub" style="margin-top:.8rem"><a class="dl" href="oyaji-bros-test.mp4" download>Download the video</a></p>
+
+  <h2>Logo mockups</h2>
+  <div class="logos">
+    <figure>
+      <img src="logo-script.png" alt="Oyaji Bros logo, script lettering, red on white and white on red">
+      <figcaption>Script. Red on white, white on red.</figcaption>
+    </figure>
+    <figure>
+      <img src="logo-script-varsity.png" alt="Oyaji Bros logo, script plus varsity lettering, red on white and white on red">
+      <figcaption>Script plus varsity lettering.</figcaption>
+    </figure>
+    <figure>
+      <img src="logo-script-varsity-bar.png" alt="Oyaji Bros logo, script plus varsity lettering on a bar, red on white and white on red">
+      <figcaption>Script plus varsity lettering on a bar.</figcaption>
+    </figure>
+  </div>
+</div>
+</body>
+</html>
